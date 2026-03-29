@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ليرسكس — التعليم الجنسي من خبراء عرب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1a6b5a;
+  --primary-dark: #0f4a3d;
+  --primary-light: #2a8b74;
+  --accent: #c9a96e;
+  --accent-light: #e0c88e;
+  --bg: #faf8f5;
+  --bg-card: #ffffff;
+  --text: #2d2d2d;
+  --text-light: #6b6b6b;
+  --text-muted: #999;
+  --border: #e8e4df;
+  --shadow: 0 2px 20px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.1);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --danger: #d44;
+  --danger-dark: #b22;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  min-height: 100vh;
+}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+/* ─── Header ─── */
+.header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  color: white;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto; padding: 18px 30px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none; color: white;
+}
+.logo-icon {
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,0.15); border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.logo-text h1 { font-size: 26px; font-weight: 800; letter-spacing: 1px; line-height: 1.2; }
+.logo-text span { font-size: 12px; opacity: 0.8; font-weight: 300; letter-spacing: 0.5px; }
+.header-actions { display: flex; gap: 10px; align-items: center; }
+
+.nav-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white; padding: 10px 22px;
+  border-radius: var(--radius-sm); cursor: pointer;
+  font-family: inherit; font-size: 14px; font-weight: 500;
+  transition: var(--transition); backdrop-filter: blur(10px);
+}
+.nav-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-1px); }
+
+.admin-toggle {
+  background: rgba(201,169,110,0.25);
+  border: 1px solid rgba(201,169,110,0.4);
+  color: var(--accent-light);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  transition: var(--transition);
+  display: flex; align-items: center; gap: 6px;
+}
+.admin-toggle:hover { background: rgba(201,169,110,0.4); }
+.admin-toggle.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+/* ─── Admin Banner ─── */
+.admin-banner {
+  display: none;
+  background: linear-gradient(90deg, #2a1810, #3d2518);
+  color: var(--accent-light);
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 2px solid var(--accent);
+}
+.admin-banner.active { display: block; }
+.admin-banner span { margin: 0 8px; }
+
+/* ─── Hero ─── */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white; padding: 60px 30px 80px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -50%; right: -20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -30%; left: -10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.hero h2 { font-family: 'Amiri', serif; font-size: 42px; font-weight: 700; margin-bottom: 16px; line-height: 1.4; }
+.hero p { font-size: 18px; opacity: 0.9; font-weight: 300; line-height: 1.9; }
+.hero-badge {
+  display: inline-block; background: rgba(201,169,110,0.2);
+  color: var(--accent-light); padding: 6px 18px;
+  border-radius: 20px; font-size: 13px; margin-bottom: 20px;
+  border: 1px solid rgba(201,169,110,0.3);
+}
+
+/* ─── Stats ─── */
+.stats-bar {
+  max-width: 1200px; margin: -40px auto 40px; padding: 0 30px;
+  position: relative; z-index: 2;
+}
+.stats-inner {
+  background: var(--bg-card); border-radius: var(--radius);
+  box-shadow: var(--shadow-lg); padding: 30px 40px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px; text-align: center;
+}
+.stat-item h4 { font-size: 32px; font-weight: 800; color: var(--primary); line-height: 1; }
+.stat-item p { font-size: 13px; color: var(--text-light); margin-top: 6px; }
+
+/* ─── Main Layout ─── */
+.main { max-width: 1200px; margin: 0 auto; padding: 20px 30px 60px; }
+
+/* ─── Chapters Section ─── */
+.chapters-section { margin-bottom: 50px; }
+.section-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 30px; flex-wrap: wrap; gap: 16px;
+}
+.section-title { font-family: 'Amiri', serif; font-size: 28px; font-weight: 700; color: var(--primary-dark); }
+.section-subtitle { color: var(--text-light); font-size: 15px; margin-top: 4px; }
+
+.add-chapter-btn {
+  background: var(--primary); color: white;
+  border: none; padding: 12px 28px;
+  border-radius: var(--radius-sm); font-family: inherit;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+  display: none; align-items: center; gap: 8px;
+}
+.add-chapter-btn.visible { display: inline-flex; }
+.add-chapter-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(26,107,90,0.3); }
+
+.chapters-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+.chapter-card {
+  background: var(--bg-card); border-radius: var(--radius);
+  padding: 28px; box-shadow: var(--shadow);
+  border: 1px solid var(--border); cursor: pointer;
+  transition: var(--transition); position: relative; overflow: hidden;
+}
+.chapter-card::before {
+  content: ''; position: absolute; top: 0; right: 0;
+  width: 4px; height: 100%;
+  background: var(--primary); opacity: 0; transition: var(--transition);
+}
+.chapter-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
+.chapter-card:hover::before { opacity: 1; }
+
+.chapter-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
+.chapter-num {
+  width: 46px; height: 46px; min-width: 46px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 700;
+}
+.chapter-info h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.4; }
+.chapter-info p { font-size: 13px; color: var(--text-muted); }
+.chapter-meta {
+  display: flex; gap: 16px; margin-top: 14px;
+  padding-top: 14px; border-top: 1px solid var(--border);
+}
+.chapter-meta span { font-size: 13px; color: var(--text-light); display: flex; align-items: center; gap: 5px; }
+
+/* ─── Chapter Admin Actions ─── */
+.chapter-admin-actions {
+  display: none; position: absolute; top: 12px; left: 12px; gap: 6px; z-index: 5;
+}
+body.admin-mode .chapter-admin-actions { display: flex; }
+.chapter-admin-btn {
+  width: 34px; height: 34px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: 8px; cursor: pointer;
+  font-size: 15px; display: flex;
+  align-items: center; justify-content: center;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.chapter-admin-btn.edit-chapter-btn:hover { background: #eef6ff; border-color: #8ac; }
+.chapter-admin-btn.delete-chapter-btn:hover { background: #fee; border-color: #e88; }
+
+/* ─── Chapter View ─── */
+.chapter-view { display: none; }
+.chapter-view.active { display: block; }
+.back-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--primary); font-weight: 500; font-size: 15px;
+  cursor: pointer; margin-bottom: 24px; padding: 8px 16px;
+  border-radius: var(--radius-sm); transition: var(--transition);
+  background: none; border: none; font-family: inherit;
+}
+.back-btn:hover { background: rgba(26,107,90,0.08); }
+
+.chapter-view-header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: white; border-radius: var(--radius);
+  padding: 40px; margin-bottom: 30px;
+  position: relative; overflow: hidden;
+}
+.chapter-view-header::after {
+  content: ''; position: absolute; top: -30%; left: -10%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.chapter-view-header h2 {
+  font-family: 'Amiri', serif; font-size: 32px;
+  margin-bottom: 8px; position: relative; z-index: 1;
+}
+.chapter-view-header p { opacity: 0.85; font-size: 16px; position: relative; z-index: 1; }
+
+.chapter-view-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
+
+.add-article-btn {
+  background: var(--accent); color: white; border: none;
+  padding: 12px 28px; border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.add-article-btn:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(201,169,110,0.4); }
+
+/* ─── Articles ─── */
+.articles-list { display: flex; flex-direction: column; gap: 24px; }
+.article-card {
+  background: var(--bg-card); border-radius: var(--radius);
+  box-shadow: var(--shadow); border: 1px solid var(--border);
+  overflow: hidden; transition: var(--transition);
+}
+.article-card:hover { box-shadow: var(--shadow-lg); }
+.article-images {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px; padding: 12px; background: #f5f3f0;
+}
+.article-images img {
+  width: 100%; height: 180px; object-fit: cover;
+  border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition);
+}
+.article-images img:hover { transform: scale(1.03); box-shadow: var(--shadow); }
+.article-body { padding: 28px; }
+.article-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 12px; line-height: 1.5; }
+.article-content { color: var(--text-light); font-size: 15px; line-height: 2; white-space: pre-wrap; }
+.article-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 28px; border-top: 1px solid var(--border); background: #fdfcfa;
+}
+.article-date { font-size: 13px; color: var(--text-muted); }
+.article-actions { display: flex; gap: 8px; }
+.article-actions button {
+  background: none; border: 1px solid var(--border);
+  padding: 6px 14px; border-radius: 8px;
+  font-family: inherit; font-size: 13px;
+  cursor: pointer; color: var(--text-light); transition: var(--transition);
+}
+.article-actions .delete-btn:hover { background: #fee; border-color: #e88; color: #c33; }
+.article-actions .edit-btn:hover { background: #eef6ff; border-color: #8ac; color: #369; }
+
+/* ─── Modal ─── */
+.modal-overlay {
+  display: none; position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5); z-index: 1000;
+  align-items: center; justify-content: center;
+  padding: 20px; backdrop-filter: blur(4px);
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: var(--bg-card); border-radius: var(--radius);
+  width: 100%; max-width: 650px; max-height: 90vh;
+  overflow-y: auto; box-shadow: var(--shadow-lg);
+  animation: modalIn 0.3s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal-header {
+  padding: 24px 28px; border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.modal-header h3 { font-size: 20px; font-weight: 700; }
+.modal-close {
+  width: 36px; height: 36px; border: none;
+  background: var(--bg); border-radius: 10px;
+  cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition); color: var(--text-light);
+}
+.modal-close:hover { background: #fee; color: #c33; }
+.modal-body { padding: 28px; }
+
+.form-group { margin-bottom: 22px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; color: var(--text); }
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+  width: 100%; padding: 12px 16px;
+  border: 2px solid var(--border); border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 15px;
+  transition: var(--transition); background: var(--bg);
+  color: var(--text); direction: rtl;
+}
+.form-group input[type="text"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none; border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(26,107,90,0.1);
+}
+.form-group textarea { min-height: 180px; resize: vertical; line-height: 2; }
+
+/* ─── Image Upload ─── */
+.image-upload-area {
+  border: 2px dashed var(--border); border-radius: var(--radius-sm);
+  padding: 30px; text-align: center; cursor: pointer;
+  transition: var(--transition); background: var(--bg);
+}
+.image-upload-area:hover { border-color: var(--primary); background: rgba(26,107,90,0.03); }
+.image-upload-area .upload-icon { font-size: 36px; margin-bottom: 10px; }
+.image-upload-area p { color: var(--text-light); font-size: 14px; }
+.image-upload-area small { color: var(--text-muted); font-size: 12px; }
+.image-preview-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px; margin-top: 14px;
+}
+.image-preview-item {
+  position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 1;
+}
+.image-preview-item img { width: 100%; height: 100%; object-fit: cover; }
+.image-preview-item .remove-img {
+  position: absolute; top: 4px; left: 4px;
+  width: 24px; height: 24px;
+  background: rgba(200,30,30,0.9); color: white;
+  border: none; border-radius: 50%; cursor: pointer;
+  font-size: 14px; display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.image-preview-item .remove-img:hover { background: #c22; transform: scale(1.1); }
+
+.modal-footer {
+  padding: 20px 28px; border-top: 1px solid var(--border);
+  display: flex; gap: 12px; justify-content: flex-end;
+}
+.btn-primary {
+  background: var(--primary); color: white; border: none;
+  padding: 12px 32px; border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+}
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.btn-secondary {
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); padding: 12px 28px;
+  border-radius: var(--radius-sm); font-family: inherit;
+  font-size: 15px; cursor: pointer; transition: var(--transition);
+}
+.btn-secondary:hover { background: var(--border); }
+.btn-danger {
+  background: var(--danger); color: white; border: none;
+  padding: 12px 28px; border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+}
+.btn-danger:hover { background: var(--danger-dark); }
+
+/* ─── Empty State ─── */
+.empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+.empty-state .empty-icon { font-size: 56px; margin-bottom: 16px; opacity: 0.5; }
+.empty-state h4 { font-size: 18px; color: var(--text-light); margin-bottom: 8px; }
+.empty-state p { font-size: 14px; }
+
+/* ─── Lightbox ─── */
+.lightbox {
+  display: none; position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.92); z-index: 2000;
+  align-items: center; justify-content: center; cursor: pointer;
+}
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; }
+
+/* ─── Footer ─── */
+.footer {
+  background: var(--primary-dark); color: rgba(255,255,255,0.7);
+  text-align: center; padding: 30px; font-size: 14px;
+}
+.footer strong { color: white; }
+
+/* ─── Toast ─── */
+.toast {
+  position: fixed; bottom: 30px; left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--primary-dark); color: white;
+  padding: 14px 28px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 500; z-index: 3000;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ─── Emoji Picker ─── */
+.emoji-grid {
+  display: grid; grid-template-columns: repeat(8, 1fr);
+  gap: 6px; margin-top: 10px;
+}
+.emoji-btn {
+  width: 40px; height: 40px; border: 1px solid var(--border);
+  background: var(--bg); border-radius: 8px; cursor: pointer;
+  font-size: 20px; transition: var(--transition);
+  display: flex; align-items: center; justify-content: center;
+}
+.emoji-btn:hover { background: var(--primary-light); border-color: var(--primary-light); transform: scale(1.1); }
+.emoji-btn.selected { background: var(--primary); border-color: var(--primary); }
+
+/* ─── Chapter Card Admin Mode ─── */
+body.admin-mode .chapter-card { cursor: default; }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .header-inner { padding: 14px 20px; }
+  .logo-text h1 { font-size: 20px; }
+  .hero { padding: 40px 20px 60px; }
+  .hero h2 { font-size: 28px; }
+  .hero p { font-size: 15px; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); padding: 20px; gap: 16px; }
+  .stat-item h4 { font-size: 24px; }
+  .main { padding: 20px 16px 40px; }
+  .chapters-grid { grid-template-columns: 1fr; }
+  .chapter-view-header { padding: 28px 20px; }
+  .chapter-view-header h2 { font-size: 24px; }
+  .article-body { padding: 20px; }
+  .article-title { font-size: 18px; }
+  .modal { margin: 10px; }
+  .modal-body { padding: 20px; }
+  .section-header { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- Admin Banner -->
+<div class="admin-banner" id="adminBanner">
+  🔐 <span>وضع الأدمن مفعّل</span> — يمكنك الآن إضافة وتعديل وحذف الأبواب
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="#" onclick="showHome()">
+      <div class="logo-icon">📚</div>
+      <div class="logo-text">
+        <h1>ليرسكس</h1>
+        <span>التعليم الجنسي من خبراء عرب</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <button class="admin-toggle" id="adminToggle" onclick="toggleAdmin()">🔑 وضع الأدمن</button>
+      <button class="nav-btn" onclick="showHome()">🏠 الرئيسية</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="heroSection">
+  <div class="hero-content">
+    <div class="hero-badge">🔬 محتوى علمي موثوق</div>
+    <h2>التعليم الجنسي بأسلوب علمي مؤدب</h2>
+    <p>منصة عربية متخصصة تهدف إلى نشر الوعي الجنسي الصحي بطريقة علمية محترمة، بإشراف خبراء ومختصين عرب في مجالات الصحة الجنسية والنفسية.</p>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats-bar" id="statsBar">
+  <div class="stats-inner">
+    <div class="stat-item"><h4 id="statChapters">0</h4><p>أبواب رئيسية</p></div>
+    <div class="stat-item"><h4 id="statArticles">0</h4><p>مقالات منشورة</p></div>
+    <div class="stat-item"><h4 id="statImages">0</h4><p>صور توضيحية</p></div>
+    <div class="stat-item"><h4>∞</h4><p>محتوى متجدد</p></div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main class="main">
+  <!-- Home View -->
+  <div id="homeView">
+    <section class="chapters-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">📖 أبواب المدونة</h2>
+          <p class="section-subtitle">أبواب涵盖ة لأهم مواضيع الصحة الجنسية بأسلوب علمي موثوق</p>
+        </div>
+        <button class="add-chapter-btn" id="addChapterBtn" onclick="openChapterModal()">➕ إضافة باب جديد</button>
+      </div>
+      <div class="chapters-grid" id="chaptersGrid"></div>
+    </section>
+  </div>
+
+  <!-- Chapter View -->
+  <div class="chapter-view" id="chapterView">
+    <button class="back-btn" onclick="showHome()">← العودة إلى الأبواب</button>
+    <div class="chapter-view-header" id="chapterViewHeader">
+      <h2 id="chapterViewTitle"></h2>
+      <p id="chapterViewDesc"></p>
+    </div>
+    <div class="chapter-view-actions">
+      <button class="add-article-btn" onclick="openAddArticleModal()">➕ إضافة مقال جديد</button>
+    </div>
+    <div class="articles-list" id="articlesList"></div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <p><strong>ليرسكس</strong> — منصة التعليم الجنسي العربي © 2026</p>
+  <p style="margin-top:6px;font-size:12px;opacity:0.6">محتوى علمي تثقيفي بإشراف مختصين • ليس بديلاً عن الاستشارة الطبية</p>
+</footer>
+
+<!-- Add/Edit Chapter Modal -->
+<div class="modal-overlay" id="chapterModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="chapterModalTitle">إضافة باب جديد</h3>
+      <button class="modal-close" onclick="closeChapterModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>اسم الباب</label>
+        <input type="text" id="chapterTitleInput" placeholder="مثال: الصحة النفسية الجنسية">
+      </div>
+      <div class="form-group">
+        <label>وصف الباب</label>
+        <textarea id="chapterDescInput" style="min-height:100px" placeholder="وصف مختصر لمحتوى هذا الباب..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>أيقونة الباب</label>
+        <input type="text" id="chapterIconInput" placeholder="أدخل رمز تعبيري مثل: 🔬" maxlength="4" style="text-align:center;font-size:28px">
+        <div class="emoji-grid" id="emojiGrid"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeChapterModal()">إلغاء</button>
+      <button class="btn-primary" onclick="saveChapter()">💾 حفظ</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add/Edit Article Modal -->
+<div class="modal-overlay" id="articleModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="articleModalTitle">إضافة مقال جديد</h3>
+      <button class="modal-close" onclick="closeArticleModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>عنوان المقال</label>
+        <input type="text" id="articleTitleInput" placeholder="أدخل عنوان المقال...">
+      </div>
+      <div class="form-group">
+        <label>محتوى المقال</label>
+        <textarea id="articleContentInput" placeholder="اكتب محتوى المقال هنا..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>الصور التوضيحية</label>
+        <div class="image-upload-area" onclick="document.getElementById('imageInput').click()">
+          <div class="upload-icon">📷</div>
+          <p>اضغط لرفع صور توضيحية</p>
+          <small>يمكنك رفع عدد غير محدود من الصور</small>
+        </div>
+        <input type="file" id="imageInput" multiple accept="image/*" style="display:none" onchange="handleImageUpload(event)">
+        <div class="image-preview-grid" id="imagePreviewGrid"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeArticleModal()">إلغاء</button>
+      <button class="btn-primary" onclick="saveArticle()">💾 حفظ المقال</button>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal" style="max-width:450px">
+    <div class="modal-header">
+      <h3 id="deleteModalTitle">تأكيد الحذف</h3>
+      <button class="modal-close" onclick="closeDeleteModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p id="deleteModalMsg" style="font-size:16px;line-height:2"></p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeDeleteModal()">إلغاء</button>
+      <button class="btn-danger" id="deleteConfirmBtn" onclick="confirmDelete()">🗑️ تأكيد الحذف</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── Default Chapters ───
+const DEFAULT_CHAPTERS = [
+  { id: "ch_1", title: "التشريح والفيزيولوجيا", desc: "فهم الجهاز التناسلي للذكور والإناث من الناحية العلمية", icon: "🔬" },
+  { id: "ch_2", title: "البلوغ والنمو", desc: "مراحل البلوغ والتغيرات الجسدية والنفسية لدى المراهقين", icon: "🌱" },
+  { id: "ch_3", title: "الصحة الجنسية والوقاية", desc: "الوقاية من الأمراض المنقولة جنسياً والفحوصات الدورية", icon: "🛡️" },
+  { id: "ch_4", title: "التواصل والعلاقات", desc: "بناء علاقة صحية, التواصل الفعّال, والحدود الصحية", icon: "💬" },
+  { id: "ch_5", title: "الصحة الإنجابية", desc: "التخطيط الأسري, الحمل, والعقم — رعاية شاملة", icon: "👶" },
+  { id: "ch_6", title: "الهوية الجندرية", desc: "فهم التنوع, احترام الاختلاف, والدعم النفسي", icon: "🌈" },
+  { id: "ch_7", title: "الاضطرابات الجنسية", desc: "الضعف الجنسي, البرود الجنسي, وغيرها من الاضطرابات الشائعة", icon: "⚕️" },
+  { id: "ch_8", title: "التربية الجنسية للأطفال", desc: "كيفية توعية الأطفال بتدرج مناسب لعمرهم", icon: "👨‍👩‍👧" },
+  { id: "ch_9", title: "الدين والثقافة والجنس", desc: "التوازن بين المعتقدات الدينية والصحة الجنسية", icon: "🕌" },
+  { id: "ch_10", title: "مصادر ومراجع", desc: "كتب, أبحاث, ومواقع موثوقة للتعمق في المواضيع", icon: "📖" }
+];
+
+const EMOJI_OPTIONS = ['🔬','🌱','🛡️','💬','👶','🌈','⚕️','👨‍👩‍👧','🕌','📖','🧠','❤️','🏥','🧘','💑','🔔','📝','🎓','💪','🌟','🔑','📌','🧬','🔬','💊','🩺','🧑‍⚕️','🧩','🕊️','📘'];
+
+// ─── State ───
+let isAdmin = false;
+let chapters = [];
+let currentChapterId = null;
+let editingChapterId = null;
+let editingArticleIdx = null;
+let pendingImages = [];
+let deleteCallback = null;
+
+// ─── Storage ───
+function loadData() {
+  const saved = localStorage.getItem('lersex_chapters');
+  if (saved) {
+    chapters = JSON.parse(saved);
+    // Migrate old data format
+    const oldData = localStorage.getItem('lersex_data');
+    if (oldData && chapters.length === 0) {
+      const od = JSON.parse(oldData);
+      chapters = DEFAULT_CHAPTERS.map((ch, i) => ({
+        ...ch,
+        articles: od[i + 1]?.articles || []
+      }));
+    }
+  } else {
+    // Check old format
+    const oldData = localStorage.getItem('lersex_data');
+    if (oldData) {
+      const od = JSON.parse(oldData);
+      chapters = DEFAULT_CHAPTERS.map((ch, i) => ({
+        ...ch,
+        articles: od[i + 1]?.articles || []
+      }));
+    } else {
+      chapters = DEFAULT_CHAPTERS.map(ch => ({ ...ch, articles: [] }));
+    }
+  }
+  saveData();
+}
+
+function saveData() {
+  localStorage.setItem('lersex_chapters', JSON.stringify(chapters));
+}
+
+// ─── Admin Mode ───
+function toggleAdmin() {
+  isAdmin = !isAdmin;
+  const btn = document.getElementById('adminToggle');
+  const banner = document.getElementById('adminBanner');
+  const addBtn = document.getElementById('addChapterBtn');
+
+  if (isAdmin) {
+    const pass = prompt('🔐 أدخل كلمة مرور الأدمن:');
+    if (pass !== 'admin123') {
+      showToast('❌ كلمة المرور غير صحيحة');
+      isAdmin = false;
+      return;
+    }
+    btn.classList.add('active');
+    btn.textContent = '🔓 خروج من الأدمن';
+    banner.classList.add('active');
+    addBtn.classList.add('visible');
+    document.body.classList.add('admin-mode');
+    showToast('✅ تم تفعيل وضع الأدمن');
+  } else {
+    btn.classList.remove('active');
+    btn.textContent = '🔑 وضع الأدمن';
+    banner.classList.remove('active');
+    addBtn.classList.remove('visible');
+    document.body.classList.remove('admin-mode');
+    showToast('🔒 تم إلغاء وضع الأدمن');
+  }
+  renderChapters();
+}
+
+// ─── Init ───
+function init() {
+  loadData();
+  renderEmojiGrid();
+  renderChapters();
+  updateStats();
+}
+
+function updateStats() {
+  let totalArticles = 0, totalImages = 0;
+  chapters.forEach(ch => {
+    totalArticles += ch.articles.length;
+    ch.articles.forEach(a => totalImages += (a.images || []).length);
+  });
+  document.getElementById('statChapters').textContent = chapters.length;
+  document.getElementById('statArticles').textContent = totalArticles;
+  document.getElementById('statImages').textContent = totalImages;
+}
+
+// ─── Render Chapters ───
+function renderChapters() {
+  const grid = document.getElementById('chaptersGrid');
+
+  if (chapters.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state" style="grid-column:1/-1">
+        <div class="empty-icon">📚</div>
+        <h4>لا توجد أبواب بعد</h4>
+        <p>فعّل وضع الأدمن وأضف أول باب</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = chapters.map((ch, idx) => {
+    const articles = ch.articles || [];
+    const imgCount = articles.reduce((s, a) => s + (a.images || []).length, 0);
+    return `
+      <div class="chapter-card" onclick="openChapter('${ch.id}')">
+        <div class="chapter-admin-actions">
+          <button class="chapter-admin-btn edit-chapter-btn" onclick="event.stopPropagation(); openEditChapterModal('${ch.id}')" title="تعديل">✏️</button>
+          <button class="chapter-admin-btn delete-chapter-btn" onclick="event.stopPropagation(); deleteChapter('${ch.id}')" title="حذف">🗑️</button>
+        </div>
+        <div class="chapter-header">
+          <div class="chapter-num">${ch.icon || '📄'}</div>
+          <div class="chapter-info">
+            <h3>${escapeHtml(ch.title)}</h3>
+            <p>${escapeHtml(ch.desc || '')}</p>
+          </div>
+        </div>
+        <div class="chapter-meta">
+          <span>📝 ${articles.length} مقال</span>
+          <span>📷 ${imgCount} صورة</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ─── Emoji Grid ───
+function renderEmojiGrid() {
+  const grid = document.getElementById('emojiGrid');
+  grid.innerHTML = EMOJI_OPTIONS.map(e =>
+    `<button class="emoji-btn" onclick="selectEmoji('${e}')">${e}</button>`
+  ).join('');
+}
+
+function selectEmoji(emoji) {
+  document.getElementById('chapterIconInput').value = emoji;
+  document.querySelectorAll('.emoji-btn').forEach(b => b.classList.remove('selected'));
+  event.target.classList.add('selected');
+}
+
+// ─── Chapter Modal ───
+function openChapterModal() {
+  if (!isAdmin) return;
+  editingChapterId = null;
+  document.getElementById('chapterModalTitle').textContent = '➕ إضافة باب جديد';
+  document.getElementById('chapterTitleInput').value = '';
+  document.getElementById('chapterDescInput').value = '';
+  document.getElementById('chapterIconInput').value = '📄';
+  document.querySelectorAll('.emoji-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('chapterModal').classList.add('active');
+}
+
+function openEditChapterModal(id) {
+  if (!isAdmin) return;
+  editingChapterId = id;
+  const ch = chapters.find(c => c.id === id);
+  document.getElementById('chapterModalTitle').textContent = '✏️ تعديل الباب';
+  document.getElementById('chapterTitleInput').value = ch.title;
+  document.getElementById('chapterDescInput').value = ch.desc || '';
+  document.getElementById('chapterIconInput').value = ch.icon || '📄';
+  document.querySelectorAll('.emoji-btn').forEach(b => {
+    b.classList.toggle('selected', b.textContent === ch.icon);
+  });
+  document.getElementById('chapterModal').classList.add('active');
+}
+
+function closeChapterModal() {
+  document.getElementById('chapterModal').classList.remove('active');
+  editingChapterId = null;
+}
+
+function saveChapter() {
+  const title = document.getElementById('chapterTitleInput').value.trim();
+  const desc = document.getElementById('chapterDescInput').value.trim();
+  const icon = document.getElementById('chapterIconInput').value.trim() || '📄';
+
+  if (!title) { showToast('⚠️ يرجى إدخال اسم الباب'); return; }
+
+  if (editingChapterId) {
+    const ch = chapters.find(c => c.id === editingChapterId);
+    ch.title = title;
+    ch.desc = desc;
+    ch.icon = icon;
+    showToast('✅ تم تحديث الباب بنجاح');
+  } else {
+    const newId = 'ch_' + Date.now();
+    chapters.push({ id: newId, title, desc, icon, articles: [] });
+    showToast('✅ تم إضافة الباب بنجاح');
+  }
+
+  saveData();
+  renderChapters();
+  updateStats();
+  closeChapterModal();
+}
+
+// ─── Delete Chapter ───
+function deleteChapter(id) {
+  if (!isAdmin) return;
+  const ch = chapters.find(c => c.id === id);
+  const articleCount = ch.articles.length;
+
+  document.getElementById('deleteModalTitle').textContent = '⚠️ حذف الباب';
+  document.getElementById('deleteModalMsg').innerHTML = `
+    هل أنت متأكد من حذف <strong>"${escapeHtml(ch.title)}"</strong>؟
+    ${articleCount > 0 ? `<br><br>⚠️ هذا الباب يحتوي على <strong>${articleCount} مقال</strong> — سيتم حذفها جميعاً.` : ''}
+    <br><br>هذا الإجراء لا يمكن التراجع عنه.
+  `;
+  deleteCallback = () => {
+    chapters = chapters.filter(c => c.id !== id);
+    saveData();
+    renderChapters();
+    updateStats();
+    showToast('🗑️ تم حذف الباب');
+    closeDeleteModal();
+  };
+  document.getElementById('deleteModal').classList.add('active');
+}
+
+// ─── Delete Confirmation ───
+function confirmDelete() {
+  if (deleteCallback) { deleteCallback(); deleteCallback = null; }
+}
+function closeDeleteModal() {
+  document.getElementById('deleteModal').classList.remove('active');
+  deleteCallback = null;
+}
+
+// ─── Open Chapter ───
+function openChapter(id) {
+  currentChapterId = id;
+  const ch = chapters.find(c => c.id === id);
+  if (!ch) return;
+  document.getElementById('homeView').style.display = 'none';
+  document.getElementById('chapterView').classList.add('active');
+  document.getElementById('heroSection').style.display = 'none';
+  document.getElementById('statsBar').style.display = 'none';
+  document.getElementById('chapterViewTitle').textContent = `${ch.icon || '📄'} ${ch.title}`;
+  document.getElementById('chapterViewDesc').textContent = ch.desc || '';
+  renderArticles();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showHome() {
+  currentChapterId = null;
+  document.getElementById('homeView').style.display = 'block';
+  document.getElementById('chapterView').classList.remove('active');
+  document.getElementById('heroSection').style.display = 'block';
+  document.getElementById('statsBar').style.display = 'block';
+  renderChapters();
+  updateStats();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── Render Articles ───
+function renderArticles() {
+  const list = document.getElementById('articlesList');
+  const ch = chapters.find(c => c.id === currentChapterId);
+  const articles = ch?.articles || [];
+
+  if (articles.length === 0) {
+    list.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">📝</div>
+        <h4>لا توجد مقالات بعد</h4>
+        <p>ابدأ بإضافة أول مقال في هذا الباب</p>
+      </div>
+    `;
+    return;
+  }
+
+  list.innerHTML = articles.map((article, idx) => `
+    <div class="article-card">
+      ${article.images && article.images.length > 0 ? `
+        <div class="article-images">
+          ${article.images.map(img => `<img src="${img}" onclick="openLightbox(this.src)" alt="صورة توضيحية">`).join('')}
+        </div>
+      ` : ''}
+      <div class="article-body">
+        <h3 class="article-title">${escapeHtml(article.title)}</h3>
+        <div class="article-content">${escapeHtml(article.content)}</div>
+      </div>
+      <div class="article-footer">
+        <span class="article-date">📅 ${article.date}</span>
+        <div class="article-actions">
+          <button class="edit-btn" onclick="editArticle(${idx})">✏️ تعديل</button>
+          <button class="delete-btn" onclick="deleteArticle(${idx})">🗑️ حذف</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ─── Article Modal ───
+function openAddArticleModal() {
+  editingArticleIdx = null;
+  pendingImages = [];
+  document.getElementById('articleModalTitle').textContent = '➕ إضافة مقال جديد';
+  document.getElementById('articleTitleInput').value = '';
+  document.getElementById('articleContentInput').value = '';
+  document.getElementById('imagePreviewGrid').innerHTML = '';
+  document.getElementById('articleModal').classList.add('active');
+}
+
+function editArticle(idx) {
+  editingArticleIdx = idx;
+  const ch = chapters.find(c => c.id === currentChapterId);
+  const article = ch.articles[idx];
+  pendingImages = [...(article.images || [])];
+  document.getElementById('articleModalTitle').textContent = '✏️ تعديل المقال';
+  document.getElementById('articleTitleInput').value = article.title;
+  document.getElementById('articleContentInput').value = article.content;
+  renderImagePreviews();
+  document.getElementById('articleModal').classList.add('active');
+}
+
+function closeArticleModal() {
+  document.getElementById('articleModal').classList.remove('active');
+  pendingImages = [];
+  editingArticleIdx = null;
+}
+
+// ─── Image Handling ───
+function handleImageUpload(event) {
+  const files = event.target.files;
+  Array.from(files).forEach(file => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      compressImage(e.target.result, 1200, 0.8).then(compressed => {
+        pendingImages.push(compressed);
+        renderImagePreviews();
+      });
+    };
+    reader.readAsDataURL(file);
+  });
+  event.target.value = '';
+}
+
+function compressImage(dataUrl, maxWidth, quality) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      let w = img.width, h = img.height;
+      if (w > maxWidth) { h = h * maxWidth / w; w = maxWidth; }
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      resolve(canvas.toDataURL('image/jpeg', quality));
+    };
+    img.src = dataUrl;
+  });
+}
+
+function renderImagePreviews() {
+  const grid = document.getElementById('imagePreviewGrid');
+  grid.innerHTML = pendingImages.map((img, idx) => `
+    <div class="image-preview-item">
+      <img src="${img}" alt="">
+      <button class="remove-img" onclick="removeImage(${idx})">✕</button>
+    </div>
+  `).join('');
+}
+
+function removeImage(idx) {
+  pendingImages.splice(idx, 1);
+  renderImagePreviews();
+}
+
+// ─── Save Article ───
+function saveArticle() {
+  const title = document.getElementById('articleTitleInput').value.trim();
+  const content = document.getElementById('articleContentInput').value.trim();
+  if (!title) { showToast('⚠️ يرجى إدخال عنوان المقال'); return; }
+  if (!content) { showToast('⚠️ يرجى إدخال محتوى المقال'); return; }
+
+  const ch = chapters.find(c => c.id === currentChapterId);
+  const article = {
+    title, content,
+    images: [...pendingImages],
+    date: new Date().toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' }),
+    updatedAt: Date.now()
+  };
+
+  if (editingArticleIdx !== null) {
+    ch.articles[editingArticleIdx] = article;
+    showToast('✅ تم تحديث المقال بنجاح');
+  } else {
+    ch.articles.push(article);
+    showToast('✅ تم إضافة المقال بنجاح');
+  }
+
+  saveData();
+  renderArticles();
+  updateStats();
+  closeArticleModal();
+}
+
+// ─── Delete Article ───
+function deleteArticle(idx) {
+  const ch = chapters.find(c => c.id === currentChapterId);
+  const article = ch.articles[idx];
+  document.getElementById('deleteModalTitle').textContent = '🗑️ حذف المقال';
+  document.getElementById('deleteModalMsg').innerHTML = `
+    هل أنت متأكد من حذف مقال <strong>"${escapeHtml(article.title)}"</strong>؟
+    <br><br>هذا الإجراء لا يمكن التراجع عنه.
+  `;
+  deleteCallback = () => {
+    ch.articles.splice(idx, 1);
+    saveData();
+    renderArticles();
+    updateStats();
+    showToast('🗑️ تم حذف المقال');
+    closeDeleteModal();
+  };
+  document.getElementById('deleteModal').classList.add('active');
+}
+
+// ─── Lightbox ───
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+// ─── Toast ───
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+// ─── Util ───
+function escapeHtml(text) {
+  const d = document.createElement('div');
+  d.textContent = text;
+  return d.innerHTML;
+}
+
+// ─── Start ───
+init();
+</script>
+</body>
+</html>
