@@ -455,6 +455,67 @@ body.admin-mode .chapter-admin-actions { display: flex; }
 /* ─── Chapter Card Admin Mode ─── */
 body.admin-mode .chapter-card { cursor: default; }
 
+/* ─── Dark Mode ─── */
+body.dark-mode {
+  --bg: #121212;
+  --bg-card: #1e1e1e;
+  --text: #e0e0e0;
+  --text-light: #aaaaaa;
+  --text-muted: #777;
+  --border: #333;
+  --shadow: 0 2px 20px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
+}
+body.dark-mode .header { background: linear-gradient(135deg, #1a0000 0%, #b71c1c 50%, #e53935 100%); }
+body.dark-mode .chapter-view-header { background: linear-gradient(135deg, #1a0000, #b71c1c); }
+body.dark-mode .hero { background: linear-gradient(135deg, #1a0000 0%, #b71c1c 100%); }
+body.dark-mode .footer { background: #0a0000; }
+body.dark-mode .admin-banner { background: linear-gradient(90deg, #0a0000, #1a0000); }
+body.dark-mode .article-images { background: #2a2a2a; }
+body.dark-mode .article-footer { background: #1a1a1a; }
+body.dark-mode input[type="text"],
+body.dark-mode textarea,
+body.dark-mode select { background: #2a2a2a; color: #e0e0e0; border-color: #444; }
+body.dark-mode .image-upload-area { background: #2a2a2a; border-color: #444; }
+body.dark-mode .emoji-btn { background: #2a2a2a; border-color: #444; color: #e0e0e0; }
+body.dark-mode .btn-secondary { background: #2a2a2a; color: #e0e0e0; border-color: #444; }
+body.dark-mode .chapter-admin-btn { background: #2a2a2a; border-color: #444; }
+body.dark-mode .article-actions button { color: #aaa; border-color: #444; }
+body.dark-mode .stats-inner { background: #1e1e1e; }
+body.dark-mode .stat-item h4 { color: #e53935; }
+body.dark-mode .modal { background: #1e1e1e; }
+body.dark-mode .modal-header { border-color: #333; }
+body.dark-mode .modal-footer { border-color: #333; }
+body.dark-mode .modal-close { background: #2a2a2a; color: #aaa; }
+body.dark-mode .back-btn { color: #e53935; }
+body.dark-mode .back-btn:hover { background: rgba(183,28,28,0.15); }
+body.dark-mode .section-title { color: #e53935; }
+
+/* ─── Pages (About, Terms, Privacy) ─── */
+.page-view { display: none; }
+.page-view.active { display: block; }
+.page-content {
+  max-width: 900px; margin: 0 auto;
+  background: var(--bg-card); border-radius: var(--radius);
+  padding: 50px 40px; box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.page-content h2 {
+  font-family: 'Amiri', serif; font-size: 32px;
+  color: var(--primary); margin-bottom: 10px;
+  padding-bottom: 16px; border-bottom: 2px solid var(--border);
+}
+.page-content h3 {
+  font-size: 20px; color: var(--primary);
+  margin: 28px 0 12px; font-weight: 700;
+}
+.page-content p, .page-content li {
+  font-size: 15px; color: var(--text-light);
+  line-height: 2.2; margin-bottom: 12px;
+}
+.page-content ul { padding-right: 24px; }
+.page-content ul li { margin-bottom: 8px; }
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .header-inner { padding: 14px 20px; }
@@ -494,6 +555,9 @@ body.admin-mode .chapter-card { cursor: default; }
       </div>
     </a>
     <div class="header-actions">
+      <button class="nav-btn" onclick="toggleDarkMode()" id="darkModeBtn" title="الوضع الليلي">🌙</button>
+      <button class="nav-btn" onclick="showPage('about')">من نحن</button>
+      <button class="nav-btn" onclick="showPage('terms')">الشروط</button>
       <button class="admin-toggle" id="adminToggle" onclick="toggleAdmin()">🔑 وضع الأدمن</button>
       <button class="nav-btn" onclick="showHome()">🏠 الرئيسية</button>
     </div>
@@ -547,12 +611,121 @@ body.admin-mode .chapter-card { cursor: default; }
     </div>
     <div class="articles-list" id="articlesList"></div>
   </div>
+  <!-- About Us Page -->
+  <div class="page-view" id="page-about">
+    <button class="back-btn" onclick="showHome()">← العودة إلى الرئيسية</button>
+    <div class="page-content">
+      <h2>من نحن</h2>
+      <p>مرحباً بكم في <strong>ليرسكس</strong> — المنصة العربية المتخصصة في التثقيف الصحي الجنسي بأسلوب علمي مؤدب ومحتشم.</p>
+
+      <h3>رؤيتنا</h3>
+      <p>نسعى لنشر الوعي الصحي الجنسي في المجتمع العربي بطريقة محترمة ومبنية على الأسس العلمية الموثوقة، بعيداً عن الإثارة أو المحتوى غير اللائق. نؤمن بأن المعرفة الصحيحة هي أساس الحياة الزوجية السعيدة والمجتمعات الصحية.</p>
+
+      <h3>رسالتنا</h3>
+      <ul>
+        <li>تقديم محتوى علمي موثوق في مجال الصحة الجنسية بأسلوب عربي أصيل</li>
+        <li>المساهمة في كسر الحواجز الثقافية حول التثقيف الصحي</li>
+        <li>توفير مرجعية عربية شاملة للזוגين والأسر</li>
+        <li>التعاون مع خبراء ومختصين في مجالات الطب والصحة النفسية</li>
+      </ul>
+
+      <h3>فريقنا</h3>
+      <p>يضم فريق ليرسكس مجموعة من المتخصصين في مجالات الطب والصحة النفسية والتثقيف الصحي، يعملون معاً لضمان دقة المحتوى وموثوقيته علمياً.</p>
+
+      <h3>إخلاء المسؤولية</h3>
+      <p>المحتوى المنشور على ليرسكس هو لأغراض تثقيفية وتعليمية فقط، ولا يُغني عن استشارة الطبيب المختص. يُرجى دائماً استشارة مختص طبي قبل اتخاذ أي قرارات صحية.</p>
+
+      <p style="text-align:center;margin-top:30px;color:var(--text-muted)">للتواصل: info@lersex.com</p>
+    </div>
+  </div>
+
+  <!-- Terms of Use Page -->
+  <div class="page-view" id="page-terms">
+    <button class="back-btn" onclick="showHome()">← العودة إلى الرئيسية</button>
+    <div class="page-content">
+      <h2>شروط الاستخدام</h2>
+      <p><strong>آخر تحديث:</strong> أبريل 2026</p>
+      <p>باستخدامك لموقع ليرسكس، فإنك توافق على الشروط والأحكام التالية. يُرجى قراءتها بعناية قبل استخدام الموقع.</p>
+
+      <h3>1. قبول الشروط</h3>
+      <p>بدخولك إلى هذا الموقع واستخدامه، فإنك تقر بأنك قرأت وفهمت ووافقت على الالتزام بهذه الشروط. إذا كنت لا توافق على أي جزء من هذه الشروط، يُرجى عدم استخدام الموقع.</p>
+
+      <h3>2. الطبيعة التعليمية</h3>
+      <p>محتوى ليرسكس تعليمي وتثقيفي فقط ولا يُعتبر بديلاً عن الاستشارة الطبية المتخصصة. يجب دائماً استشارة طبيب مختص قبل تطبيق أي معلومات من الموقع.</p>
+
+      <h3>3. شروط العمر</h3>
+      <p>هذا الموقع مخصص للبالغين فقط (18 سنة فما فوق). باستخدامك للموقع، فإنك تؤكد أنك تبلغ من العمر 18 عاماً على الأقل.</p>
+
+      <h3>4. حقوق الملكية الفكرية</h3>
+      <p>جميع المحتويات المنشورة على ليرسكس (نصوص، صور، تصاميم) محمية بحقوق الملكية الفكرية. يُمنع نسخ أو إعادة نشر أي محتوى دون إذن كتابي مسبق.</p>
+
+      <h3>5. الخصوصية</h3>
+      <p>نحترم خصوصيتك. يُرجى مراجعة سياسة الخصوصية الخاصة بنا لفهم كيفية جمع واستخدام بياناتك.</p>
+
+      <h3>6. إخلاء المسؤولية الطبية</h3>
+      <p>ليرسكس لا يقدم استشارات طبية شخصية. المعلومات المنشورة هي لأغراض تثقيفية عامة ولا تُغني عن زيارة الطبيب المختص.</p>
+
+      <h3>7. السلوك المقبول</h3>
+      <p>يلتزم المستخدم باستخدام الموقع بطريقة محترمة وقانونية. يُمنع نشر أي محتوى مسيء أو غير لائق.</p>
+
+      <h3>8. تعديل الشروط</h3>
+      <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سيتم الإعلان عن التغييرات الجوهرية على هذه الصفحة.</p>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Page -->
+  <div class="page-view" id="page-privacy">
+    <button class="back-btn" onclick="showHome()">← العودة إلى الرئيسية</button>
+    <div class="page-content">
+      <h2>سياسة الخصوصية</h2>
+      <p><strong>آخر تحديث:</strong> أبريل 2026</p>
+      <p>في ليرسكس، نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية معلوماتك.</p>
+
+      <h3>1. المعلومات التي نجمعها</h3>
+      <ul>
+        <li><strong>بيانات التصفح:</strong> نجمع بيانات غير شخصية مثل نوع المتصفح، نظام التشغيل، وصفحات الزيارة لتحسين تجربة المستخدم</li>
+        <li><strong>ملفات تعريف الارتباط (Cookies):</strong> نستخدم ملفات تعريف الارتباط لحفظ تفضيلاتك (مثل الوضع الليلي)</li>
+        <li><strong>بيانات التحليلات:</strong> نستخدم أدوات تحليلية مجهولة لفهم سلوك المستخدمين وتحسين المحتوى</li>
+      </ul>
+
+      <h3>2. كيف نستخدم معلوماتك</h3>
+      <ul>
+        <li>تحسين محتوى الموقع وتجربة المستخدم</li>
+        <li>تحليل أنماط الزيارة لتطوير المنصة</li>
+        <li>عرض إعلانات مناسبة عبر شركائنا الإعلانيين (مثل Google AdSense)</li>
+      </ul>
+
+      <h3>3. ملفات تعريف الارتباط والإعلانات</h3>
+      <p>يستخدم موقع ليرسكس ملفات تعريف الارتباط، بما في ذلك ملفات تعريف الارتباط من Google وشركائها، لعرض إعلانات بناءً على زياراتك السابقة لموقعنا ومواقع أخرى. يمكنك تعطيل الإعلانات المخصصة عن طريق <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--primary)">إعدادات الإعلانات في Google</a>.</p>
+
+      <h3>4. حماية البيانات</h3>
+      <p>نتخذ إجراءات أمنية مناسبة لحماية معلوماتك من الوصول غير المصرح به أو التعديل أو الإفصاح. جميع البيانات مخزنة على خوادم آمنة.</p>
+
+      <h3>5. مشاركة المعلومات</h3>
+      <p>لا نبيع أو نؤجر أو نتاجر ببياناتك الشخصية لأطراف ثالثة. قد نشارك بيانات مجهولة مع شركائنا لتحسين الخدمة.</p>
+
+      <h3>6. حقوقك</h3>
+      <p>لك الحق في الوصول إلى بياناتك الشخصية وطلب حذفها. يمكنك التواصل معنا في أي وقت للاستفسار عن بياناتك.</p>
+
+      <h3>7. تحديثات السياسة</h3>
+      <p>قد نقوم بتحديث هذه السياسة من وقت لآخر. سيتم نشر أي تغييرات على هذه الصفحة مع تاريخ التحديث.</p>
+
+      <h3>8. التواصل</h3>
+      <p>لأي استفسارات حول سياسة الخصوصية، يرجى التواصل معنا على: <strong>privacy@lersex.com</strong></p>
+    </div>
+  </div>
+
 </main>
 
 <!-- Footer -->
 <footer class="footer">
   <p><strong>ليرسكس</strong> — منصة التعليم الجنسي العربي © 2026</p>
   <p style="margin-top:6px;font-size:12px;opacity:0.6">محتوى علمي تثقيفي بإشراف مختصين • ليس بديلاً عن الاستشارة الطبية</p>
+  <div style="margin-top:14px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
+    <a href="#" onclick="showPage('about');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px">من نحن</a>
+    <a href="#" onclick="showPage('terms');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px">شروط الاستخدام</a>
+    <a href="#" onclick="showPage('privacy');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px">سياسة الخصوصية</a>
+  </div>
 </footer>
 
 <!-- Add/Edit Chapter Modal -->
@@ -991,12 +1164,40 @@ function openChapter(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// ─── Dark Mode ───
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('lersex_dark', isDark ? '1' : '0');
+  document.getElementById('darkModeBtn').textContent = isDark ? '☀️' : '🌙';
+  showToast(isDark ? '🌙 تم تفعيل الوضع الليلي' : '☀️ تم تفعيل الوضع النهاري');
+}
+
+function initDarkMode() {
+  if (localStorage.getItem('lersex_dark') === '1') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('darkModeBtn').textContent = '☀️';
+  }
+}
+
+// ─── Page Navigation ───
+function showPage(page) {
+  document.getElementById('homeView').style.display = 'none';
+  document.getElementById('chapterView').classList.remove('active');
+  document.getElementById('heroSection').style.display = 'none';
+  document.getElementById('statsBar').style.display = 'none';
+  document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function showHome() {
   currentChapterId = null;
   document.getElementById('homeView').style.display = 'block';
   document.getElementById('chapterView').classList.remove('active');
   document.getElementById('heroSection').style.display = 'block';
   document.getElementById('statsBar').style.display = 'block';
+  document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
   renderChapters();
   updateStats();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1191,6 +1392,7 @@ function escapeHtml(text) {
 
 // ─── Start ───
 init();
+initDarkMode();
 </script>
 </body>
 </html>
