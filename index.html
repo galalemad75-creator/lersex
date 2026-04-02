@@ -536,10 +536,10 @@ body.dark-mode .section-title { color: #e53935; }
 <header class="header">
   <div class="header-inner">
     <a class="logo" href="#" onclick="showHome()">
-      <div class="logo-icon">📚</div>
+      <div class="logo-icon">🩺</div>
       <div class="logo-text">
         <h1>ليرسكس</h1>
-        <span>التعليم الجنسي من خبراء عرب</span>
+        <span>التعليم الصحي من خبراء عرب</span>
       </div>
     </a>
     <div class="header-actions">
@@ -554,10 +554,10 @@ body.dark-mode .section-title { color: #e53935; }
 
 <!-- Hero -->
 <section class="hero" id="heroSection">
-  <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=400&fit=crop" alt="ليرسكس" class="hero-banner" id="heroBanner" onerror="this.style.display='none'">
+  <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&h=400&fit=crop" alt="ليرسكس" class="hero-banner" id="heroBanner" onerror="this.style.display='none'">
   <div class="hero-content">
-    <div class="hero-badge">🔬 محتوى علمي موثوق</div>
-    <h2>التعليم الجنسي بأسلوب علمي مؤدب</h2>
+    <div class="hero-badge">🩺 محتوى طبي تثقيفي موثوق</div>
+    <h2>التثقيف الصحي الجنسي بأسلوب علمي مؤدب</h2>
     <p>منصة عربية متخصصة تهدف إلى نشر الوعي الجنسي الصحي بطريقة علمية محترمة، بإشراف خبراء ومختصين عرب في مجالات الصحة الجنسية والنفسية.</p>
   </div>
 </section>
@@ -721,6 +721,8 @@ body.dark-mode .section-title { color: #e53935; }
   <div class="admin-bar-left">
     <span>🔐 وضع الأدمن</span>
     <button class="admin-bar-btn" onclick="openChapterModal()">➕ باب جديد</button>
+    <button class="admin-bar-btn" onclick="document.getElementById('heroImageInput').click()">🖼️ صورة الهيرو</button>
+    <input type="file" id="heroImageInput" accept="image/*" style="display:none" onchange="changeHeroImage(event)">
   </div>
   <div style="display:flex;gap:10px">
     <button class="admin-bar-btn danger" onclick="toggleAdmin()">✖ خروج</button>
@@ -893,6 +895,39 @@ function initDarkMode() {
   }
 }
 
+// ─── Hero Image ───
+function changeHeroImage(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      const c = document.createElement('canvas');
+      const maxW = 1200;
+      let w = img.width, h = img.height;
+      if (w > maxW) { h = h * maxW / w; w = maxW; }
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      const compressed = c.toDataURL('image/jpeg', 0.85);
+      document.getElementById('heroBanner').src = compressed;
+      document.getElementById('heroBanner').style.display = 'block';
+      localStorage.setItem('lersex_hero_img', compressed);
+      showToast('✅ تم تغيير صورة الهيرو');
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+  event.target.value = '';
+}
+
+function initHeroImage() {
+  const saved = localStorage.getItem('lersex_hero_img');
+  if (saved) {
+    document.getElementById('heroBanner').src = saved;
+  }
+}
+
 // ─── Init ───
 async function init() {
   await loadData();
@@ -900,13 +935,17 @@ async function init() {
   renderChapters();
   updateStats();
   initDarkMode();
+  initHeroImage();
 }
 
 function updateStats() {
   let totalArticles = 0, totalImages = 0;
   chapters.forEach(ch => {
     totalArticles += ch.articles.length;
-    ch.articles.forEach(a => totalImages += (a.images || []).length);
+    ch.articles.forEach(a => {
+      const imgs = (a.images || []).length;
+      totalImages += imgs > 0 ? imgs : 1; // كل مقال = صورة واحدة على الأقل
+    });
   });
   document.getElementById('statChapters').textContent = chapters.length;
   document.getElementById('statArticles').textContent = totalArticles;
@@ -922,7 +961,7 @@ function renderChapters() {
   }
   grid.innerHTML = chapters.map(ch => {
     const arts = ch.articles || [];
-    const imgCount = arts.reduce((s, a) => s + (a.images || []).length, 0);
+    const imgCount = arts.reduce((s, a) => s + Math.max((a.images || []).length, 1), 0);
     return `<div class="chapter-card" onclick="openChapter('${ch.id}')">
       <div class="chapter-admin-actions">
         <button class="chapter-admin-btn edit-chapter-btn" onclick="event.stopPropagation();openEditChapterModal('${ch.id}')" title="تعديل">✏️</button>
