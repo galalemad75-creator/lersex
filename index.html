@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ليرسكس — التعليم الجنسي من خبراء عرب</title>
+<meta name="description" content="منصة عربية متخصصة في التثقيف الصحي الجنسي بأسلوب علمي مؤدب ومحتشم، بإشراف خبراء ومختصين عرب.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -47,7 +48,7 @@ body {
   box-shadow: 0 4px 30px rgba(0,0,0,0.15);
 }
 .header-inner {
-  max-width: 1200px; margin: 0 auto; padding: 18px 30px;
+  max-width: 1200px; margin: 0 auto; padding: 14px 30px;
   display: flex; align-items: center; justify-content: space-between;
 }
 .logo {
@@ -63,65 +64,32 @@ body {
 }
 .logo-text h1 { font-size: 26px; font-weight: 800; letter-spacing: 1px; line-height: 1.2; }
 .logo-text span { font-size: 12px; opacity: 0.8; font-weight: 300; letter-spacing: 0.5px; }
-.header-actions { display: flex; gap: 10px; align-items: center; }
+.header-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 
 .nav-btn {
   background: rgba(255,255,255,0.15);
   border: 1px solid rgba(255,255,255,0.2);
-  color: white; padding: 10px 22px;
+  color: white; padding: 8px 16px;
   border-radius: var(--radius-sm); cursor: pointer;
-  font-family: inherit; font-size: 14px; font-weight: 500;
+  font-family: inherit; font-size: 13px; font-weight: 500;
   transition: var(--transition); backdrop-filter: blur(10px);
+  white-space: nowrap;
 }
 .nav-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-1px); }
-
-.admin-toggle {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-family: inherit; font-size: 13px; font-weight: 600;
-  transition: var(--transition);
-  display: flex; align-items: center; gap: 6px;
-}
-.admin-toggle:hover { background: rgba(255,255,255,0.25); }
-.admin-toggle.active { background: var(--accent); color: white; border-color: var(--accent); }
-
-/* ─── Admin Banner ─── */
-.admin-banner {
-  display: none;
-  background: linear-gradient(90deg, #1a0000, #3d0000);
-  color: #ffcdd2;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  border-bottom: 2px solid var(--primary);
-}
-.admin-banner.active { display: block; }
-.admin-banner span { margin: 0 8px; }
 
 /* ─── Hero ─── */
 .hero {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-  color: white; padding: 60px 30px 80px;
-  text-align: center; position: relative; overflow: hidden;
+  color: white; padding: 0; position: relative; overflow: hidden;
 }
-.hero::before {
-  content: ''; position: absolute; top: -50%; right: -20%;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-  border-radius: 50%;
+.hero-banner {
+  width: 100%; max-height: 400px; object-fit: cover;
+  display: block; opacity: 0.9;
 }
-.hero::after {
-  content: ''; position: absolute; bottom: -30%; left: -10%;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-  border-radius: 50%;
+.hero-content {
+  position: relative; z-index: 1; max-width: 700px; margin: 0 auto;
+  padding: 50px 30px 70px; text-align: center;
 }
-.hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
 .hero h2 { font-family: 'Amiri', serif; font-size: 42px; font-weight: 700; margin-bottom: 16px; line-height: 1.4; }
 .hero p { font-size: 18px; opacity: 0.9; font-weight: 300; line-height: 1.9; }
 .hero-badge {
@@ -130,6 +98,20 @@ body {
   border-radius: 20px; font-size: 13px; margin-bottom: 20px;
   border: 1px solid rgba(255,255,255,0.2);
 }
+
+/* ─── Ad Banner ─── */
+.ad-slot {
+  max-width: 1200px; margin: 20px auto;
+  padding: 0 30px; text-align: center;
+}
+.ad-box {
+  background: #f5f5f5; border: 2px dashed #ccc;
+  border-radius: var(--radius-sm); padding: 20px;
+  color: var(--text-muted); font-size: 13px;
+  min-height: 90px; display: flex;
+  align-items: center; justify-content: center;
+}
+body.dark-mode .ad-box { background: #1e1e1e; border-color: #444; color: #777; }
 
 /* ─── Stats ─── */
 .stats-bar {
@@ -156,17 +138,6 @@ body {
 }
 .section-title { font-family: 'Amiri', serif; font-size: 28px; font-weight: 700; color: var(--primary-dark); }
 .section-subtitle { color: var(--text-light); font-size: 15px; margin-top: 4px; }
-
-.add-chapter-btn {
-  background: var(--primary); color: white;
-  border: none; padding: 12px 28px;
-  border-radius: var(--radius-sm); font-family: inherit;
-  font-size: 15px; font-weight: 600;
-  cursor: pointer; transition: var(--transition);
-  display: none; align-items: center; gap: 8px;
-}
-.add-chapter-btn.visible { display: inline-flex; }
-.add-chapter-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(183,28,28,0.3); }
 
 .chapters-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -219,6 +190,7 @@ body.admin-mode .chapter-admin-actions { display: flex; }
 }
 .chapter-admin-btn.edit-chapter-btn:hover { background: #eef6ff; border-color: #8ac; }
 .chapter-admin-btn.delete-chapter-btn:hover { background: #fee; border-color: #e88; }
+body.dark-mode .chapter-admin-btn { background: #2a2a2a; border-color: #444; }
 
 /* ─── Chapter View ─── */
 .chapter-view { display: none; }
@@ -238,12 +210,6 @@ body.admin-mode .chapter-admin-actions { display: flex; }
   padding: 40px; margin-bottom: 30px;
   position: relative; overflow: hidden;
 }
-.chapter-view-header::after {
-  content: ''; position: absolute; top: -30%; left: -10%;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-  border-radius: 50%;
-}
 .chapter-view-header h2 {
   font-family: 'Amiri', serif; font-size: 32px;
   margin-bottom: 8px; position: relative; z-index: 1;
@@ -257,8 +223,9 @@ body.admin-mode .chapter-admin-actions { display: flex; }
   padding: 12px 28px; border-radius: var(--radius-sm);
   font-family: inherit; font-size: 15px; font-weight: 600;
   cursor: pointer; transition: var(--transition);
-  display: inline-flex; align-items: center; gap: 8px;
+  display: none; align-items: center; gap: 8px;
 }
+body.admin-mode .add-article-btn { display: inline-flex; }
 .add-article-btn:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(183,28,28,0.3); }
 
 /* ─── Articles ─── */
@@ -273,6 +240,7 @@ body.admin-mode .chapter-admin-actions { display: flex; }
   display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 8px; padding: 12px; background: #f5f3f0;
 }
+body.dark-mode .article-images { background: #2a2a2a; }
 .article-images img {
   width: 100%; height: 180px; object-fit: cover;
   border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition);
@@ -280,13 +248,15 @@ body.admin-mode .chapter-admin-actions { display: flex; }
 .article-images img:hover { transform: scale(1.03); box-shadow: var(--shadow); }
 .article-body { padding: 28px; }
 .article-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 12px; line-height: 1.5; }
-.article-content { color: var(--text-light); font-size: 15px; line-height: 2; white-space: pre-wrap; }
+.article-content { color: var(--text-light); font-size: 15px; line-height: 2.2; white-space: pre-wrap; }
 .article-footer {
   display: flex; justify-content: space-between; align-items: center;
   padding: 16px 28px; border-top: 1px solid var(--border); background: #fdfcfa;
 }
+body.dark-mode .article-footer { background: #1a1a1a; }
 .article-date { font-size: 13px; color: var(--text-muted); }
-.article-actions { display: flex; gap: 8px; }
+.article-actions { display: none; gap: 8px; }
+body.admin-mode .article-actions { display: flex; }
 .article-actions button {
   background: none; border: 1px solid var(--border);
   padding: 6px 14px; border-radius: 8px;
@@ -426,9 +396,31 @@ body.admin-mode .chapter-admin-actions { display: flex; }
 }
 .footer strong { color: white; }
 
+/* ─── Admin Bar (Bottom) ─── */
+.admin-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--accent); color: white;
+  padding: 12px 30px; z-index: 100;
+  display: none; justify-content: space-between;
+  align-items: center; font-size: 14px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+}
+.admin-bar.active { display: flex; }
+.admin-bar-left { display: flex; gap: 10px; align-items: center; }
+.admin-bar-btn {
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+  color: white; padding: 8px 18px; border-radius: 8px;
+  cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 500;
+  transition: var(--transition);
+}
+.admin-bar-btn:hover { background: rgba(255,255,255,0.25); }
+.admin-bar-btn.active { background: var(--primary); border-color: var(--primary); }
+.admin-bar-btn.danger { background: rgba(255,0,0,0.3); }
+.admin-bar-btn.danger:hover { background: rgba(255,0,0,0.5); }
+
 /* ─── Toast ─── */
 .toast {
-  position: fixed; bottom: 30px; left: 50%;
+  position: fixed; bottom: 80px; left: 50%;
   transform: translateX(-50%) translateY(100px);
   background: var(--primary-dark); color: white;
   padding: 14px 28px; border-radius: var(--radius-sm);
@@ -452,9 +444,6 @@ body.admin-mode .chapter-admin-actions { display: flex; }
 .emoji-btn:hover { background: var(--primary-light); border-color: var(--primary-light); transform: scale(1.1); }
 .emoji-btn.selected { background: var(--primary); border-color: var(--primary); }
 
-/* ─── Chapter Card Admin Mode ─── */
-body.admin-mode .chapter-card { cursor: default; }
-
 /* ─── Dark Mode ─── */
 body.dark-mode {
   --bg: #121212;
@@ -470,9 +459,8 @@ body.dark-mode .header { background: linear-gradient(135deg, #1a0000 0%, #b71c1c
 body.dark-mode .chapter-view-header { background: linear-gradient(135deg, #1a0000, #b71c1c); }
 body.dark-mode .hero { background: linear-gradient(135deg, #1a0000 0%, #b71c1c 100%); }
 body.dark-mode .footer { background: #0a0000; }
-body.dark-mode .admin-banner { background: linear-gradient(90deg, #0a0000, #1a0000); }
-body.dark-mode .article-images { background: #2a2a2a; }
-body.dark-mode .article-footer { background: #1a1a1a; }
+body.dark-mode .admin-bar { background: #111; }
+body.dark-mode .stat-item h4 { color: #e53935; }
 body.dark-mode input[type="text"],
 body.dark-mode textarea,
 body.dark-mode select { background: #2a2a2a; color: #e0e0e0; border-color: #444; }
@@ -482,7 +470,6 @@ body.dark-mode .btn-secondary { background: #2a2a2a; color: #e0e0e0; border-colo
 body.dark-mode .chapter-admin-btn { background: #2a2a2a; border-color: #444; }
 body.dark-mode .article-actions button { color: #aaa; border-color: #444; }
 body.dark-mode .stats-inner { background: #1e1e1e; }
-body.dark-mode .stat-item h4 { color: #e53935; }
 body.dark-mode .modal { background: #1e1e1e; }
 body.dark-mode .modal-header { border-color: #333; }
 body.dark-mode .modal-footer { border-color: #333; }
@@ -518,11 +505,13 @@ body.dark-mode .section-title { color: #e53935; }
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .header-inner { padding: 14px 20px; }
-  .logo-text h1 { font-size: 20px; }
-  .hero { padding: 40px 20px 60px; }
+  .header-inner { padding: 12px 16px; }
+  .logo-text h1 { font-size: 18px; }
+  .header-actions { gap: 4px; }
+  .nav-btn { padding: 6px 10px; font-size: 11px; }
   .hero h2 { font-size: 28px; }
   .hero p { font-size: 15px; }
+  .hero-content { padding: 30px 20px 50px; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); padding: 20px; gap: 16px; }
   .stat-item h4 { font-size: 24px; }
   .main { padding: 20px 16px 40px; }
@@ -534,15 +523,14 @@ body.dark-mode .section-title { color: #e53935; }
   .modal { margin: 10px; }
   .modal-body { padding: 20px; }
   .section-header { flex-direction: column; }
+  .page-content { padding: 30px 20px; }
+  .ad-slot { padding: 0 16px; }
+  .admin-bar { flex-direction: column; gap: 10px; padding: 10px 16px; }
+  .admin-bar-left { flex-wrap: wrap; justify-content: center; }
 }
 </style>
 </head>
 <body>
-
-<!-- Admin Banner -->
-<div class="admin-banner" id="adminBanner">
-  🔐 <span>وضع الأدمن مفعّل</span> — يمكنك الآن إضافة وتعديل وحذف الأبواب
-</div>
 
 <!-- Header -->
 <header class="header">
@@ -558,7 +546,7 @@ body.dark-mode .section-title { color: #e53935; }
       <button class="nav-btn" onclick="toggleDarkMode()" id="darkModeBtn" title="الوضع الليلي">🌙</button>
       <button class="nav-btn" onclick="showPage('about')">من نحن</button>
       <button class="nav-btn" onclick="showPage('terms')">الشروط</button>
-      <button class="admin-toggle" id="adminToggle" onclick="toggleAdmin()">🔑 وضع الأدمن</button>
+      <button class="nav-btn" onclick="showPage('privacy')">الخصوصية</button>
       <button class="nav-btn" onclick="showHome()">🏠 الرئيسية</button>
     </div>
   </div>
@@ -566,12 +554,21 @@ body.dark-mode .section-title { color: #e53935; }
 
 <!-- Hero -->
 <section class="hero" id="heroSection">
+  <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=400&fit=crop" alt="ليرسكس" class="hero-banner" id="heroBanner" onerror="this.style.display='none'">
   <div class="hero-content">
     <div class="hero-badge">🔬 محتوى علمي موثوق</div>
     <h2>التعليم الجنسي بأسلوب علمي مؤدب</h2>
     <p>منصة عربية متخصصة تهدف إلى نشر الوعي الجنسي الصحي بطريقة علمية محترمة، بإشراف خبراء ومختصين عرب في مجالات الصحة الجنسية والنفسية.</p>
   </div>
 </section>
+
+<!-- Ad Slot 1 -->
+<div class="ad-slot" id="adSlot1">
+  <div class="ad-box" id="adBox1">
+    <!-- Google AdSense Slot 1 -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+  </div>
+</div>
 
 <!-- Stats -->
 <div class="stats-bar" id="statsBar">
@@ -591,12 +588,19 @@ body.dark-mode .section-title { color: #e53935; }
       <div class="section-header">
         <div>
           <h2 class="section-title">📖 أبواب المدونة</h2>
-          <p class="section-subtitle">أبواب涵盖ة لأهم مواضيع الصحة الجنسية بأسلوب علمي موثوق</p>
+          <p class="section-subtitle">أبواب شاملة لأهم مواضيع الصحة الجنسية بأسلوب علمي موثوق</p>
         </div>
-        <button class="add-chapter-btn" id="addChapterBtn" onclick="openChapterModal()">➕ إضافة باب جديد</button>
       </div>
       <div class="chapters-grid" id="chaptersGrid"></div>
     </section>
+  </div>
+
+  <!-- Ad Slot 2 -->
+  <div class="ad-slot" id="adSlot2">
+    <div class="ad-box">
+      <!-- Google AdSense Slot 2 (In-Article) -->
+      <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222"></ins>
+    </div>
   </div>
 
   <!-- Chapter View -->
@@ -609,32 +613,32 @@ body.dark-mode .section-title { color: #e53935; }
     <div class="chapter-view-actions">
       <button class="add-article-btn" onclick="openAddArticleModal()">➕ إضافة مقال جديد</button>
     </div>
+    <!-- Ad Slot 3 (inside chapter) -->
+    <div class="ad-slot">
+      <div class="ad-box">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
     <div class="articles-list" id="articlesList"></div>
   </div>
+
   <!-- About Us Page -->
   <div class="page-view" id="page-about">
     <button class="back-btn" onclick="showHome()">← العودة إلى الرئيسية</button>
     <div class="page-content">
       <h2>من نحن</h2>
       <p>مرحباً بكم في <strong>ليرسكس</strong> — المنصة العربية المتخصصة في التثقيف الصحي الجنسي بأسلوب علمي مؤدب ومحتشم.</p>
-
       <h3>رؤيتنا</h3>
       <p>نسعى لنشر الوعي الصحي الجنسي في المجتمع العربي بطريقة محترمة ومبنية على الأسس العلمية الموثوقة، بعيداً عن الإثارة أو المحتوى غير اللائق. نؤمن بأن المعرفة الصحيحة هي أساس الحياة الزوجية السعيدة والمجتمعات الصحية.</p>
-
       <h3>رسالتنا</h3>
       <ul>
         <li>تقديم محتوى علمي موثوق في مجال الصحة الجنسية بأسلوب عربي أصيل</li>
         <li>المساهمة في كسر الحواجز الثقافية حول التثقيف الصحي</li>
-        <li>توفير مرجعية عربية شاملة للזוגين والأسر</li>
+        <li>توفير مرجعية عربية شاملة للزوجين والأسر</li>
         <li>التعاون مع خبراء ومختصين في مجالات الطب والصحة النفسية</li>
       </ul>
-
-      <h3>فريقنا</h3>
-      <p>يضم فريق ليرسكس مجموعة من المتخصصين في مجالات الطب والصحة النفسية والتثقيف الصحي، يعملون معاً لضمان دقة المحتوى وموثوقيته علمياً.</p>
-
       <h3>إخلاء المسؤولية</h3>
       <p>المحتوى المنشور على ليرسكس هو لأغراض تثقيفية وتعليمية فقط، ولا يُغني عن استشارة الطبيب المختص. يُرجى دائماً استشارة مختص طبي قبل اتخاذ أي قرارات صحية.</p>
-
       <p style="text-align:center;margin-top:30px;color:var(--text-muted)">للتواصل: info@lersex.com</p>
     </div>
   </div>
@@ -645,31 +649,20 @@ body.dark-mode .section-title { color: #e53935; }
     <div class="page-content">
       <h2>شروط الاستخدام</h2>
       <p><strong>آخر تحديث:</strong> أبريل 2026</p>
-      <p>باستخدامك لموقع ليرسكس، فإنك توافق على الشروط والأحكام التالية. يُرجى قراءتها بعناية قبل استخدام الموقع.</p>
-
       <h3>1. قبول الشروط</h3>
-      <p>بدخولك إلى هذا الموقع واستخدامه، فإنك تقر بأنك قرأت وفهمت ووافقت على الالتزام بهذه الشروط. إذا كنت لا توافق على أي جزء من هذه الشروط، يُرجى عدم استخدام الموقع.</p>
-
+      <p>بدخولك إلى هذا الموقع واستخدامه، فإنك تقر بأنك قرأت وفهمت ووافقت على الالتزام بهذه الشروط.</p>
       <h3>2. الطبيعة التعليمية</h3>
-      <p>محتوى ليرسكس تعليمي وتثقيفي فقط ولا يُعتبر بديلاً عن الاستشارة الطبية المتخصصة. يجب دائماً استشارة طبيب مختص قبل تطبيق أي معلومات من الموقع.</p>
-
+      <p>محتوى ليرسكس تعليمي وتثقيفي فقط ولا يُعتبر بديلاً عن الاستشارة الطبية المتخصصة.</p>
       <h3>3. شروط العمر</h3>
-      <p>هذا الموقع مخصص للبالغين فقط (18 سنة فما فوق). باستخدامك للموقع، فإنك تؤكد أنك تبلغ من العمر 18 عاماً على الأقل.</p>
-
+      <p>هذا الموقع مخصص للبالغين فقط (18 سنة فما فوق).</p>
       <h3>4. حقوق الملكية الفكرية</h3>
-      <p>جميع المحتويات المنشورة على ليرسكس (نصوص، صور، تصاميم) محمية بحقوق الملكية الفكرية. يُمنع نسخ أو إعادة نشر أي محتوى دون إذن كتابي مسبق.</p>
-
+      <p>جميع المحتويات المنشورة محمية بحقوق الملكية الفكرية. يُمنع نسخ أو إعادة نشر أي محتوى دون إذن كتابي مسبق.</p>
       <h3>5. الخصوصية</h3>
-      <p>نحترم خصوصيتك. يُرجى مراجعة سياسة الخصوصية الخاصة بنا لفهم كيفية جمع واستخدام بياناتك.</p>
-
+      <p>نحترم خصوصيتك. يُرجى مراجعة سياسة الخصوصية لفهم كيفية جمع واستخدام بياناتك.</p>
       <h3>6. إخلاء المسؤولية الطبية</h3>
-      <p>ليرسكس لا يقدم استشارات طبية شخصية. المعلومات المنشورة هي لأغراض تثقيفية عامة ولا تُغني عن زيارة الطبيب المختص.</p>
-
-      <h3>7. السلوك المقبول</h3>
-      <p>يلتزم المستخدم باستخدام الموقع بطريقة محترمة وقانونية. يُمنع نشر أي محتوى مسيء أو غير لائق.</p>
-
-      <h3>8. تعديل الشروط</h3>
-      <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سيتم الإعلان عن التغييرات الجوهرية على هذه الصفحة.</p>
+      <p>ليرسكس لا يقدم استشارات طبية شخصية. المعلومات المنشورة هي لأغراض تثقيفية عامة.</p>
+      <h3>7. تعديل الشروط</h3>
+      <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت.</p>
     </div>
   </div>
 
@@ -679,43 +672,38 @@ body.dark-mode .section-title { color: #e53935; }
     <div class="page-content">
       <h2>سياسة الخصوصية</h2>
       <p><strong>آخر تحديث:</strong> أبريل 2026</p>
-      <p>في ليرسكس، نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية معلوماتك.</p>
-
       <h3>1. المعلومات التي نجمعها</h3>
       <ul>
-        <li><strong>بيانات التصفح:</strong> نجمع بيانات غير شخصية مثل نوع المتصفح، نظام التشغيل، وصفحات الزيارة لتحسين تجربة المستخدم</li>
-        <li><strong>ملفات تعريف الارتباط (Cookies):</strong> نستخدم ملفات تعريف الارتباط لحفظ تفضيلاتك (مثل الوضع الليلي)</li>
-        <li><strong>بيانات التحليلات:</strong> نستخدم أدوات تحليلية مجهولة لفهم سلوك المستخدمين وتحسين المحتوى</li>
+        <li><strong>بيانات التصفح:</strong> نجمع بيانات غير شخصية مثل نوع المتصفح وصفحات الزيارة</li>
+        <li><strong>Cookies:</strong> نستخدم ملفات تعريف الارتباط لحفظ تفضيلاتك (مثل الوضع الليلي)</li>
+        <li><strong>التحليلات:</strong> نستخدم أدوات تحليلية مجهولة لتحسين المحتوى</li>
       </ul>
-
       <h3>2. كيف نستخدم معلوماتك</h3>
       <ul>
         <li>تحسين محتوى الموقع وتجربة المستخدم</li>
         <li>تحليل أنماط الزيارة لتطوير المنصة</li>
-        <li>عرض إعلانات مناسبة عبر شركائنا الإعلانيين (مثل Google AdSense)</li>
+        <li>عرض إعلانات مناسبة عبر شركائنا (مثل Google AdSense)</li>
       </ul>
-
       <h3>3. ملفات تعريف الارتباط والإعلانات</h3>
-      <p>يستخدم موقع ليرسكس ملفات تعريف الارتباط، بما في ذلك ملفات تعريف الارتباط من Google وشركائها، لعرض إعلانات بناءً على زياراتك السابقة لموقعنا ومواقع أخرى. يمكنك تعطيل الإعلانات المخصصة عن طريق <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--primary)">إعدادات الإعلانات في Google</a>.</p>
-
+      <p>يستخدم موقع ليرسكس ملفات تعريف الارتباط، بما في ذلك ملفات من Google وشركائها، لعرض إعلانات بناءً على زياراتك السابقة. يمكنك تعطيل الإعلانات المخصصة عبر <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--primary)">إعدادات الإعلانات في Google</a>.</p>
       <h3>4. حماية البيانات</h3>
-      <p>نتخذ إجراءات أمنية مناسبة لحماية معلوماتك من الوصول غير المصرح به أو التعديل أو الإفصاح. جميع البيانات مخزنة على خوادم آمنة.</p>
-
+      <p>نتخذ إجراءات أمنية مناسبة لحماية معلوماتك من الوصول غير المصرح به.</p>
       <h3>5. مشاركة المعلومات</h3>
-      <p>لا نبيع أو نؤجر أو نتاجر ببياناتك الشخصية لأطراف ثالثة. قد نشارك بيانات مجهولة مع شركائنا لتحسين الخدمة.</p>
-
+      <p>لا نبيع أو نؤجر بياناتك الشخصية لأطراف ثالثة.</p>
       <h3>6. حقوقك</h3>
-      <p>لك الحق في الوصول إلى بياناتك الشخصية وطلب حذفها. يمكنك التواصل معنا في أي وقت للاستفسار عن بياناتك.</p>
-
-      <h3>7. تحديثات السياسة</h3>
-      <p>قد نقوم بتحديث هذه السياسة من وقت لآخر. سيتم نشر أي تغييرات على هذه الصفحة مع تاريخ التحديث.</p>
-
-      <h3>8. التواصل</h3>
-      <p>لأي استفسارات حول سياسة الخصوصية، يرجى التواصل معنا على: <strong>privacy@lersex.com</strong></p>
+      <p>لك الحق في الوصول إلى بياناتك الشخصية وطلب حذفها.</p>
+      <h3>7. التواصل</h3>
+      <p>لأي استفسارات: <strong>privacy@lersex.com</strong></p>
     </div>
   </div>
-
 </main>
+
+<!-- Ad Slot 4 (Bottom) -->
+<div class="ad-slot" id="adSlot4">
+  <div class="ad-box">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer">
@@ -728,7 +716,23 @@ body.dark-mode .section-title { color: #e53935; }
   </div>
 </footer>
 
-<!-- Add/Edit Chapter Modal -->
+<!-- Admin Bar (Bottom Fixed) -->
+<div class="admin-bar" id="adminBar">
+  <div class="admin-bar-left">
+    <span>🔐 وضع الأدمن</span>
+    <button class="admin-bar-btn" onclick="openChapterModal()">➕ باب جديد</button>
+  </div>
+  <div style="display:flex;gap:10px">
+    <button class="admin-bar-btn danger" onclick="toggleAdmin()">✖ خروج</button>
+  </div>
+</div>
+
+<!-- Admin Toggle (Visible when NOT in admin mode) -->
+<div style="text-align:center;padding:20px 30px 40px">
+  <button class="nav-btn" id="adminToggleBtn" onclick="toggleAdmin()" style="background:var(--accent);border-color:var(--accent);font-size:14px;padding:10px 24px">🔑 تسجيل دخول كأدمن</button>
+</div>
+
+<!-- Chapter Modal -->
 <div class="modal-overlay" id="chapterModal">
   <div class="modal">
     <div class="modal-header">
@@ -746,7 +750,7 @@ body.dark-mode .section-title { color: #e53935; }
       </div>
       <div class="form-group">
         <label>أيقونة الباب</label>
-        <input type="text" id="chapterIconInput" placeholder="أدخل رمز تعبيري مثل: 🔬" maxlength="4" style="text-align:center;font-size:28px">
+        <input type="text" id="chapterIconInput" placeholder="أدخل رمز تعبيري" maxlength="4" style="text-align:center;font-size:28px">
         <div class="emoji-grid" id="emojiGrid"></div>
       </div>
     </div>
@@ -757,7 +761,7 @@ body.dark-mode .section-title { color: #e53935; }
   </div>
 </div>
 
-<!-- Add/Edit Article Modal -->
+<!-- Article Modal -->
 <div class="modal-overlay" id="articleModal">
   <div class="modal">
     <div class="modal-header">
@@ -791,7 +795,7 @@ body.dark-mode .section-title { color: #e53935; }
   </div>
 </div>
 
-<!-- Delete Confirmation Modal -->
+<!-- Delete Modal -->
 <div class="modal-overlay" id="deleteModal">
   <div class="modal" style="max-width:450px">
     <div class="modal-header">
@@ -817,24 +821,8 @@ body.dark-mode .section-title { color: #e53935; }
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Default Chapters ───
-const DEFAULT_CHAPTERS = [
-  { id: "ch_1", title: "التشريح والفيزيولوجيا", desc: "فهم الجهاز التناسلي للذكور والإناث من الناحية العلمية", icon: "🔬" },
-  { id: "ch_2", title: "البلوغ والنمو", desc: "مراحل البلوغ والتغيرات الجسدية والنفسية لدى المراهقين", icon: "🌱" },
-  { id: "ch_3", title: "الصحة الجنسية والوقاية", desc: "الوقاية من الأمراض المنقولة جنسياً والفحوصات الدورية", icon: "🛡️" },
-  { id: "ch_4", title: "التواصل والعلاقات", desc: "بناء علاقة صحية, التواصل الفعّال, والحدود الصحية", icon: "💬" },
-  { id: "ch_5", title: "الصحة الإنجابية", desc: "التخطيط الأسري, الحمل, والعقم — رعاية شاملة", icon: "👶" },
-  { id: "ch_6", title: "الهوية الجندرية", desc: "فهم التنوع, احترام الاختلاف, والدعم النفسي", icon: "🌈" },
-  { id: "ch_7", title: "الاضطرابات الجنسية", desc: "الضعف الجنسي, البرود الجنسي, وغيرها من الاضطرابات الشائعة", icon: "⚕️" },
-  { id: "ch_8", title: "التربية الجنسية للأطفال", desc: "كيفية توعية الأطفال بتدرج مناسب لعمرهم", icon: "👨‍👩‍👧" },
-  { id: "ch_9", title: "الدين والثقافة والجنس", desc: "التوازن بين المعتقدات الدينية والصحة الجنسية", icon: "🕌" },
-  { id: "ch_10", title: "مصادر ومراجع", desc: "كتب, أبحاث, ومواقع موثوقة للتعمق في المواضيع", icon: "📖" },
-  { id: "ch_11", title: "الأوضاع الجنسية", desc: "دليل شامل لأوضاع العلاقة الحميمة بين الزوجين بأسلوب علمي موثوق", icon: "💑" }
-];
+const EMOJI_OPTIONS = ['🔬','🌱','🛡️','💬','👶','🌈','⚕️','👨‍👩‍👧','🕌','📖','🧠','❤️','🏥','🧘','💑','🔔','📝','🎓','💪','🌟','🔑','📌','🧬','💊','🩺','🧑‍⚕️','🧩','🕊️','📘'];
 
-const EMOJI_OPTIONS = ['🔬','🌱','🛡️','💬','👶','🌈','⚕️','👨‍👩‍👧','🕌','📖','🧠','❤️','🏥','🧘','💑','🔔','📝','🎓','💪','🌟','🔑','📌','🧬','🔬','💊','🩺','🧑‍⚕️','🧩','🕊️','📘'];
-
-// ─── State ───
 let isAdmin = false;
 let chapters = [];
 let currentChapterId = null;
@@ -843,126 +831,31 @@ let editingArticleIdx = null;
 let pendingImages = [];
 let deleteCallback = null;
 
-// ─── Chapter 11 Default Articles ───
-const CH11_ARTICLES = [
-  {
-    title: "الوضع التقليدي (المبشّر) وأهميته في تعزيز الروابط الزوجية",
-    content: "يعتبر الوضع التقليدي من أكثر الأوضاع انتشاراً وقبولاً في العلاقة الحميمة بين الزوجين، حيث يمثل حجر الزاوية في بناء التواصل البصري والجسدي.يعتمد الوضع التقليدي على استلقاء الزوجة على ظهرها مع استلقاء الزوج فوقها، مما يسمح بتبادل النظرات والكلمات الرقيقة التي تعزز من القوة العاطفية للعلاقة.\nمن الناحية الفنية، يوفر الوضع التقليدي فرصة ممتازة للاسترخاء، حيث لا يتطلب جهداً عضلياً كبيراً من الطرفين، مما يجعله مثالياً في أوقات التعب أو الرغبة في الهدوء. كما أن الوضع التقليدي يتيح للزوجين التقارب الجسدي الكامل، وهو ما يزيد من إفراز هرمون \"الأوكسيتوسين\" المعروف بهرمون الحب، والذي يلعب دوراً حيوياً في تقليل التوتر وزيادة الشعور بالأمان بين الشريكين.\nلتحسين تجربة الوضع التقليدي، يمكن استخدام بعض الوسائد تحت الظهر لزيادة الراحة وتغيير الزوايا الجسدية، مما يضفي تجدداً على العلاقة دون الخروج عن بساطة هذا الوضع.\nإن الاعتماد على الوضع التقليدي في بداية الحياة الزوجية يساعد في كسر حاجز الخجل وبناء ثقة متبادلة متينة، حيث يظل هذا الوضع رمزاً لل_Classic_ والحميمية العميقة التي لا تنتهي بمرور الزمن."
-  },
-  {
-    title: "وضع المرأة في الأعلى (الفارسة) لتعزيز التحكم والراحة",
-    content: "يُعد وضع المرأة في الأعلى من الأوضاع الحيوية التي تمنح الزوجة دوراً قيادياً ومتحكماً في وتييرة العلاقة الحميمة. في وضع المرأة في الأعلى، يستلقي الزوج على ظهره بينما تكون الزوجة في الأعلى، مما يمنحها حرية كاملة في الحركة وتحديد الزوايا التي تشعرها بالراحة والرضا الجسدي.\nتكمن جمالية وضع المرأة في الأعلى في أنه يقلل العبء الجسدي عن الزوج، ويسمح له بالاستمتاع بمشاهدة تعبيرات وجه زوجته والتفاعل معها عاطفياً بشكل أكبر. كما أن وضع المرأة في الأعلى يسهل عملية التواصل اللفظي، حيث يكون الشريكان وجهًا لوجه في وضعية مريحة تسمح بالهمس وتبادل المشاعر الصادقة.\nمن منظور السيو والصحة الزوجية، يُنصح بـ وضع المرأة في الأعلى للأزواج الذين يعانون من آلام الظهر أو الإجهاد البدني، حيث يوفر هذا الوضع توازناً في توزيع الجهد.\nإن تطبيق وضع المرأة في الأعلى بانتظام يسهم في كسر الروتين الممل ويضفي نوعاً من التجدد والحيوية على الفراش الزوجي، مما يعزز السعادة الزوجية المستدامة."
-  },
-  {
-    title: "وضع الملعقة (Side-Lying) للحميمية الهادئة",
-    content: "يُعرف وضع الملعقة بأنه أكثر الأوضاع رومانسية وهدوءاً، وهو مثالي لفترات الليل المتأخرة أو الصباح الباكر.يعتمد وضع الملعقة على استلقاء الزوجين على جانبيهما في نفس الاتجاه، بحيث يكون الزوج خلف الزوجة، مما يخلق تلامساً جسدياً كاملاً يبعث على الدفء والطمأنينة.\nيعتبر وضع الملعقة خياراً متميزاً خلال فترات الحمل أو عند الشعور بالإرهاق، لأن وضع الملعقة لا يتطلب أي جهد بدني شاق ولا يضغط على منطقة البطن. بالإضافة إلى ذلك، فإن وضع الملعقة يتيح للزوجين فرصة العناق الطويل أثناء العلاقة، مما يزيد من الروابط العاطفية ويجعل الطرفين يشعران بالاحتواء والقبول.\nمن الفوائد الصحية لـ وضع الملعقة أنه يساعد على تنظيم ضربات القلب وتهدئة الأعصاب بفضل التلامس الجلدي المستمر. ولتحقيق أقصى استفادة من وضع الملعقة، يجب على الزوجين التركيز على التنفس المتزامن، مما يجعل العلاقة تبدو وكأنها رقصة هادئة تعزز من جودة النوم والراحة النفسية بعد الانتهاء من العلاقة."
-  },
-  {
-    title: "وضع الفراشة (Butterfly) لعمق التواصل الجسدي",
-    content: "يتتميز وضع الفراشة بكونه يجمع بين الإثارة والراحة، وهو يتطلب استلقاء الزوجة على حافة السرير مع رفع قدميها، بينما يقف الزوج أو ينحني أمامها. يُعد وضع الفراشة من الأوضاع التي تسمح بعمق أكبر في التواصل الجسدي، مما يساعد في زيادة الرضا بين الزوجين.\nفي وضع الفراشة، تتتوفر زاوية رؤية واضحة وتواصل بصري ممتاز، مما يعزز من الثقة بالنفس لدى الشريكين. كما أن وضع الفراشة يتيح للزوج حرية الحركة واستخدام يديه للتعبير عن المودة واللمسات الحانية، مما يجعل التجربة متكاملة من الناحية الجسدية والعاطفية.\nينصح باستعمال وضع الفراشة لمن يبحثون عن تجديد في علاقاتهم الحميمة دون اللجوء إلى أوضاع معقدة. إن بساطة وضع الفراشة تكمن في إمكانية تطبيقه بسهولة مع إضافة بعض الوسائد لرفع مستوى الراحة.\nفي النهاية، يظل وضع الفراشة خياراً مفضلاً للأزواج الذين يقدرون التوازن بين القرب الجسدي والراحة المكانية."
-  },
-  {
-    title: "وضع اللوتوس (Lotus) للاندماج العاطفي الكامل",
-    content: "يُستوحى اسم وضع اللوتوس من وضعية التأمل الشهيرة، وهو يعكس أقصى درجات الاندماج الروحي والجسدي بين الزوجين. في وضع اللوتوس، يجلس الزوج متربيعاً، وتجلس الزوجة في حجره مع لفها بأرجلها، مما يخلق حالة من التعانق الوثيق والوجه لوجه.\nيعتمد وضع اللوتوس بشكل أساسي على القرب الشديد، حيث يمكن للشريكين سماع نبضات قلب بعضهما البعض. هذا القرب في وضع اللوتوس يجعل العلاقة تتجاوز البعد الجسدي لتتصبح تجربة عاطفية عميقة تعزز من روابط المودة والرحمة التي ذكرها القرآن الكريم في العلاقة الزوجية.\nمن الناحية العملية، يحتاج وضع اللوتوس إلى توازن وتنسيق بين الشريكين، وهو ما يدربهما على العمل كفريق واحد. إن ممارسة وضع اللوتوس بانتظام يمكن أن تسهم في حل الخلافات الزوجية، حيث أن هذا الوضع يفرض نوعاً من القرب الذي يذيب الجليد ويجبّر الشريكين على التواصل البصري المباشر واللمس الحميم الذي يرمم العلاقة."
-  },
-  {
-    title: "وضع المقص (Scissor) لزيادة التلاحم الجسدي",
-    content: "يُعتبر وضع المقص من الأوضاع التي تمنح الزوجين تجربة فريدة من نوعها بفضل التلامس الجسدي الوثيق الذي يوفره.يعتمد وضع المقص على استلقاء الزوجين بشكل متقابل ولكن بزاوية تسمح بتداخل أرجلهما مثل طرفي المقص، مما يخلق حالة من التوازن والانسجام التام بين الطرفين أثناء العلاقة.\nما يميز وضع المقص هو أنه لا يتطلب جهداً عضلياً كبيراً، بل يعتمد على التناغم في الحركة.يتيح وضع المقص للزوجين فرصة رائعة للتواصل البصري المستمر، كما يسهل تبديل القبلات والهمسات الرقيقة، مما يزيد من الشحنة العاطفية للعلاقة.\nيعتبر هذا الوضع مثالياً للأزواج الذين يفضلون الهدوء والبطء في الحركة للاستمتاع بكل لحظة.من الناحية الصحية، يوفر وضع المقص راحة كبيرة لمنطقة الظهر، حيث يكون الثقل موزاً بالتساوي على الجانبين.\nلتحقيق أفضل النتائج في وضع المقص، يُنصح بالتركيز على الهدوء والتنفس العميق، حيث أن هذا الوضع يهدف في المقام الأول إلى تعزيز الشعور بالقرب والاندماج الروحي، مما يجعله إضافة قيّمة لقائمة الأوضاع التي تكسر الملل وتجدد الحب بين الزوجين."
-  },
-  {
-    title: "وضع الجسر (The Bridge) لتعزيز النشاط والحيوية",
-    content: "يُعد وضع الجسر من الأوضاع الحركية التي تضفي نوعاً من التجديد على العلاقة الحميمة، وهو يتطلب مستوى جيداً من المرونة. في وضع الجسر، تقوم الزوجة بالاستناد على قدميها وكتفيها مع رفع منطقة الحوض للأعلى، مما يشكّل شكلًا يشبه الجسر، بينما يتفاعل الزوج معها من وضعية مريحة تضمن سلاسة الحركة.\nتكمن أهمية وضع الجسر في أنه يساعد على تقوية عضلات الحوض والظهر لدى الزوجة، مما ينعكس إيجاباً على صحتها الجسدية العامة. كما أن وضع الجسر يغيّر من زوايا اللقاء الجسدي، مما يمنح الشريكين إحساساً متجدداً ومختلفاً عن الأوضاع التقليدية.\nيساهم وضع الجسر في كسر الرتابة، ويحفز الزوجين على استكشاف قدراتهم الجسدية في إطار من المودة والراحة. لضمان نجاح وضع الجسر، يمكن للزوج تقديم الدعم لزوجته من خلال وضع وسائد تحت منطقة الظهر لتقليل الجهد العضلي، مما يجعل وضع الجسر أكثر استدامة وراحة.\nإن التواصل اللفظي والتشجيع المتبادل أثناء ممارسة وضع الجسر يعزز من الثقة بالنفس لدى الزوجين ويجعل من التجربة الحميمة مغامرة إيجابية تقوي الروابط الزوجية ويزيد من منسب السعادة في الحياة المشتركة."
-  },
-  {
-    title: "وضع الفارسة المعكوس (Reverse Cowgirl) وتغيير المنظور الحميمي",
-    content: "يعد وضع الفارسة المعكوس تنويعاً هاماً لوضع المرأة في الأعلى، حيث تمنح هذه الوضعية الزوجة القدرة على التحكم مع تغيير في الاتجاه الجسدي. في وضع الفارسة المعكوس، تكون الزوجة في الأعلى ولكن وجهها في الاتجاه المعكوس لزوجها، مما يوفر تجربة حسية وبصرية مختلفة تماماً لكلا الطرفين.\nيعطي وضع الفارسة المعكوس للزوج فرصة للاسترخاء التام ومشاهدة حركة زوجته بأسلوب جديد، بينما تستمتع الزوجة بحرية الحركة الكاملة والتحكم في الإيقاع بما يناسب راحتها.\nينصح بـ وضع الفارسة المعكوس للأزواج الذين يبحثون عن كسر الروتين البصري، حيث أن هذا التغيير البسيط في الاتجاه يضفي إثارة وتجدداً على العلاقة دون الحاجة إلى تعقيدات كبيرة.من الناحية العاطفية، قد يقلل وضع الفارسة المعكوس من التواصل البصري المباشر، لكنه في المقابل يزيد من التركيز على الأحاسيس الجسدية والتفاعل مع اللمسات الخلفية.\nلزيادة الراحة في وضع الفارسة المعكوس، يمكن للزوجين استخدام اليدان للتواصل والاحتضان من الخلف، مما يعزز من شعور الأمان والارتباط.يظل وضع الفارسة المعكوس خياراً مفضلاً للأزواج الذين يتمتعون بروح الانفتاح والتجديد في حياتهم الخاصة."
-  },
-  {
-    title: "الوضع القائم (Standing) للحظات العفوية والمميزة",
-    content: "يُعتبر الوضع القائم من الأوضاع التي تكسر النمط المعتاد للعلاقة التي تتم غالباً على الفراش.يعتمد الوضع القائم على وقوف الزوجين وجهًا لوجه، ويمكن الاستعانة بجدار أو قطعة أثاث متينة لتوفير الدعم والتوازن.\nيضفي الوضع القائم جوًا من العفوية والحيوية على العلاقة الزوجية، مما يجعله مثاليًا للأوقات التي يرغب فيها الزوجان في لقاء سريع ومفعم بالنشاط.من مزايا الوضع القائم أنه يسمح بالتقريب الكامل بين الجسدين، ويوفر زاوية رؤية واضحة تعزز من الإعجاب المتبادل.\nكما أن الوضع القائم يتطلب تنسيقاً بدنياً عالياً، مما يساعد في حرق السعرات الحرارية وزيادة اللياقة البدنية للشريكين.يمكن ممارسة الوضع القائم في أماكن مختلفة داخل المنزل (في إطار الخصوصية الزوجية)، مما يغيّر من الروتين المكاني الممل.\nلتحسين تجربة الوضع القائم، يجب التأكد من ثبات الأرضية ووجود مسنّد مريح للزوجة إذا لزم الأمر.إن اختيار الوضع القائم يعبر عن رغبة الزوجين في تجديد الدماء في علاقتهما واستكشاف آفاق جديدة للحميمية.وفي النهاية، يظل الوضع القائم رمزاً للحيوية والشباب الدائم في العلاقة الزوجية، حيث يكسر قيود العادة ويفتح باباً للمتعة المتجددة."
-  },
-  {
-    title: "وضع التقاطع (The X Position) للهدوء والاسترخاء",
-    content: "يُعد وضع التقاطع من الأوضاع الهادئة التي تشبه إلى حد ما وضع المقص ولكن مع اختلاف في زوايا الاستلقاء. في وضع التقاطع، يستلقي الزوجان بحيث يتقطع جسداهما ليشكلا حرف X، مما يسمح بتلامس كبير في منطقة الحوض مع الحفاظ على مسافة مريحة للأطراف.\nيوفر وضع التقاطع فرصة ممتازة للاراحة والاسترخاء أثناء العلاقة. يتميز وضع التقاطع بأنه يسمح للزوجين بالبقاء في حالة من التواصل الجسدي لفترة طويلة دون الشعور بالتعب، لأن توزيع الوزن يكون مثالياً.\nفي وضع التقاطع، يمكن للزوجين تبادل الأحاديث الهادئة والنظر في أعين بعضهما البعض، مما يعزز من القيمة العاطفية والروحية للقاء الزوجي. هذا الوضع مثالي للنهايات الهادئة ليوم طويل ومتعب.\nمن الناحية النفسية، يساعد وضع التقاطع على تقليل مستويات القلق والتوتر، حيث أن وضعية الجسم المتقطعة تمنح شعوراً بالاحتواء والترابط.لاستكشاف أقصى درجات الرضا في وضع التقاطع، يُنصح بالتحرك ببطء وتناغم، والتركيز على اللمسات الحانية باليدان. إن وضع التقاطع يثبت أن العلاقة الحميمة ليست مجرد حركة جسدية، بل هي وسيلة للراحة النفسية والسكينة التي ينشدها كل زوجين."
-  },
-  {
-    title: "وضع الجلوس المقابل (Seated Intimacy) لتعزيز الحوار العاطفي",
-    content: "يعتبر وضع الجلوس المقابل من أكثر الأوضاع التي تمنح الزوجين شعوراً بالاتحاد والمساواة، حيث يجلس الزوج على مقعد مريح أو على السرير، وتجلس الزوجة في حجره مواجهة له.\nيتيح وضع الجلوس المقابل فرصة لا مثيل لها للتواصل البصري العميق، مما يساعد في نقل المشاعر الصادقة من خلال نظرات العين والابتسامات الرقيقة. في وضع الجلوس المقابل، يكون الجسدان في حالة تلامس كامل، مما يزيد من إفراز هرمونات السعادة والارتباط.\nهذا الوضع مثالي للأزواج الذين يرغبون في قضاء وقت طويل في المداعبة والحديث أثناء العلاقة، حيث أن وضع الجلوس المقابل لا يتطلب جهداً حركياً عنيفاً، بل يعتمد على التناغم والانسجام النفسي.\nمن الناحية العملية، يسهل وضع الجلوس المقابل على الزوجين استخدام أيديهما للعناق واللمس الحاني، مما يجعل العلاقة تبدو وكأنها جلسة صلح أو تقارب روحي.ينصح بـ وضع الجلوس المقابل خاصة في الأيام التي يحتاج فيها الشريكان إلى الدعم النفسي والاحتواء، فهو يرمز إلى السند والمشاركة الوجدانية التي هي أساس الزوج الناجح."
-  },
-  {
-    title: "وضع الوسادة المرتفعة (Elevated Missionary) للراحة والعمق",
-    content: "يُعد وضع الوسادة المرتفعة تطوراً ذكياً للوضع التقليدي، حيث يتم وضع وسادة أو أكثر تحت منطقة الحوض لدى الزوجة.يساعد وضع الوسادة المرتفعة في تغيير زاوية اللقاء الجسدي بشكل مريح وسلس، مما يمنح إحساساً مختلفاً وتجدداً في العلاقة دون الحاجة إلى حركات معقدة.\nتكمن فائدة وضع الوسادة المرتفعة في أنه يقلل من أي ضغط قد تشعر به الزوجة في منطقة الظهر، ويوفر للزوج زاوية أفضل للتواصل.يعتبر وضع الوسادة المرتفعة خياراً ممتازاً للأزواج الذين يعانون من بعض الآلام الجسدية البسيطة، حيث توفر الوسائد دعماً إضافياً يجعل العلاقة أكثر استرخاءً وسكينة.\nلتحقيق أقصى استفادة من وضع الوسادة المرتفعة، يجب اختيار وسائد ذات مرونة جيدة وقوة تحمّل.إن تكرار وضع الوسادة المرتفعة في الحياة الزوجية يكسر روتين الوضع الكلاسيكي الممل ويضفي لمسة من الرفاهية والراحة، مما يجعل اللقاء الحميم وقتاً للاستجمام واللذة الجسدية والنفسية في آن واحد."
-  },
-  {
-    title: "وضع الجنب المائل (The Side-Saddle) للتناغم والهدوء",
-    content: "يمتاز وضع الجنب المائل بكونه يجمع بين وضعية الاستلقاء الجانبي وبين وضعية التحكم، حيث يستلقي الزوج على جانبه بينما تكون الزوجة في وضعية تسمح لهما بالالتقاء بشكل مائل.\nيوفر وضع الجنب المائل مساحة كبيرة للراحة، حيث لا يحمل أي طرف ثقل الطرف الآخر، مما يجعله مناسباً جداً لفترات الاسترخاء.يعتبر وضع الجنب المائل من الأوضاع التي تزيد من القرب العاطفي، فهو يسمح للزوجين بالهمس في آذان بعضهما البعض وممارسة المداعبة اللطيفة باليدان.\nإن تطبيق وضع الجنب المائل يتطلب نوعاً من المرونة البسيطة والتنسيق في حركة الأرجل، وهو ما يضفي طابعاً من المرح والتعاون بين الشريكين.\nمن فوائد وضع الجنب المائل الصحية أنه يقلل من الجهد المبذول من القلب والعضلات، مما يجعله مثالياً بعد يوم عمل شاق.ينصح باستعمال وضع الجنب المائل كنوع من التغيير عن الأوضاع الرأسية أو التقليدية، فهو يمنح الزوجين شعوراً بالسكينة والرضا المتبادل تحت غطاء من المودة والرحمة."
-  },
-  {
-    title: "وضع الركوع المقابل (Kneeling Face-to-Face) للقوة والثبات",
-    content: "يُعتبر وضع الركوع المقابل من الأوضاع التي تعكس القوة والتفاعل النشط بين الزوجين. في وضع الركوع المقابل، يركع الزوجان وجهًا لوجه على ركبتيهما، مما يخلق توازناً جسدانياً فريداً وتواصلاً بصرياً مباشراً وقوياً.\nهذا الوضع يمنح كلاً من الزوج والزوجة القدرة على التحرك بحرية وثبات.يسمح وضع الركوع المقابل بتقارب الصدور والأكتاف، وهو ما يعزز من مشاعر الحماية والاحتواء. كما أن وضع الركوع المقابل يتيح للزوجين فرصة استخدام الذراعين للعناق الشديد، مما يزيد من حرارة العاطفة وتدفق الأحاسيس.\nيُعد هذا الوضع من الأوضاع المحفزة التي تزيد من حيوية العلاقة الزوجية.لضمان الراحة في وضع الركوع المقابل، يُفضل استعماله فوق سطح ناعم أو وضع وسائد تحت الركب لتجنب أي احتكاك مزعج.\nإن اختيار وضع الركوع المقابل يعبر عن رغبة الزوجين في لقاء مفعم بالنشاط والنَدِيَّة المحبَّبة، حيث يشارك الطرفان بفعالية في رسم تفاصيل اللحظة الحميمة بانسجام تام."
-  },
-  {
-    title: "وضع حافة السرير (The Waterfall) لتجديد الحيوية",
-    content: "يُعرف وضع حافة السرير بأنه وضع ابتكاري يستفيد من أثاث الغرفة لتوفير تجربة جديدة.يعتمد وضع حافة السرير على استلقاء الزوجة على حافة السرير مع وضع قدميها على الأرض أو رفعهما، بينما يقف الزوج أمامها.\nيوفر وضع حافة السرير زاوية رؤية مختلفة وتفاعلاً جسدياً يتسم بالحرية.تكمن ميزة وضع حافة السرير في أنه يكسر القيد المكاني المعتاد لوسط السرير، ويسمح للزوج بالتحكم الكامل في الحركة والزوايا.\nكما أن وضع حافة السرير يسهل على الزوجة الاسترخاء التام بجسمها العلوي على الفراش بينما يظل الجزء السفلي في وضعية تفاعل نشط، مما يخلق توازناً بين الراحة والإثارة.\nينصح بـ وضع حافة السرير للأزواج الذين يرغبون في إضافة لمسة من المغامرة المنضبطة لحياتهم الخاصة.إن استعمال وضع حافة السرير بشكل دوري يساعد في منع تسلل الملل إلى العلاقة، حيث يشعر الزوجان وكأنهما في تجربة متجددة في كل مرة يغيّران فيها مكان وطريقة لقائهما الحميم."
-  },
-  {
-    title: "وضع العناق الوثيق (The Close Embrace) للاندماج الروحي",
-    content: "يركز وضع العناق الوثيق على تداخل الجسدين بشكل كامل، حيث تلتف أرجل الزوجة حول الزوج وهو فوقها أو في وضعية الجلس.يهدف وضع العناق الوثيق إلى تقليل المسافات بين الشريكين إلى الصفر، مما يخلق إحساساً بالوحدة والاندماج الذي يذيب الفوارق الجسدية.\nيُعد وضع العناق الوثيق من أفضل الأوضاع للتعبير عن الحب الجارف والاشتياق، حيث تكون نبضات القلب متلاصقة وأنفاس الزوجين ممتزجة.في وضع العناق الوثيق، لا يكون التركيز فقط على الجانب الجسدي، بل على الشعور بالأمان والسكينة التي يوفرها حضن الشريك.\nمن الناحية النفسية، يعزز وضع العناق الوثيق من إفراز هرمون \"الإندورفين\" الذي يحسن المزاج ويقلل من الشعور بالألم أو القلق.ممارسة وضع العناق الوثيق في نهاية العلاقة أو خلالها تترك أثراً عاطفياً عميقاً يدوم طويلاً، مما يجعل الزوجين يشعران بالرضا التام والارتباط الوثيق الذي لا يتزعزع."
-  },
-  {
-    title: "وضع التمدد الجانبي المطوّر (Modified Side-Lying) للراحة القصوى",
-    content: "يُعتبر وضع التمدد الجانبي المطوّر خياراً متميزاً للأزواج الذين يفضلون الهدوء التام والبطء في الحركة.يعتمد وضع التمدد الجانبي المطوّر على استلقاء الشريكين جانباً، مع رفع الزوجة لإحدى قدميها للأعلى لتسهيل التواصل الجسدي.\nهذا التعديل البسيط يحوّل الوضع الجانبي العادي إلى وضع التمدد الجانبي المطوّر الأكثر فاعلية.يوفر وضع التمدد الجانبي المطوّر استقراراً كبيراً للجسم، مما يسمح بفترات طويلة من التلامس دون إرهاق.\nكما أن هذا الوضع يسهل عملية التنفس والحديث، مما يجعل وضع التمدد الجانبي المطوّر مناسباً جداً لجلسات الحميمية الطويلة التي تهدف إلى الاسترخاء النفسي وتفريغ ضغوط الحياة اليومية.\nمن الناحية الجسدية، يقلل وضع التمدد الجانبي المطوّر من الضغط على المفاصل والركب، وهو ما يجعله وضعاً \"صحياً\" بامتياز.إن اختيار وضع التمدد الجانبي المطوّر يعكس نضج العلاقة الزوجية وفهم الطرفين لاحتياجات بعضهما البعض في الراحة واللذة المتوازنة."
-  },
-  {
-    title: "وضع الاستناد القائم (Supported Standing) للتغيير المرح",
-    content: "يعتمد وضع الاستناد القائم على وقوف الزوجين مع استناد أحدهما إلى حائط أو خزانة متينة.يضفي وضع الاستناد القائم لمسة من الحيوية والنشاط على العلاقة، ويغيّر من المشهد المعتاد لغرفة النوم.\nيعتبر وضع الاستناد القائم نوعاً من الرياضة الحميمية التي تزيد من لياقة الزوجين وتناغمهما العضلي.في وضع الاستناد القائم، يكون التواصل البصري قوياً ومباشراً، كما يسمح للزوجين بالتحرك بحرية أكبر واستكشاف مساحات جديدة من المودة.\nيُعد وضع الاستناد القائم مثالياً للأوقات التي يشعر فيها الزوجان بطاقة عالية ورغبة في كسر القواعد الروتينية للعلاقة الهادئة.لنجاح وضع الاستناد القائم، يجب التأكد من وجود سند قوي ومريح للظهر.\nإن ممارسة وضع الاستناد القائم بوعي وحب يعزز من روح الدعابة والمرح بين الزوجين، مما يقوي الرابطة الزوجية ويجعل من العلاقة الحميمة وقتاً ممتعاً يتطلّبه الطرفان بشغف وتجدد."
-  },
-  {
-    title: "وضع حرف V (The V-Position) للمرونة والجمال",
-    content: "يستوحي وضع حرف V اسمه من الشكل الذي يتخذه جسد الزوجة عند رفع الأرجل بزاوية معيّنة، مما يسهل اللقاء الجسدي من زوايا مريحة وعميقة.يعتبر وضع حرف V من الأوضاع التي تبرز جمال العلاقة الحميمة وتسمح للزوج بتقدير شريكته والثناء عليها خلال اللقاء.\nيتطلب وضع حرف V نوعاً من المرونة من قبل الزوجة، ويمكن تسهيله باستعمال الوسائد لدعم الظهر.تكمن روعة وضع حرف V في أنه يجمع بين التقارب الجسدي وبين حرية الحركة للزوج، مما يخلق توازناً رائعاً بين الطرفين.\nيساهم وضع حرف V في تعزيز الثقة بالجسم وزيادة الرضا عن العلاقة.من منظور السيو والثقافة الزوجية، يُصنّف وضع حرف V كوضع كلاسيكي مطوّر يجمع بين بساطة الوضع التقليدي وفعالية الأوضاع الحديثة.\nإن إدراج وضع حرف V ضمن برنامج العلاقة الزوجية يضمن تجديداً مستمراً وشعوراً بالرضا الذي يغذي الروح والجسد معاً."
-  },
-  {
-    title: "وضع الانصهار الكامل (The Melting Pot) والختم العاطفي",
-    content: "يُعد وضع الانصهار الكامل هو الغاية التي ينشدها كل زوجين، حيث لا يعتمد فقط على وضعية جسدية محددة بل على حالة من التلاحم الجسدي والروحي في آن واحد.في وضع الانصهار الكامل، يختار الزوجان الوضعية التي يشعران فيها بأكبر قدر من القرب، سواء كان جلوساً أو استلقاءً، مع التركيز على التلامس الجلدي الكامل.\nيهدف وضع الانصهار الكامل إلى الوصول بحالة الحب إلى أقصى درجاتها، حيث ينسى الزوجان العالم الخارجي وينغمسان في عالم خاص من المودة والرحمة.إن وضع الانصهار الكامل يتطلب هدوءاً، إضاءة خافتة، وكلمات طيبة تعزز من القيمة الروحية للعلاقة، مما يحوّلها من مجرد لقاء جسدي إلى عبادة وتواصل إنساني راقٍ.\nفي الختام، يظل وضع الانصهار الكامل هي الثمرة التي تُجتَنى من تنوع الأوضاع الزوجية السابقة. إن فهم الأوضاع الجنسية بوعي وأدب يسهم في استقرار البيوت وسعادة الأزواج.وبغض النظر عن الاسم، فإن وضع الانصهار الكامل يذكّرنا دائماً بأن الحب والاحترام المتبادلان هما المحركان الأساسيان لكل علاقة زوجية ناجحة ومستمرة."
-  }
-];
-
-// ─── Storage ───
-function loadData() {
-  const saved = localStorage.getItem('lersex_chapters');
+// ─── Load Data ───
+async function loadData() {
+  const saved = localStorage.getItem('lersex_chapters_v2');
   if (saved) {
     chapters = JSON.parse(saved);
-    // Ensure ch_11 exists with articles
-    if (!chapters.find(c => c.id === 'ch_11')) {
-      chapters.push({
-        id: 'ch_11', title: 'الأوضاع الجنسية',
-        desc: 'دليل شامل لأوضاع العلاقة الحميمة بين الزوجين بأسلوب علمي موثوق',
-        icon: '💑',
-        articles: CH11_ARTICLES.map(a => ({...a, images: [], date: '٢٠٢٦', updatedAt: Date.now()}))
-      });
-      saveData();
-    }
   } else {
-    chapters = DEFAULT_CHAPTERS.map(ch => {
-      if (ch.id === 'ch_11') {
-        return { ...ch, articles: CH11_ARTICLES.map(a => ({...a, images: [], date: '٢٠٢٦', updatedAt: Date.now()})) };
-      }
-      return { ...ch, articles: [] };
-    });
+    try {
+      const resp = await fetch('data.json');
+      chapters = await resp.json();
+    } catch(e) {
+      chapters = [];
+    }
     saveData();
   }
 }
 
 function saveData() {
-  localStorage.setItem('lersex_chapters', JSON.stringify(chapters));
+  localStorage.setItem('lersex_chapters_v2', JSON.stringify(chapters));
 }
 
 // ─── Admin Mode ───
 function toggleAdmin() {
   isAdmin = !isAdmin;
-  const btn = document.getElementById('adminToggle');
-  const banner = document.getElementById('adminBanner');
-  const addBtn = document.getElementById('addChapterBtn');
+  const bar = document.getElementById('adminBar');
+  const toggleBtn = document.getElementById('adminToggleBtn');
 
   if (isAdmin) {
     const pass = prompt('🔐 أدخل كلمة مرور الأدمن:');
@@ -971,29 +864,42 @@ function toggleAdmin() {
       isAdmin = false;
       return;
     }
-    btn.classList.add('active');
-    btn.textContent = '🔓 خروج من الأدمن';
-    banner.classList.add('active');
-    addBtn.classList.add('visible');
+    bar.classList.add('active');
+    toggleBtn.style.display = 'none';
     document.body.classList.add('admin-mode');
     showToast('✅ تم تفعيل وضع الأدمن');
   } else {
-    btn.classList.remove('active');
-    btn.textContent = '🔑 وضع الأدمن';
-    banner.classList.remove('active');
-    addBtn.classList.remove('visible');
+    bar.classList.remove('active');
+    toggleBtn.style.display = 'inline-block';
     document.body.classList.remove('admin-mode');
     showToast('🔒 تم إلغاء وضع الأدمن');
   }
   renderChapters();
 }
 
+// ─── Dark Mode ───
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('lersex_dark', isDark ? '1' : '0');
+  document.getElementById('darkModeBtn').textContent = isDark ? '☀️' : '🌙';
+  showToast(isDark ? '🌙 الوضع الليلي' : '☀️ الوضع النهاري');
+}
+
+function initDarkMode() {
+  if (localStorage.getItem('lersex_dark') === '1') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('darkModeBtn').textContent = '☀️';
+  }
+}
+
 // ─── Init ───
-function init() {
-  loadData();
+async function init() {
+  await loadData();
   renderEmojiGrid();
   renderChapters();
   updateStats();
+  initDarkMode();
 }
 
 function updateStats() {
@@ -1010,49 +916,36 @@ function updateStats() {
 // ─── Render Chapters ───
 function renderChapters() {
   const grid = document.getElementById('chaptersGrid');
-
   if (chapters.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state" style="grid-column:1/-1">
-        <div class="empty-icon">📚</div>
-        <h4>لا توجد أبواب بعد</h4>
-        <p>فعّل وضع الأدمن وأضف أول باب</p>
-      </div>
-    `;
+    grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">📚</div><h4>لا توجد أبواب بعد</h4><p>فعّل وضع الأدمن وأضف أول باب</p></div>';
     return;
   }
-
-  grid.innerHTML = chapters.map((ch, idx) => {
-    const articles = ch.articles || [];
-    const imgCount = articles.reduce((s, a) => s + (a.images || []).length, 0);
-    return `
-      <div class="chapter-card" onclick="openChapter('${ch.id}')">
-        <div class="chapter-admin-actions">
-          <button class="chapter-admin-btn edit-chapter-btn" onclick="event.stopPropagation(); openEditChapterModal('${ch.id}')" title="تعديل">✏️</button>
-          <button class="chapter-admin-btn delete-chapter-btn" onclick="event.stopPropagation(); deleteChapter('${ch.id}')" title="حذف">🗑️</button>
-        </div>
-        <div class="chapter-header">
-          <div class="chapter-num">${ch.icon || '📄'}</div>
-          <div class="chapter-info">
-            <h3>${escapeHtml(ch.title)}</h3>
-            <p>${escapeHtml(ch.desc || '')}</p>
-          </div>
-        </div>
-        <div class="chapter-meta">
-          <span>📝 ${articles.length} مقال</span>
-          <span>📷 ${imgCount} صورة</span>
+  grid.innerHTML = chapters.map(ch => {
+    const arts = ch.articles || [];
+    const imgCount = arts.reduce((s, a) => s + (a.images || []).length, 0);
+    return `<div class="chapter-card" onclick="openChapter('${ch.id}')">
+      <div class="chapter-admin-actions">
+        <button class="chapter-admin-btn edit-chapter-btn" onclick="event.stopPropagation();openEditChapterModal('${ch.id}')" title="تعديل">✏️</button>
+        <button class="chapter-admin-btn delete-chapter-btn" onclick="event.stopPropagation();deleteChapter('${ch.id}')" title="حذف">🗑️</button>
+      </div>
+      <div class="chapter-header">
+        <div class="chapter-num">${ch.icon||'📄'}</div>
+        <div class="chapter-info">
+          <h3>${escapeHtml(ch.title)}</h3>
+          <p>${escapeHtml(ch.desc||'')}</p>
         </div>
       </div>
-    `;
+      <div class="chapter-meta">
+        <span>📝 ${arts.length} مقال</span>
+        <span>📷 ${imgCount} صورة</span>
+      </div>
+    </div>`;
   }).join('');
 }
 
-// ─── Emoji Grid ───
 function renderEmojiGrid() {
   const grid = document.getElementById('emojiGrid');
-  grid.innerHTML = EMOJI_OPTIONS.map(e =>
-    `<button class="emoji-btn" onclick="selectEmoji('${e}')">${e}</button>`
-  ).join('');
+  grid.innerHTML = EMOJI_OPTIONS.map(e => `<button class="emoji-btn" onclick="selectEmoji('${e}')">${e}</button>`).join('');
 }
 
 function selectEmoji(emoji) {
@@ -1069,85 +962,50 @@ function openChapterModal() {
   document.getElementById('chapterTitleInput').value = '';
   document.getElementById('chapterDescInput').value = '';
   document.getElementById('chapterIconInput').value = '📄';
-  document.querySelectorAll('.emoji-btn').forEach(b => b.classList.remove('selected'));
   document.getElementById('chapterModal').classList.add('active');
 }
-
 function openEditChapterModal(id) {
   if (!isAdmin) return;
   editingChapterId = id;
   const ch = chapters.find(c => c.id === id);
   document.getElementById('chapterModalTitle').textContent = '✏️ تعديل الباب';
   document.getElementById('chapterTitleInput').value = ch.title;
-  document.getElementById('chapterDescInput').value = ch.desc || '';
-  document.getElementById('chapterIconInput').value = ch.icon || '📄';
-  document.querySelectorAll('.emoji-btn').forEach(b => {
-    b.classList.toggle('selected', b.textContent === ch.icon);
-  });
+  document.getElementById('chapterDescInput').value = ch.desc||'';
+  document.getElementById('chapterIconInput').value = ch.icon||'📄';
   document.getElementById('chapterModal').classList.add('active');
 }
-
-function closeChapterModal() {
-  document.getElementById('chapterModal').classList.remove('active');
-  editingChapterId = null;
-}
-
+function closeChapterModal() { document.getElementById('chapterModal').classList.remove('active'); editingChapterId = null; }
 function saveChapter() {
   const title = document.getElementById('chapterTitleInput').value.trim();
   const desc = document.getElementById('chapterDescInput').value.trim();
-  const icon = document.getElementById('chapterIconInput').value.trim() || '📄';
-
-  if (!title) { showToast('⚠️ يرجى إدخال اسم الباب'); return; }
-
+  const icon = document.getElementById('chapterIconInput').value.trim()||'📄';
+  if (!title) { showToast('⚠️ أدخل اسم الباب'); return; }
   if (editingChapterId) {
     const ch = chapters.find(c => c.id === editingChapterId);
-    ch.title = title;
-    ch.desc = desc;
-    ch.icon = icon;
-    showToast('✅ تم تحديث الباب بنجاح');
+    ch.title = title; ch.desc = desc; ch.icon = icon;
+    showToast('✅ تم تحديث الباب');
   } else {
-    const newId = 'ch_' + Date.now();
-    chapters.push({ id: newId, title, desc, icon, articles: [] });
-    showToast('✅ تم إضافة الباب بنجاح');
+    chapters.push({ id: 'ch_'+Date.now(), title, desc, icon, articles: [] });
+    showToast('✅ تم إضافة الباب');
   }
-
-  saveData();
-  renderChapters();
-  updateStats();
-  closeChapterModal();
+  saveData(); renderChapters(); updateStats(); closeChapterModal();
 }
 
 // ─── Delete Chapter ───
 function deleteChapter(id) {
   if (!isAdmin) return;
   const ch = chapters.find(c => c.id === id);
-  const articleCount = ch.articles.length;
-
   document.getElementById('deleteModalTitle').textContent = '⚠️ حذف الباب';
-  document.getElementById('deleteModalMsg').innerHTML = `
-    هل أنت متأكد من حذف <strong>"${escapeHtml(ch.title)}"</strong>؟
-    ${articleCount > 0 ? `<br><br>⚠️ هذا الباب يحتوي على <strong>${articleCount} مقال</strong> — سيتم حذفها جميعاً.` : ''}
-    <br><br>هذا الإجراء لا يمكن التراجع عنه.
-  `;
+  document.getElementById('deleteModalMsg').innerHTML = `هل أنت متأكد من حذف <strong>"${escapeHtml(ch.title)}"</strong>؟<br><br>سيتم حذف ${ch.articles.length} مقال.`;
   deleteCallback = () => {
     chapters = chapters.filter(c => c.id !== id);
-    saveData();
-    renderChapters();
-    updateStats();
-    showToast('🗑️ تم حذف الباب');
-    closeDeleteModal();
+    saveData(); renderChapters(); updateStats();
+    showToast('🗑️ تم حذف الباب'); closeDeleteModal();
   };
   document.getElementById('deleteModal').classList.add('active');
 }
-
-// ─── Delete Confirmation ───
-function confirmDelete() {
-  if (deleteCallback) { deleteCallback(); deleteCallback = null; }
-}
-function closeDeleteModal() {
-  document.getElementById('deleteModal').classList.remove('active');
-  deleteCallback = null;
-}
+function confirmDelete() { if (deleteCallback) { deleteCallback(); deleteCallback = null; } }
+function closeDeleteModal() { document.getElementById('deleteModal').classList.remove('active'); deleteCallback = null; }
 
 // ─── Open Chapter ───
 function openChapter(id) {
@@ -1158,36 +1016,11 @@ function openChapter(id) {
   document.getElementById('chapterView').classList.add('active');
   document.getElementById('heroSection').style.display = 'none';
   document.getElementById('statsBar').style.display = 'none';
-  document.getElementById('chapterViewTitle').textContent = `${ch.icon || '📄'} ${ch.title}`;
-  document.getElementById('chapterViewDesc').textContent = ch.desc || '';
-  renderArticles();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// ─── Dark Mode ───
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
-  localStorage.setItem('lersex_dark', isDark ? '1' : '0');
-  document.getElementById('darkModeBtn').textContent = isDark ? '☀️' : '🌙';
-  showToast(isDark ? '🌙 تم تفعيل الوضع الليلي' : '☀️ تم تفعيل الوضع النهاري');
-}
-
-function initDarkMode() {
-  if (localStorage.getItem('lersex_dark') === '1') {
-    document.body.classList.add('dark-mode');
-    document.getElementById('darkModeBtn').textContent = '☀️';
-  }
-}
-
-// ─── Page Navigation ───
-function showPage(page) {
-  document.getElementById('homeView').style.display = 'none';
-  document.getElementById('chapterView').classList.remove('active');
-  document.getElementById('heroSection').style.display = 'none';
-  document.getElementById('statsBar').style.display = 'none';
+  document.getElementById('adSlot1').style.display = 'none';
   document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
+  document.getElementById('chapterViewTitle').textContent = `${ch.icon||'📄'} ${ch.title}`;
+  document.getElementById('chapterViewDesc').textContent = ch.desc||'';
+  renderArticles();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1197,9 +1030,20 @@ function showHome() {
   document.getElementById('chapterView').classList.remove('active');
   document.getElementById('heroSection').style.display = 'block';
   document.getElementById('statsBar').style.display = 'block';
+  document.getElementById('adSlot1').style.display = 'block';
   document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
-  renderChapters();
-  updateStats();
+  renderChapters(); updateStats();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showPage(page) {
+  document.getElementById('homeView').style.display = 'none';
+  document.getElementById('chapterView').classList.remove('active');
+  document.getElementById('heroSection').style.display = 'none';
+  document.getElementById('statsBar').style.display = 'none';
+  document.getElementById('adSlot1').style.display = 'none';
+  document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1208,31 +1052,19 @@ function renderArticles() {
   const list = document.getElementById('articlesList');
   const ch = chapters.find(c => c.id === currentChapterId);
   const articles = ch?.articles || [];
-
   if (articles.length === 0) {
-    list.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-icon">📝</div>
-        <h4>لا توجد مقالات بعد</h4>
-        <p>ابدأ بإضافة أول مقال في هذا الباب</p>
-      </div>
-    `;
+    list.innerHTML = '<div class="empty-state"><div class="empty-icon">📝</div><h4>لا توجد مقالات</h4><p>أضف أول مقال من وضع الأدمن</p></div>';
     return;
   }
-
-  list.innerHTML = articles.map((article, idx) => `
+  list.innerHTML = articles.map((a, idx) => `
     <div class="article-card">
-      ${article.images && article.images.length > 0 ? `
-        <div class="article-images">
-          ${article.images.map(img => `<img src="${img}" onclick="openLightbox(this.src)" alt="صورة توضيحية">`).join('')}
-        </div>
-      ` : ''}
+      ${a.images && a.images.length > 0 ? `<div class="article-images">${a.images.map(img => `<img src="${img}" onclick="openLightbox(this.src)" alt="">`).join('')}</div>` : ''}
       <div class="article-body">
-        <h3 class="article-title">${escapeHtml(article.title)}</h3>
-        <div class="article-content">${escapeHtml(article.content)}</div>
+        <h3 class="article-title">${escapeHtml(a.title)}</h3>
+        <div class="article-content">${escapeHtml(a.content)}</div>
       </div>
       <div class="article-footer">
-        <span class="article-date">📅 ${article.date}</span>
+        <span class="article-date">📅 ${a.date||''}</span>
         <div class="article-actions">
           <button class="edit-btn" onclick="editArticle(${idx})">✏️ تعديل</button>
           <button class="delete-btn" onclick="deleteArticle(${idx})">🗑️ حذف</button>
@@ -1244,155 +1076,91 @@ function renderArticles() {
 
 // ─── Article Modal ───
 function openAddArticleModal() {
-  editingArticleIdx = null;
-  pendingImages = [];
-  document.getElementById('articleModalTitle').textContent = '➕ إضافة مقال جديد';
+  editingArticleIdx = null; pendingImages = [];
+  document.getElementById('articleModalTitle').textContent = '➕ إضافة مقال';
   document.getElementById('articleTitleInput').value = '';
   document.getElementById('articleContentInput').value = '';
   document.getElementById('imagePreviewGrid').innerHTML = '';
   document.getElementById('articleModal').classList.add('active');
 }
-
 function editArticle(idx) {
   editingArticleIdx = idx;
   const ch = chapters.find(c => c.id === currentChapterId);
-  const article = ch.articles[idx];
-  pendingImages = [...(article.images || [])];
+  const a = ch.articles[idx];
+  pendingImages = [...(a.images||[])];
   document.getElementById('articleModalTitle').textContent = '✏️ تعديل المقال';
-  document.getElementById('articleTitleInput').value = article.title;
-  document.getElementById('articleContentInput').value = article.content;
+  document.getElementById('articleTitleInput').value = a.title;
+  document.getElementById('articleContentInput').value = a.content;
   renderImagePreviews();
   document.getElementById('articleModal').classList.add('active');
 }
+function closeArticleModal() { document.getElementById('articleModal').classList.remove('active'); pendingImages = []; editingArticleIdx = null; }
 
-function closeArticleModal() {
-  document.getElementById('articleModal').classList.remove('active');
-  pendingImages = [];
-  editingArticleIdx = null;
-}
-
-// ─── Image Handling ───
 function handleImageUpload(event) {
-  const files = event.target.files;
-  Array.from(files).forEach(file => {
+  Array.from(event.target.files).forEach(file => {
     const reader = new FileReader();
-    reader.onload = (e) => {
-      compressImage(e.target.result, 1200, 0.8).then(compressed => {
-        pendingImages.push(compressed);
-        renderImagePreviews();
-      });
-    };
+    reader.onload = e => compressImage(e.target.result, 1200, 0.8).then(c => { pendingImages.push(c); renderImagePreviews(); });
     reader.readAsDataURL(file);
   });
   event.target.value = '';
 }
-
-function compressImage(dataUrl, maxWidth, quality) {
-  return new Promise((resolve) => {
+function compressImage(dataUrl, maxW, q) {
+  return new Promise(r => {
     const img = new Image();
     img.onload = () => {
-      const canvas = document.createElement('canvas');
+      const c = document.createElement('canvas');
       let w = img.width, h = img.height;
-      if (w > maxWidth) { h = h * maxWidth / w; w = maxWidth; }
-      canvas.width = w; canvas.height = h;
-      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-      resolve(canvas.toDataURL('image/jpeg', quality));
+      if (w > maxW) { h = h*maxW/w; w = maxW; }
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      r(c.toDataURL('image/jpeg', q));
     };
     img.src = dataUrl;
   });
 }
-
 function renderImagePreviews() {
-  const grid = document.getElementById('imagePreviewGrid');
-  grid.innerHTML = pendingImages.map((img, idx) => `
-    <div class="image-preview-item">
-      <img src="${img}" alt="">
-      <button class="remove-img" onclick="removeImage(${idx})">✕</button>
-    </div>
-  `).join('');
+  document.getElementById('imagePreviewGrid').innerHTML = pendingImages.map((img, i) =>
+    `<div class="image-preview-item"><img src="${img}" alt=""><button class="remove-img" onclick="removeImage(${i})">✕</button></div>`
+  ).join('');
 }
+function removeImage(i) { pendingImages.splice(i, 1); renderImagePreviews(); }
 
-function removeImage(idx) {
-  pendingImages.splice(idx, 1);
-  renderImagePreviews();
-}
-
-// ─── Save Article ───
 function saveArticle() {
   const title = document.getElementById('articleTitleInput').value.trim();
   const content = document.getElementById('articleContentInput').value.trim();
-  if (!title) { showToast('⚠️ يرجى إدخال عنوان المقال'); return; }
-  if (!content) { showToast('⚠️ يرجى إدخال محتوى المقال'); return; }
-
+  if (!title) { showToast('⚠️ أدخل عنوان المقال'); return; }
+  if (!content) { showToast('⚠️ أدخل محتوى المقال'); return; }
   const ch = chapters.find(c => c.id === currentChapterId);
-  const article = {
-    title, content,
-    images: [...pendingImages],
-    date: new Date().toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' }),
-    updatedAt: Date.now()
-  };
-
-  if (editingArticleIdx !== null) {
-    ch.articles[editingArticleIdx] = article;
-    showToast('✅ تم تحديث المقال بنجاح');
-  } else {
-    ch.articles.push(article);
-    showToast('✅ تم إضافة المقال بنجاح');
-  }
-
-  saveData();
-  renderArticles();
-  updateStats();
-  closeArticleModal();
+  const article = { title, content, images: [...pendingImages], date: new Date().toLocaleDateString('ar-SA',{year:'numeric',month:'long',day:'numeric'}), updatedAt: Date.now() };
+  if (editingArticleIdx !== null) { ch.articles[editingArticleIdx] = article; showToast('✅ تم التحديث'); }
+  else { ch.articles.push(article); showToast('✅ تم الإضافة'); }
+  saveData(); renderArticles(); updateStats(); closeArticleModal();
 }
 
-// ─── Delete Article ───
 function deleteArticle(idx) {
   const ch = chapters.find(c => c.id === currentChapterId);
-  const article = ch.articles[idx];
+  const a = ch.articles[idx];
   document.getElementById('deleteModalTitle').textContent = '🗑️ حذف المقال';
-  document.getElementById('deleteModalMsg').innerHTML = `
-    هل أنت متأكد من حذف مقال <strong>"${escapeHtml(article.title)}"</strong>؟
-    <br><br>هذا الإجراء لا يمكن التراجع عنه.
-  `;
-  deleteCallback = () => {
-    ch.articles.splice(idx, 1);
-    saveData();
-    renderArticles();
-    updateStats();
-    showToast('🗑️ تم حذف المقال');
-    closeDeleteModal();
-  };
+  document.getElementById('deleteModalMsg').innerHTML = `هل أنت متأكد من حذف <strong>"${escapeHtml(a.title)}"</strong>؟`;
+  deleteCallback = () => { ch.articles.splice(idx, 1); saveData(); renderArticles(); updateStats(); showToast('🗑️ تم الحذف'); closeDeleteModal(); };
   document.getElementById('deleteModal').classList.add('active');
 }
 
 // ─── Lightbox ───
-function openLightbox(src) {
-  document.getElementById('lightboxImg').src = src;
-  document.getElementById('lightbox').classList.add('active');
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
-}
+function openLightbox(src) { document.getElementById('lightboxImg').src = src; document.getElementById('lightbox').classList.add('active'); }
+function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
 
 // ─── Toast ───
 function showToast(msg) {
-  const toast = document.getElementById('toast');
-  toast.textContent = msg;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 3000);
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ─── Util ───
-function escapeHtml(text) {
-  const d = document.createElement('div');
-  d.textContent = text;
-  return d.innerHTML;
-}
+function escapeHtml(text) { const d = document.createElement('div'); d.textContent = text; return d.innerHTML; }
 
 // ─── Start ───
 init();
-initDarkMode();
 </script>
 </body>
 </html>
