@@ -503,6 +503,59 @@ body.dark-mode .section-title { color: #e53935; }
 .page-content ul { padding-right: 24px; }
 .page-content ul li { margin-bottom: 8px; }
 
+/* ─── Login Modal ─── */
+.login-modal .modal { max-width: 420px; }
+.login-modal .modal-body { padding: 32px; }
+.login-header { text-align: center; margin-bottom: 24px; }
+.login-header .login-icon { font-size: 48px; margin-bottom: 8px; }
+.login-header h3 { font-size: 22px; font-weight: 700; color: var(--primary); }
+.login-header p { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+.login-input {
+  width: 100%; padding: 14px 18px;
+  border: 2px solid var(--border); border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 15px; direction: rtl;
+  transition: var(--transition); background: var(--bg); color: var(--text);
+}
+.login-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(183,28,28,0.1); }
+.login-input-group { position: relative; margin-bottom: 16px; }
+.login-input-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px; }
+.login-input-group .toggle-pass {
+  position: absolute; left: 14px; top: 38px;
+  background: none; border: none; cursor: pointer; font-size: 18px; opacity: 0.5;
+}
+.login-input-group .toggle-pass:hover { opacity: 1; }
+.login-btn {
+  width: 100%; padding: 14px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: white; border: none; border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 16px; font-weight: 700;
+  cursor: pointer; transition: var(--transition); margin-top: 8px;
+}
+.login-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(183,28,28,0.3); }
+.login-footer { text-align: center; margin-top: 16px; }
+.login-footer a {
+  color: var(--primary); cursor: pointer; font-size: 13px;
+  text-decoration: none; font-weight: 500;
+}
+.login-footer a:hover { text-decoration: underline; }
+.login-error {
+  background: #ffeaea; color: #c33; padding: 10px 14px;
+  border-radius: 8px; font-size: 13px; margin-bottom: 16px;
+  display: none; border: 1px solid #fcc;
+}
+body.dark-mode .login-error { background: #3a1a1a; border-color: #633; }
+
+/* ─── Settings Modal ─── */
+.settings-section { margin-bottom: 28px; }
+.settings-section h4 {
+  font-size: 16px; font-weight: 700; color: var(--primary);
+  margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--border);
+}
+.settings-note {
+  font-size: 12px; color: var(--text-muted); margin-top: 6px;
+  background: var(--bg); padding: 8px 12px; border-radius: 8px;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .header-inner { padding: 12px 16px; }
@@ -554,7 +607,7 @@ body.dark-mode .section-title { color: #e53935; }
 
 <!-- Hero -->
 <section class="hero" id="heroSection">
-  <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&h=400&fit=crop" alt="ليرسكس" class="hero-banner" id="heroBanner" onerror="this.style.display='none'">
+  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=400&fit=crop" alt="ليرسكس" class="hero-banner" id="heroBanner" onerror="this.style.display='none'">
   <div class="hero-content">
     <div class="hero-badge">🩺 محتوى طبي تثقيفي موثوق</div>
     <h2>التثقيف الصحي الجنسي بأسلوب علمي مؤدب</h2>
@@ -723,15 +776,16 @@ body.dark-mode .section-title { color: #e53935; }
     <button class="admin-bar-btn" onclick="openChapterModal()">➕ باب جديد</button>
     <button class="admin-bar-btn" onclick="document.getElementById('heroImageInput').click()">🖼️ صورة الهيرو</button>
     <input type="file" id="heroImageInput" accept="image/*" style="display:none" onchange="changeHeroImage(event)">
+    <button class="admin-bar-btn" onclick="openSettingsModal()">⚙️ الإعدادات</button>
   </div>
   <div style="display:flex;gap:10px">
-    <button class="admin-bar-btn danger" onclick="toggleAdmin()">✖ خروج</button>
+    <button class="admin-bar-btn danger" onclick="adminLogout()">✖ خروج</button>
   </div>
 </div>
 
 <!-- Admin Toggle (Visible when NOT in admin mode) -->
 <div style="text-align:center;padding:20px 30px 40px">
-  <button class="nav-btn" id="adminToggleBtn" onclick="toggleAdmin()" style="background:var(--accent);border-color:var(--accent);font-size:14px;padding:10px 24px">🔑 تسجيل دخول كأدمن</button>
+  <button class="nav-btn" id="adminToggleBtn" onclick="openLoginModal()" style="background:var(--accent);border-color:var(--accent);font-size:14px;padding:10px 24px">🔑 تسجيل دخول كأدمن</button>
 </div>
 
 <!-- Chapter Modal -->
@@ -814,6 +868,117 @@ body.dark-mode .section-title { color: #e53935; }
   </div>
 </div>
 
+<!-- Login Modal -->
+<div class="modal-overlay login-modal" id="loginModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>تسجيل الدخول</h3>
+      <button class="modal-close" onclick="closeLoginModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="login-header">
+        <div class="login-icon">🔐</div>
+        <h3>لوحة تحكم الأدمن</h3>
+        <p>أدخل بيانات الدخول للوصول إلى لوحة التحكم</p>
+      </div>
+      <div class="login-error" id="loginError"></div>
+      <div class="login-input-group">
+        <label>اسم المستخدم</label>
+        <input type="text" class="login-input" id="loginUsername" placeholder="أدخل اسم المستخدم" autocomplete="username">
+      </div>
+      <div class="login-input-group">
+        <label>كلمة المرور</label>
+        <input type="password" class="login-input" id="loginPassword" placeholder="أدخل كلمة المرور" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+        <button class="toggle-pass" onclick="togglePassVisibility('loginPassword', this)">👁️</button>
+      </div>
+      <button class="login-btn" onclick="doLogin()">🔓 دخول</button>
+      <div class="login-footer" style="margin-top:14px">
+        <a onclick="openForgotPasswordModal()">نسيت كلمة المرور؟</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div class="modal-overlay" id="forgotPasswordModal">
+  <div class="modal" style="max-width:450px">
+    <div class="modal-header">
+      <h3>استعادة كلمة المرور</h3>
+      <button class="modal-close" onclick="closeForgotPasswordModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="login-header">
+        <div class="login-icon">🔑</div>
+        <h3>نسيت كلمة المرور؟</h3>
+        <p>أجب على سؤال الأمان لإعادة تعيين كلمة المرور</p>
+      </div>
+      <div class="login-error" id="forgotError"></div>
+      <div class="login-input-group">
+        <label>سؤال الأمان</label>
+        <p id="securityQuestionDisplay" style="font-size:15px;color:var(--text);background:var(--bg);padding:12px;border-radius:8px;margin-bottom:8px"></p>
+      </div>
+      <div class="login-input-group">
+        <label>إجابة سؤال الأمان</label>
+        <input type="text" class="login-input" id="securityAnswer" placeholder="أدخل الإجابة">
+      </div>
+      <div class="login-input-group">
+        <label>كلمة المرور الجديدة</label>
+        <input type="password" class="login-input" id="newPasswordReset" placeholder="أدخل كلمة المرور الجديدة">
+        <button class="toggle-pass" onclick="togglePassVisibility('newPasswordReset', this)">👁️</button>
+      </div>
+      <div class="login-input-group">
+        <label>تأكيد كلمة المرور الجديدة</label>
+        <input type="password" class="login-input" id="confirmPasswordReset" placeholder="أعد إدخال كلمة المرور">
+        <button class="toggle-pass" onclick="togglePassVisibility('confirmPasswordReset', this)">👁️</button>
+      </div>
+      <button class="login-btn" onclick="resetPassword()">✅ إعادة تعيين</button>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Settings Modal -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal" style="max-width:500px">
+    <div class="modal-header">
+      <h3>⚙️ إعدادات الأدمن</h3>
+      <button class="modal-close" onclick="closeSettingsModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="settings-section">
+        <h4>👤 تغيير بيانات الدخول</h4>
+        <div class="login-error" id="settingsError"></div>
+        <div class="login-input-group">
+          <label>اسم المستخدم الجديد</label>
+          <input type="text" class="login-input" id="newUsername" placeholder="اسم المستخدم الجديد">
+        </div>
+        <div class="login-input-group">
+          <label>كلمة المرور الحالية</label>
+          <input type="password" class="login-input" id="currentPassword" placeholder="أدخل كلمة المرور الحالية للتأكيد">
+          <button class="toggle-pass" onclick="togglePassVisibility('currentPassword', this)">👁️</button>
+        </div>
+        <div class="login-input-group">
+          <label>كلمة المرور الجديدة</label>
+          <input type="password" class="login-input" id="newPassword" placeholder="اتركه فارغاً إذا لا تريد تغييره">
+          <button class="toggle-pass" onclick="togglePassVisibility('newPassword', this)">👁️</button>
+        </div>
+        <div class="settings-note">💡 اترك كلمة المرور الجديدة فارغة إذا كنت تريد تغيير اسم المستخدم فقط</div>
+      </div>
+      <div class="settings-section">
+        <h4>🛡️ سؤال الأمان (لنسيان كلمة المرور)</h4>
+        <div class="login-input-group">
+          <label>سؤال الأمان</label>
+          <input type="text" class="login-input" id="securityQuestion" placeholder="مثال: ما اسم أول مدرسة؟">
+        </div>
+        <div class="login-input-group">
+          <label>إجابة سؤال الأمان</label>
+          <input type="text" class="login-input" id="securityAnswerSetting" placeholder="أدخل الإجابة">
+        </div>
+      </div>
+      <button class="btn-primary" onclick="saveSettings()" style="width:100%;text-align:center">💾 حفظ الإعدادات</button>
+    </div>
+  </div>
+</div>
+
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <img id="lightboxImg" src="" alt="">
@@ -853,30 +1018,156 @@ function saveData() {
   localStorage.setItem('lersex_chapters_v2', JSON.stringify(chapters));
 }
 
-// ─── Admin Mode ───
-function toggleAdmin() {
-  isAdmin = !isAdmin;
-  const bar = document.getElementById('adminBar');
-  const toggleBtn = document.getElementById('adminToggleBtn');
+// ─── Admin Credentials ───
+const DEFAULT_CREDS = { username: 'admin', password: 'lersex2026', question: 'ما اسم الموقع؟', answer: 'ليرسكس' };
 
-  if (isAdmin) {
-    const pass = prompt('🔐 أدخل كلمة مرور الأدمن:');
-    if (pass !== 'admin123') {
-      showToast('❌ كلمة المرور غير صحيحة');
-      isAdmin = false;
-      return;
-    }
-    bar.classList.add('active');
-    toggleBtn.style.display = 'none';
+function getCreds() {
+  const saved = localStorage.getItem('lersex_admin_creds');
+  return saved ? JSON.parse(saved) : { ...DEFAULT_CREDS };
+}
+function saveCreds(creds) {
+  localStorage.setItem('lersex_admin_creds', JSON.stringify(creds));
+}
+
+// ─── Login Modal ───
+function openLoginModal() {
+  document.getElementById('loginUsername').value = '';
+  document.getElementById('loginPassword').value = '';
+  document.getElementById('loginError').style.display = 'none';
+  document.getElementById('loginModal').classList.add('active');
+  setTimeout(() => document.getElementById('loginUsername').focus(), 100);
+}
+function closeLoginModal() { document.getElementById('loginModal').classList.remove('active'); }
+
+function doLogin() {
+  const username = document.getElementById('loginUsername').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  const creds = getCreds();
+  const errEl = document.getElementById('loginError');
+
+  if (username === creds.username && password === creds.password) {
+    isAdmin = true;
+    document.getElementById('adminBar').classList.add('active');
+    document.getElementById('adminToggleBtn').style.display = 'none';
     document.body.classList.add('admin-mode');
+    closeLoginModal();
     showToast('✅ تم تفعيل وضع الأدمن');
+    renderChapters();
   } else {
-    bar.classList.remove('active');
-    toggleBtn.style.display = 'inline-block';
-    document.body.classList.remove('admin-mode');
-    showToast('🔒 تم إلغاء وضع الأدمن');
+    errEl.textContent = '❌ اسم المستخدم أو كلمة المرور غير صحيحة';
+    errEl.style.display = 'block';
+    document.getElementById('loginPassword').value = '';
+    document.getElementById('loginPassword').focus();
   }
+}
+
+function adminLogout() {
+  isAdmin = false;
+  document.getElementById('adminBar').classList.remove('active');
+  document.getElementById('adminToggleBtn').style.display = 'inline-block';
+  document.body.classList.remove('admin-mode');
+  showToast('🔒 تم إلغاء وضع الأدمن');
   renderChapters();
+}
+
+// ─── Forgot Password ───
+function openForgotPasswordModal() {
+  closeLoginModal();
+  const creds = getCreds();
+  document.getElementById('securityQuestionDisplay').textContent = creds.question;
+  document.getElementById('securityAnswer').value = '';
+  document.getElementById('newPasswordReset').value = '';
+  document.getElementById('confirmPasswordReset').value = '';
+  document.getElementById('forgotError').style.display = 'none';
+  document.getElementById('forgotPasswordModal').classList.add('active');
+}
+function closeForgotPasswordModal() { document.getElementById('forgotPasswordModal').classList.remove('active'); }
+
+function resetPassword() {
+  const creds = getCreds();
+  const answer = document.getElementById('securityAnswer').value.trim();
+  const newPass = document.getElementById('newPasswordReset').value;
+  const confirmPass = document.getElementById('confirmPasswordReset').value;
+  const errEl = document.getElementById('forgotError');
+
+  if (answer !== creds.answer) {
+    errEl.textContent = '❌ إجابة سؤال الأمان غير صحيحة';
+    errEl.style.display = 'block'; return;
+  }
+  if (newPass.length < 6) {
+    errEl.textContent = '⚠️ كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+    errEl.style.display = 'block'; return;
+  }
+  if (newPass !== confirmPass) {
+    errEl.textContent = '⚠️ كلمة المرور وتأكيدها غير متطابقين';
+    errEl.style.display = 'block'; return;
+  }
+  creds.password = newPass;
+  saveCreds(creds);
+  closeForgotPasswordModal();
+  showToast('✅ تم تغيير كلمة المرور بنجاح');
+}
+
+// ─── Admin Settings ───
+function openSettingsModal() {
+  if (!isAdmin) return;
+  const creds = getCreds();
+  document.getElementById('newUsername').value = creds.username;
+  document.getElementById('currentPassword').value = '';
+  document.getElementById('newPassword').value = '';
+  document.getElementById('securityQuestion').value = creds.question;
+  document.getElementById('securityAnswerSetting').value = creds.answer;
+  document.getElementById('settingsError').style.display = 'none';
+  document.getElementById('settingsModal').classList.add('active');
+}
+function closeSettingsModal() { document.getElementById('settingsModal').classList.remove('active'); }
+
+function saveSettings() {
+  if (!isAdmin) return;
+  const creds = getCreds();
+  const currentPass = document.getElementById('currentPassword').value;
+  const newUsername = document.getElementById('newUsername').value.trim();
+  const newPassword = document.getElementById('newPassword').value;
+  const newQuestion = document.getElementById('securityQuestion').value.trim();
+  const newAnswer = document.getElementById('securityAnswerSetting').value.trim();
+  const errEl = document.getElementById('settingsError');
+
+  if (currentPass !== creds.password) {
+    errEl.textContent = '❌ كلمة المرور الحالية غير صحيحة';
+    errEl.style.display = 'block'; return;
+  }
+  if (!newUsername) {
+    errEl.textContent = '⚠️ اسم المستخدم لا يمكن أن يكون فارغاً';
+    errEl.style.display = 'block'; return;
+  }
+  if (newPassword && newPassword.length < 6) {
+    errEl.textContent = '⚠️ كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+    errEl.style.display = 'block'; return;
+  }
+  if (!newQuestion || !newAnswer) {
+    errEl.textContent = '⚠️ يجب تعبئة سؤال الأمان وإجابته';
+    errEl.style.display = 'block'; return;
+  }
+
+  creds.username = newUsername;
+  if (newPassword) creds.password = newPassword;
+  creds.question = newQuestion;
+  creds.answer = newAnswer;
+  saveCreds(creds);
+  closeSettingsModal();
+  showToast('✅ تم حفظ الإعدادات بنجاح');
+}
+
+function togglePassVisibility(inputId, btn) {
+  const inp = document.getElementById(inputId);
+  if (inp.type === 'password') { inp.type = 'text'; btn.textContent = '🙈'; }
+  else { inp.type = 'password'; btn.textContent = '👁️'; }
+}
+
+// ─── Admin Mode (Legacy compat) ───
+function toggleAdmin() {
+  if (isAdmin) adminLogout();
+  else openLoginModal();
 }
 
 // ─── Dark Mode ───
