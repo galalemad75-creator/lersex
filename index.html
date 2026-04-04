@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ليرسكس — التعليم الجنسي من خبراء عرب</title>
 <meta name="description" content="منصة عربية متخصصة في التثقيف الصحي الجنسي بأسلوب علمي مؤدب ومحتشم، بإشراف خبراء ومختصين عرب.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="ليرسكس, تثقيف صحي, صحة جنسية, تربية جنسية, زواج, صحة الأسرة">
+<meta property="og:title" content="ليرسكس — التعليم الجنسي من خبراء عرب">
+<meta property="og:description" content="منصة عربية متخصصة في التثقيف الصحي الجنسي بأسلوب علمي مؤدب ومحتشم.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ليرسكس — التعليم الجنسي من خبراء عرب">
+<meta name="twitter:description" content="منصة عربية متخصصة في التثقيف الصحي الجنسي بأسلوب علمي مؤدب ومحتشم.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -791,11 +799,14 @@ body.dark-mode .login-error { background: #2a0a0a; border-color: #5a1a1a; }
       </div>
     </a>
     <div class="header-actions">
+      <button class="nav-btn" onclick="toggleLang()" id="langBtn" title="English / عربي">🌐 EN</button>
       <button class="nav-btn" onclick="toggleDarkMode()" id="darkModeBtn" title="الوضع الليلي">🌙</button>
-      <button class="nav-btn" onclick="showPage('about')">من نحن</button>
-      <button class="nav-btn" onclick="showPage('terms')">الشروط</button>
-      <button class="nav-btn" onclick="showPage('privacy')">الخصوصية</button>
-      <button class="nav-btn" onclick="showHome()">🏠 الرئيسية</button>
+      <button class="nav-btn" onclick="showPage('about')" data-i18n="nav.about">من نحن</button>
+      <button class="nav-btn" onclick="showPage('terms')" data-i18n="nav.terms">الشروط</button>
+      <button class="nav-btn" onclick="showPage('privacy')" data-i18n="nav.privacy">الخصوصية</button>
+      <button class="nav-btn" onclick="showPage('refund')" data-i18n="nav.refund">الاسترجاع</button>
+      <button class="nav-btn" onclick="showPage('contact')" data-i18n="nav.contact">تواصل</button>
+      <button class="nav-btn" onclick="showHome()" data-i18n="nav.home">🏠 الرئيسية</button>
     </div>
   </div>
 </header>
@@ -894,76 +905,288 @@ body.dark-mode .login-error { background: #2a0a0a; border-color: #5a1a1a; }
 
   <!-- About Us Page -->
   <div class="page-view" id="page-about">
-    <button class="back-btn" onclick="showHome()">← العودة إلى الرئيسية</button>
+    <button class="back-btn" onclick="showHome()" data-i18n="common.back">← العودة إلى الرئيسية</button>
     <div class="page-content">
-      <h2>من نحن</h2>
-      <p>مرحباً بكم في <strong>ليرسكس</strong> — المنصة العربية المتخصصة في التثقيف الصحي الجنسي بأسلوب علمي مؤدب ومحتشم.</p>
-      <h3>رؤيتنا</h3>
-      <p>نسعى لنشر الوعي الصحي الجنسي في المجتمع العربي بطريقة محترمة ومبنية على الأسس العلمية الموثوقة، بعيداً عن الإثارة أو المحتوى غير اللائق. نؤمن بأن المعرفة الصحيحة هي أساس الحياة الزوجية السعيدة والمجتمعات الصحية.</p>
-      <h3>رسالتنا</h3>
+      <h2 data-i18n="legal.about.title">من نحن</h2>
+      <p style="text-align:center;color:var(--primary);font-weight:700;font-size:1.1rem;margin-bottom:16px;" data-i18n="legal.about.vision">رؤيتنا: نشر التثقيف الصحي الجنسي في المجتمع العربي بأسلوب علمي محترم</p>
+      <p data-i18n="legal.about.intro">مرحباً بكم في <strong>ليرسكس</strong> — المنصة العربية المتخصصة في التثقيف الصحي الجنسي بأسلوب علمي مؤدب ومحتشم.</p>
+      <h3 data-i18n="legal.about.s1.title">🎯 رسالتنا</h3>
       <ul>
-        <li>تقديم محتوى علمي موثوق في مجال الصحة الجنسية بأسلوب عربي أصيل</li>
-        <li>المساهمة في كسر الحواجز الثقافية حول التثقيف الصحي</li>
-        <li>توفير مرجعية عربية شاملة للزوجين والأسر</li>
-        <li>التعاون مع خبراء ومختصين في مجالات الطب والصحة النفسية</li>
+        <li data-i18n="legal.about.s1.item1">تقديم محتوى علمي موثوق في مجال الصحة الجنسية بأسلوب عربي أصيل</li>
+        <li data-i18n="legal.about.s1.item2">المساهمة في كسر الحواجز الثقافية حول التثقيف الصحي</li>
+        <li data-i18n="legal.about.s1.item3">توفير مرجعية عربية شاملة للزوجين والأسر</li>
+        <li data-i18n="legal.about.s1.item4">التعاون مع خبراء ومختصين في مجالات الطب والصحة النفسية</li>
       </ul>
-      <h3>إخلاء المسؤولية</h3>
-      <p>المحتوى المنشور على ليرسكس هو لأغراض تثقيفية وتعليمية فقط، ولا يُغني عن استشارة الطبيب المختص. يُرجى دائماً استشارة مختص طبي قبل اتخاذ أي قرارات صحية.</p>
-      <p style="text-align:center;margin-top:30px;color:var(--text-muted)">للتواصل: info@lersex.com</p>
+      <h3 data-i18n="legal.about.s2.title">📊 بالأرقام</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0;">
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:28px">📚</div>
+          <div style="font-size:22px;font-weight:800;color:var(--primary);">10+</div>
+          <div style="font-size:11px;color:var(--text-muted);" data-i18n="legal.about.s2.chapters">أبواب</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:28px">📝</div>
+          <div style="font-size:22px;font-weight:800;color:var(--primary);">50+</div>
+          <div style="font-size:11px;color:var(--text-muted);" data-i18n="legal.about.s2.articles">مقالات</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:28px">👥</div>
+          <div style="font-size:22px;font-weight:800;color:var(--primary);">100K+</div>
+          <div style="font-size:11px;color:var(--text-muted);" data-i18n="legal.about.s2.visitors">زوار</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;">
+          <div style="font-size:28px">⚡</div>
+          <div style="font-size:22px;font-weight:800;color:var(--primary);">99.9%</div>
+          <div style="font-size:11px;color:var(--text-muted);" data-i18n="legal.about.s2.uptime">وقت التشغيل</div>
+        </div>
+      </div>
+      <h3 data-i18n="legal.about.s3.title">⚖️ إخلاء المسؤولية</h3>
+      <p data-i18n="legal.about.s3.text">المحتوى المنشور على ليرسكس هو لأغراض تثقيفية وتعليمية فقط، ولا يُغني عن استشارة الطبيب المختص. يُرجى دائماً استشارة مختص طبي قبل اتخاذ أي قرارات صحية.</p>
+      <h3 data-i18n="legal.about.s4.title">📬 تواصل معنا</h3>
+      <p data-i18n="legal.about.s4.text">للتواصل والاستفسارات: <strong>emadh5156@gmail.com</strong></p>
+      <div style="margin-top:30px;padding-top:16px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+        <a onclick="showPage('privacy')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.privacy">🔒 اطلع على سياسة الخصوصية</a>
+        <a onclick="showPage('terms')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.terms">📄 اطلع على الشروط والأحكام</a>
+        <a onclick="showPage('refund')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.refund">💰 سياسة الاسترجاع</a>
+        <a onclick="showPage('contact')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.contact">📬 تواصل معنا</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Refund Policy Page -->
+  <div class="page-view" id="page-refund">
+    <button class="back-btn" onclick="showHome()" data-i18n="common.back">← العودة إلى الرئيسية</button>
+    <div class="page-content">
+      <h2 data-i18n="legal.refund.title">سياسة الاسترجاع والاستبدال</h2>
+      <p><strong data-i18n="legal.lastUpdate">آخر تحديث:</strong> أبريل 2026</p>
+      <h3 data-i18n="legal.refund.s1.title">1. مقدمة</h3>
+      <p data-i18n="legal.refund.s1.text">في ليرسكس، نريدك أن تكون راضياً تماماً عن تجربتك. توضح هذه السياسة إجراءات الاسترجاع والاستبدال.</p>
+      <h3 data-i18n="legal.refund.s2.title">2. أهلية الاسترجاع</h3>
+      <ul>
+        <li data-i18n="legal.refund.s2.item1">يتوفر الاسترجاع خلال 14 يوماً من تاريخ الشراء أو الاشتراك.</li>
+        <li data-i18n="legal.refund.s2.item2">يجب ألا يكون قد تم استخدام أكثر من 20% من الحصة الشهرية.</li>
+        <li data-i18n="legal.refund.s2.item3">لا يتوفر الاسترجاع للحسابات المنتهية بسبب انتهاك الشروط.</li>
+      </ul>
+      <h3 data-i18n="legal.refund.s3.title">3. إجراءات الاسترجاع</h3>
+      <p data-i18n="legal.refund.s3.text">لطلب استرجاع، تواصل معنا على <strong>emadh5156@gmail.com</strong> مع ذكر بريد حسابك وسبب الاسترجاع. سنراجع طلبك خلال 5 أيام عمل.</p>
+      <h3 data-i18n="legal.refund.s4.title">4. مدة المعالجة</h3>
+      <p data-i18n="legal.refund.s4.text">يتم معالجة طلبات الاسترجاع المعتمدة خلال 7-14 يوم عمل. سيتم إرجاع المبلغ إلى طريقة الدفع الأصلية.</p>
+      <h3 data-i18n="legal.refund.s5.title">5. الاسترجاع الجزئي</h3>
+      <p data-i18n="legal.refund.s5.text">إذا ألغيت الاشتراك في منتصف دورة الفوترة، قد نقدم رصيداً محسوباً نسبياً لفترة الفوترة التالية.</p>
+      <h3 data-i18n="legal.refund.s6.title">6. استبدال الخدمة</h3>
+      <p data-i18n="legal.refund.s6.text">إذا واجهت مشاكل تقنية، سنحاول أولاً حلها. إذا لم يتم الحل خلال 48 ساعة، قد نقدم تمديد أو ترقية.</p>
+      <h3 data-i18n="legal.refund.s7.title">7. الإلغاء</h3>
+      <p data-i18n="legal.refund.s7.text">يمكنك إلغاء اشتراكك في أي وقت. يصبح الإلغاء سارياً في نهاية فترة الفوترة الحالية.</p>
+      <h3 data-i18n="legal.refund.s8.title">8. الاستثناءات</h3>
+      <ul>
+        <li data-i18n="legal.refund.s8.item1">لا استرجاع للحسابات المنتهية بسبب انتهاك الشروط.</li>
+        <li data-i18n="legal.refund.s8.item2">الباقات الترويجية تخضع لشروط خاصة.</li>
+        <li data-i18n="legal.refund.s8.item3">لا استرجاع بعد انتهاء فترة الـ 14 يوماً.</li>
+      </ul>
+      <h3 data-i18n="legal.refund.s9.title">9. التواصل للاسترجاع</h3>
+      <p data-i18n="legal.refund.s9.text">لطلبات الاسترجاع والاستبدال: <strong>emadh5156@gmail.com</strong></p>
+      <div style="margin-top:30px;padding-top:16px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+        <a onclick="showPage('privacy')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.privacy">🔒 اطلع على سياسة الخصوصية</a>
+        <a onclick="showPage('terms')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.terms">📄 اطلع على الشروط والأحكام</a>
+        <a onclick="showPage('contact')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.contact">📬 تواصل معنا</a>
+        <a onclick="showPage('about')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.about">ℹ️ تعرف علينا</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Us Page -->
+  <div class="page-view" id="page-contact">
+    <button class="back-btn" onclick="showHome()" data-i18n="common.back">← العودة إلى الرئيسية</button>
+    <div class="page-content" style="max-width:600px;">
+      <h2 data-i18n="legal.contact.title">تواصل معنا</h2>
+      <p data-i18n="legal.contact.subtitle" style="text-align:center;margin-bottom:20px;">يسعدنا سماعك! أرسل لنا رسالة وسنرد عليك في أقرب وقت ممكن.</p>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:20px;">
+        <h4 style="margin-bottom:10px;" data-i18n="legal.contact.info">📋 معلومات التواصل</h4>
+        <div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--border);">
+          <span style="font-size:20px;">📧</span>
+          <div>
+            <div style="font-size:12px;color:var(--text-muted);" data-i18n="legal.contact.directEmail">البريد المباشر</div>
+            <div style="color:var(--primary);font-weight:700;">emadh5156@gmail.com</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:8px 0;">
+          <span style="font-size:20px;">⏰</span>
+          <div style="font-size:13px;color:var(--text-muted);" data-i18n="legal.contact.response">نرد عادةً خلال 24-48 ساعة.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="legal.contact.name">اسمك *</label>
+        <input type="text" id="contactName" placeholder="اسمك الكامل">
+      </div>
+      <div class="form-group">
+        <label data-i18n="legal.contact.email">بريدك الإلكتروني *</label>
+        <input type="text" id="contactEmail" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label data-i18n="legal.contact.subject">الموضوع *</label>
+        <input type="text" id="contactSubject" placeholder="موضوع الرسالة">
+      </div>
+      <div class="form-group">
+        <label data-i18n="legal.contact.message">رسالتك *</label>
+        <textarea id="contactMessage" placeholder="اكتب رسالتك هنا..." style="min-height:120px;"></textarea>
+      </div>
+      <button class="btn-primary" onclick="handleContactSend()" style="width:100%;text-align:center;" data-i18n="legal.contact.send">📤 إرسال الرسالة</button>
+      <div style="margin-top:30px;padding-top:16px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+        <a onclick="showPage('privacy')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.privacy">🔒 اطلع على سياسة الخصوصية</a>
+        <a onclick="showPage('terms')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.terms">📄 اطلع على الشروط والأحكام</a>
+        <a onclick="showPage('refund')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.refund">💰 سياسة الاسترجاع</a>
+        <a onclick="showPage('about')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.about">ℹ️ تعرف علينا</a>
+      </div>
     </div>
   </div>
 
   <!-- Terms of Use Page -->
   <div class="page-view" id="page-terms">
-    <button class="back-btn" onclick="showHome()">← العودة إلى الرئيسية</button>
+    <button class="back-btn" onclick="showHome()" data-i18n="common.back">← العودة إلى الرئيسية</button>
     <div class="page-content">
-      <h2>شروط الاستخدام</h2>
-      <p><strong>آخر تحديث:</strong> أبريل 2026</p>
-      <h3>1. قبول الشروط</h3>
-      <p>بدخولك إلى هذا الموقع واستخدامه، فإنك تقر بأنك قرأت وفهمت ووافقت على الالتزام بهذه الشروط.</p>
-      <h3>2. الطبيعة التعليمية</h3>
-      <p>محتوى ليرسكس تعليمي وتثقيفي فقط ولا يُعتبر بديلاً عن الاستشارة الطبية المتخصصة.</p>
-      <h3>3. شروط العمر</h3>
-      <p>هذا الموقع مخصص للبالغين فقط (18 سنة فما فوق).</p>
-      <h3>4. حقوق الملكية الفكرية</h3>
-      <p>جميع المحتويات المنشورة محمية بحقوق الملكية الفكرية. يُمنع نسخ أو إعادة نشر أي محتوى دون إذن كتابي مسبق.</p>
-      <h3>5. الخصوصية</h3>
-      <p>نحترم خصوصيتك. يُرجى مراجعة سياسة الخصوصية لفهم كيفية جمع واستخدام بياناتك.</p>
-      <h3>6. إخلاء المسؤولية الطبية</h3>
-      <p>ليرسكس لا يقدم استشارات طبية شخصية. المعلومات المنشورة هي لأغراض تثقيفية عامة.</p>
-      <h3>7. تعديل الشروط</h3>
-      <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت.</p>
+      <h2 data-i18n="legal.terms.title">شروط الاستخدام</h2>
+      <p><strong data-i18n="legal.lastUpdate">آخر تحديث:</strong> أبريل 2026</p>
+      <h3 data-i18n="legal.terms.s1.title">1. قبول الشروط</h3>
+      <p data-i18n="legal.terms.s1.text">بدخولك إلى هذا الموقع واستخدامه، فإنك تقر بأنك قرأت وفهمت ووافقت على الالتزام بهذه الشروط والأحكام.</p>
+      <h3 data-i18n="legal.terms.s2.title">2. الطبيعة التعليمية</h3>
+      <p data-i18n="legal.terms.s2.text">محتوى ليرسكس تعليمي وتثقيفي فقط ولا يُعتبر بديلاً عن الاستشارة الطبية المتخصصة.</p>
+      <h3 data-i18n="legal.terms.s3.title">3. شروط العمر</h3>
+      <p data-i18n="legal.terms.s3.text">هذا الموقع مخصص للبالغين فقط (18 سنة فما فوق). بدخولك للموقع فإنك تقر بأنك فوق 18 سنة.</p>
+      <h3 data-i18n="legal.terms.s4.title">4. حقوق الملكية الفكرية</h3>
+      <p data-i18n="legal.terms.s4.text">جميع المحتويات المنشورة محمية بحقوق الملكية الفكرية. يُمنع نسخ أو إعادة نشر أي محتوى دون إذن كتابي مسبق.</p>
+      <h3 data-i18n="legal.terms.s5.title">5. الخصوصية</h3>
+      <p data-i18n="legal.terms.s5.text">نحترم خصوصيتك. يُرجى مراجعة <a onclick="showPage('privacy')" style="color:var(--primary);cursor:pointer;font-weight:700">سياسة الخصوصية</a> لفهم كيفية جمع واستخدام بياناتك.</p>
+      <h3 data-i18n="legal.terms.s6.title">6. إخلاء المسؤولية الطبية</h3>
+      <p data-i18n="legal.terms.s6.text">ليرسكس لا يقدم استشارات طبية شخصية. المعلومات المنشورة هي لأغراض تثقيفية عامة. استشر طبيبك المختص دائماً.</p>
+      <h3 data-i18n="legal.terms.s7.title">7. تعديل الشروط</h3>
+      <p data-i18n="legal.terms.s7.text">نحتفظ بالحق في تعديل هذه الشروط في أي وقت. الاستمرار في استخدام الموقع يعني قبول التعديلات.</p>
+      <h3 data-i18n="legal.terms.s8.title">8. القانون الحاكم</h3>
+      <p data-i18n="legal.terms.s8.text">تخضع هذه الشروط لقوانين بلد إقامة المستخدم المعمول بها.</p>
+      <h3 data-i18n="legal.terms.gp.title">9. التوافق مع متجر Google Play</h3>
+      <ul>
+        <li data-i18n="legal.terms.gp.1">يتوافق التطبيق مع سياسات برنامج مطوري Google Play.</li>
+        <li data-i18n="legal.terms.gp.2">لا نجمع أو نشارك بيانات شخصية تتجاوز ما هو ضروري.</li>
+        <li data-i18n="legal.terms.gp.3">التطبيق لا يحتوي على برامج ضارة أو كود خبيث.</li>
+        <li data-i18n="legal.terms.gp.4">يتم جمع بيانات الموقع فقط بموافقة صريحة.</li>
+        <li data-i18n="legal.terms.gp.5">يوفر التطبيق آلية لحذف البيانات.</li>
+        <li data-i18n="legal.terms.gp.6">لا نبيع البيانات لأطراف ثالثة.</li>
+        <li data-i18n="legal.terms.gp.7">جميع الإعلانات تتوافق مع سياسات Google Play.</li>
+        <li data-i18n="legal.terms.gp.8">الإشعارات للتنبيهات المتعلقة بالخدمة فقط.</li>
+        <li data-i18n="legal.terms.gp.9">يدعم التطبيق تصنيفات المحتوى المناسبة (18+).</li>
+        <li data-i18n="legal.terms.gp.10">نتعامل مع البيانات وفقاً لسياسة عائلات Google Play.</li>
+        <li data-i18n="legal.terms.gp.11">التطبيق خالٍ من السلوك المضلل.</li>
+        <li data-i18n="legal.terms.gp.12">يطلب التطبيق الأذونات الضرورية فقط.</li>
+        <li data-i18n="legal.terms.gp.13">نوفر رابط سياسة الخصوصية.</li>
+        <li data-i18n="legal.terms.gp.14">التطبيق يحترم تفضيلات إلغاء الاشتراك.</li>
+        <li data-i18n="legal.terms.gp.15">نلتزم بمعايير الجودة والأمان من Google Play.</li>
+      </ul>
+      <h3 data-i18n="legal.terms.as.title">10. التوافق مع متجر Apple App Store</h3>
+      <ul>
+        <li data-i18n="legal.terms.as.1">يتوافق التطبيق مع إرشادات مراجعة Apple.</li>
+        <li data-i18n="legal.terms.as.2">التطبيق لا يصل لبيانات زائدة عن وظائفه.</li>
+        <li data-i18n="legal.terms.as.3">نوفر سياسة خصوصية واضحة.</li>
+        <li data-i18n="legal.terms.as.4">التطبيق لا يحتوي ميزات خفية.</li>
+        <li data-i18n="legal.terms.as.5">نحترم خصوصية المستخدم ومتطلبات Apple.</li>
+        <li data-i18n="legal.terms.as.6">التطبيق مناسب لتصنيف العمر (18+).</li>
+        <li data-i18n="legal.terms.as.7">يتم الإفصاح عن استخدام الموقع في الخلفية.</li>
+        <li data-i18n="legal.terms.as.8">التطبيق لا يستخدم APIs خاصة.</li>
+        <li data-i18n="legal.terms.as.9">نوفر آلية لإدارة أو حذف البيانات.</li>
+        <li data-i18n="legal.terms.as.10">جميع المحتويات تتوافق مع إرشادات Apple.</li>
+        <li data-i18n="legal.terms.as.11">يدعم التطبيق أحدث إصدارات iOS.</li>
+        <li data-i18n="legal.terms.as.12">نتعامل مع تقارير الأعطال بمسؤولية.</li>
+        <li data-i18n="legal.terms.as.13">التطبيق لا يؤثر على وظائف النظام.</li>
+        <li data-i18n="legal.terms.as.14">جميع حقوق الملكية الفكرية محفوظة.</li>
+        <li data-i18n="legal.terms.as.15">نلتزم بمتطلبات Apple للخصوصية والأمان.</li>
+      </ul>
+      <h3 data-i18n="legal.terms.ad.title">11. التوافق مع Google AdSense</h3>
+      <ul>
+        <li data-i18n="legal.terms.ad.1">الإعلانات تتوافق مع سياسات Google AdSense.</li>
+        <li data-i18n="legal.terms.ad.2">لا ننقر على إعلاناتنا الخاصة.</li>
+        <li data-i18n="legal.terms.ad.3">وضع الإعلانات لا يؤثر على الوظائف الأساسية.</li>
+        <li data-i18n="legal.terms.ad.4">يمكن للمستخدمين إلغاء الاشتراك في الإعلانات المخصصة.</li>
+        <li data-i18n="legal.terms.ad.5">لا نعدّل كود AdSense.</li>
+        <li data-i18n="legal.terms.ad.6">محتوى الإعلانات مناسب للجمهور.</li>
+        <li data-i18n="legal.terms.ad.7">نتوافق مع متطلبات GDPR و CCPA.</li>
+        <li data-i18n="legal.terms.ad.8">الفئات الحساسة مستبعدة من الإعلانات.</li>
+        <li data-i18n="legal.terms.ad.9">ملفات تعريف الارتباط مذكورة في سياسة الخصوصية.</li>
+        <li data-i18n="legal.terms.ad.10">لا نضع إعلانات على صفحات فارغة.</li>
+        <li data-i18n="legal.terms.ad.11">عدد الإعلانات لا يتجاوز الحدود الموصى بها.</li>
+      </ul>
+      <div style="margin-top:30px;padding-top:16px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+        <a onclick="showPage('privacy')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.privacy">🔒 اطلع على سياسة الخصوصية</a>
+        <a onclick="showPage('refund')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.refund">💰 سياسة الاسترجاع</a>
+        <a onclick="showPage('contact')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.contact">📬 تواصل معنا</a>
+        <a onclick="showPage('about')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.about">ℹ️ تعرف علينا</a>
+      </div>
     </div>
   </div>
 
   <!-- Privacy Policy Page -->
   <div class="page-view" id="page-privacy">
-    <button class="back-btn" onclick="showHome()">← العودة إلى الرئيسية</button>
+    <button class="back-btn" onclick="showHome()" data-i18n="common.back">← العودة إلى الرئيسية</button>
     <div class="page-content">
-      <h2>سياسة الخصوصية</h2>
-      <p><strong>آخر تحديث:</strong> أبريل 2026</p>
-      <h3>1. المعلومات التي نجمعها</h3>
+      <h2 data-i18n="legal.privacy.title">سياسة الخصوصية</h2>
+      <p><strong data-i18n="legal.lastUpdate">آخر تحديث:</strong> أبريل 2026</p>
+      <h3 data-i18n="legal.privacy.s1.title">1. المعلومات التي نجمعها</h3>
       <ul>
-        <li><strong>بيانات التصفح:</strong> نجمع بيانات غير شخصية مثل نوع المتصفح وصفحات الزيارة</li>
-        <li><strong>Cookies:</strong> نستخدم ملفات تعريف الارتباط لحفظ تفضيلاتك (مثل الوضع الليلي)</li>
-        <li><strong>التحليلات:</strong> نستخدم أدوات تحليلية مجهولة لتحسين المحتوى</li>
+        <li data-i18n="legal.privacy.s1.item1"><strong>بيانات التصفح:</strong> نجمع بيانات غير شخصية مثل نوع المتصفح وصفحات الزيارة وعنوان IP.</li>
+        <li data-i18n="legal.privacy.s1.item2"><strong>Cookies:</strong> نستخدم ملفات تعريف الارتباط لحفظ تفضيلاتك (مثل الوضع الليلي واللغة).</li>
+        <li data-i18n="legal.privacy.s1.item3"><strong>التحليلات:</strong> نستخدم أدوات تحليلية مجهولة لتحسين المحتوى.</li>
+        <li data-i18n="legal.privacy.s1.item4"><strong>بيانات الجهاز:</strong> نجمع معلومات عن نوع الجهاز ونظام التشغيل لتحسين الأداء.</li>
       </ul>
-      <h3>2. كيف نستخدم معلوماتك</h3>
+      <h3 data-i18n="legal.privacy.s2.title">2. كيف نستخدم معلوماتك</h3>
       <ul>
-        <li>تحسين محتوى الموقع وتجربة المستخدم</li>
-        <li>تحليل أنماط الزيارة لتطوير المنصة</li>
-        <li>عرض إعلانات مناسبة عبر شركائنا (مثل Google AdSense)</li>
+        <li data-i18n="legal.privacy.s2.item1">تحسين محتوى الموقع وتجربة المستخدم</li>
+        <li data-i18n="legal.privacy.s2.item2">تحليل أنماط الزيارة لتطوير المنصة</li>
+        <li data-i18n="legal.privacy.s2.item3">عرض إعلانات مناسبة عبر شركائنا (مثل Google AdSense)</li>
+        <li data-i18n="legal.privacy.s2.item4">إرسال إشعارات تتعلق بالخدمة والتحديثات</li>
       </ul>
-      <h3>3. ملفات تعريف الارتباط والإعلانات</h3>
-      <p>يستخدم موقع ليرسكس ملفات تعريف الارتباط، بما في ذلك ملفات من Google وشركائها، لعرض إعلانات بناءً على زياراتك السابقة. يمكنك تعطيل الإعلانات المخصصة عبر <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--primary)">إعدادات الإعلانات في Google</a>.</p>
-      <h3>4. حماية البيانات</h3>
-      <p>نتخذ إجراءات أمنية مناسبة لحماية معلوماتك من الوصول غير المصرح به.</p>
-      <h3>5. مشاركة المعلومات</h3>
-      <p>لا نبيع أو نؤجر بياناتك الشخصية لأطراف ثالثة.</p>
-      <h3>6. حقوقك</h3>
-      <p>لك الحق في الوصول إلى بياناتك الشخصية وطلب حذفها.</p>
-      <h3>7. التواصل</h3>
-      <p>لأي استفسارات: <strong>privacy@lersex.com</strong></p>
+      <h3 data-i18n="legal.privacy.s3.title">3. ملفات تعريف الارتباط (Cookies) وتقنيات التتبع</h3>
+      <p data-i18n="legal.privacy.s3.intro">نستخدم ملفات تعريف الارتباط وتقنيات مماثلة لتحسين تجربتك:</p>
+      <ul>
+        <li data-i18n="legal.privacy.s3.item1"><strong>الأساسية:</strong> مطلوبة لعمل الموقع (حفظ الوضع الليلي/النهاري، اللغة).</li>
+        <li data-i18n="legal.privacy.s3.item2"><strong>التحليلية:</strong> تساعدنا على فهم استخدام الموقع (Google Analytics).</li>
+        <li data-i18n="legal.privacy.s3.item3"><strong>الإعلانية:</strong> تستخدمها Google AdSense لتقديم إعلانات ذات صلة.</li>
+        <li data-i18n="legal.privacy.s3.item4"><strong>التفضيلية:</strong> تذكر إعداداتك وتفضيلاتك.</li>
+      </ul>
+      <p data-i18n="legal.privacy.s3.control">يمكنك التحكم في ملفات تعريف الارتباط من خلال إعدادات متصفحك.</p>
+      <h3 data-i18n="legal.privacy.s4.title">4. الإعلانات و Google AdSense</h3>
+      <p data-i18n="legal.privacy.s4.text1">يستخدم موقع ليرسكس ملفات تعريف الارتباط، بما في ذلك ملفات من Google وشركائه، لعرض إعلانات بناءً على زياراتك السابقة للموقع أو مواقع أخرى.</p>
+      <ul>
+        <li data-i18n="legal.privacy.s4.item1">يمكنك إلغاء الاشتراك في الإعلانات المخصصة عبر <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--primary)">إعدادات إعلانات Google</a>.</li>
+        <li data-i18n="legal.privacy.s4.item2">يستخدم البائعون сторонيون، بما في ذلك Google، ملف DART لتقديم إعلانات بناءً على زياراتك.</li>
+        <li data-i18n="legal.privacy.s4.item3">يمكنك إلغاء استخدام ملف DART بزيارة <a href="https://policies.google.com/technologies/ads" target="_blank" style="color:var(--primary)">سياسة إعلانات Google</a>.</li>
+      </ul>
+      <h3 data-i18n="legal.privacy.s5.title">5. خدمات الطرف الثالث</h3>
+      <p data-i18n="legal.privacy.s5.intro">يستخدم الموقع الخدمات التالية من الطرف الثالث:</p>
+      <ul>
+        <li data-i18n="legal.privacy.s5.item1"><strong>Google AdSense:</strong> خدمات الإعلانات. <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--primary)">سياسة الخصوصية</a></li>
+        <li data-i18n="legal.privacy.s5.item2"><strong>Google Analytics:</strong> تحليلات الاستخدام. <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--primary)">سياسة الخصوصية</a></li>
+        <li data-i18n="legal.privacy.s5.item3"><strong>Google Fonts:</strong> خطوط الموقع. <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--primary)">سياسة الخصوصية</a></li>
+      </ul>
+      <h3 data-i18n="legal.privacy.s6.title">6. حماية البيانات</h3>
+      <p data-i18n="legal.privacy.s6.text">نتخذ إجراءات أمنية مناسبة لحماية معلوماتك من الوصول غير المصرح به، بما في ذلك تشفير البيانات أثناء النقل (TLS/SSL).</p>
+      <h3 data-i18n="legal.privacy.s7.title">7. مشاركة المعلومات</h3>
+      <p data-i18n="legal.privacy.s7.text"><strong>لا نبيع أو نؤجر بياناتك الشخصية لأطراف ثالثة</strong>، إلا في الحالات التالية: موافقتك الصريحة، الامتثال للقوانين، أو حماية حقوق使用者或 الآخرين.</p>
+      <h3 data-i18n="legal.privacy.s8.title">8. خصوصية الأطفال</h3>
+      <p data-i18n="legal.privacy.s8.text1">موقع ليرسكس مخصص للبالغين فقط (18 سنة فما فوق). لا نجمع معلومات شخصية من الأطفال أقل من 18 عاماً عمداً.</p>
+      <p data-i18n="legal.privacy.s8.text2">إذا اكتشفنا أن طفلاً قدّم لنا بيانات شخصية، سنحذف هذه المعلومات فوراً. تواصل معنا على emadh5156@gmail.com.</p>
+      <h3 data-i18n="legal.privacy.s9.title">9. حقوقك</h3>
+      <ul>
+        <li data-i18n="legal.privacy.s9.item1">الوصول إلى بياناتك الشخصية وطلب حذفها</li>
+        <li data-i18n="legal.privacy.s9.item2">إلغاء الاشتراك في الإعلانات المخصصة</li>
+        <li data-i18n="legal.privacy.s9.item3">التحكم في ملفات تعريف الارتباط من إعدادات المتصفح</li>
+      </ul>
+      <h3 data-i18n="legal.privacy.s10.title">10. التغييرات على هذه السياسة</h3>
+      <p data-i18n="legal.privacy.s10.text">قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. الاستمرار في استخدام الموقع بعد التغييرات يعتبر قبولاً.</p>
+      <h3 data-i18n="legal.privacy.s11.title">11. التواصل</h3>
+      <p data-i18n="legal.privacy.s11.text">لأي استفسارات: <strong>emadh5156@gmail.com</strong></p>
+      <div style="margin-top:30px;padding-top:16px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+        <a onclick="showPage('terms')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.terms">📄 اطلع على الشروط والأحكام</a>
+        <a onclick="showPage('refund')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.refund">💰 سياسة الاسترجاع</a>
+        <a onclick="showPage('contact')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.contact">📬 تواصل معنا</a>
+        <a onclick="showPage('about')" style="color:var(--primary);cursor:pointer;font-weight:700;" data-i18n="crossLinks.about">ℹ️ تعرف علينا</a>
+      </div>
     </div>
   </div>
 </main>
@@ -978,11 +1201,13 @@ body.dark-mode .login-error { background: #2a0a0a; border-color: #5a1a1a; }
 <!-- Footer -->
 <footer class="footer">
   <p><strong>ليرسكس</strong> — منصة التعليم الجنسي العربي © 2026</p>
-  <p style="margin-top:6px;font-size:12px;opacity:0.6">محتوى علمي تثقيفي بإشراف مختصين • ليس بديلاً عن الاستشارة الطبية</p>
+  <p style="margin-top:6px;font-size:12px;opacity:0.6" data-i18n="footer.disclaimer">محتوى علمي تثقيفي بإشراف مختصين • ليس بديلاً عن الاستشارة الطبية</p>
   <div style="margin-top:14px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
-    <a href="#" onclick="showPage('about');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px">من نحن</a>
-    <a href="#" onclick="showPage('terms');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px">شروط الاستخدام</a>
-    <a href="#" onclick="showPage('privacy');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px">سياسة الخصوصية</a>
+    <a href="#" onclick="showPage('about');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px" data-i18n="footer.about">من نحن</a>
+    <a href="#" onclick="showPage('terms');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px" data-i18n="footer.terms">شروط الاستخدام</a>
+    <a href="#" onclick="showPage('privacy');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px" data-i18n="footer.privacy">سياسة الخصوصية</a>
+    <a href="#" onclick="showPage('refund');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px" data-i18n="footer.refund">سياسة الاسترجاع</a>
+    <a href="#" onclick="showPage('contact');return false" style="color:#ffcdd2;text-decoration:none;font-size:13px" data-i18n="footer.contact">تواصل معنا</a>
   </div>
 </footer>
 
@@ -1214,6 +1439,398 @@ let editingChapterId = null;
 let editingArticleIdx = null;
 let pendingImages = [];
 let deleteCallback = null;
+
+// ==================== I18N ====================
+let currentLang = localStorage.getItem('lersex_lang') || 'ar';
+
+const translations = {
+  ar: {
+    'nav.about': 'من نحن', 'nav.terms': 'الشروط', 'nav.privacy': 'الخصوصية',
+    'nav.refund': 'الاسترجاع', 'nav.contact': 'تواصل', 'nav.home': '🏠 الرئيسية',
+    'common.back': '← العودة إلى الرئيسية',
+    'footer.about': 'من نحن', 'footer.terms': 'شروط الاستخدام', 'footer.privacy': 'سياسة الخصوصية',
+    'footer.refund': 'سياسة الاسترجاع', 'footer.contact': 'تواصل معنا',
+    'footer.disclaimer': 'محتوى علمي تثقيفي بإشراف مختصين • ليس بديلاً عن الاستشارة الطبية',
+    'crossLinks.privacy': '🔒 اطلع على سياسة الخصوصية',
+    'crossLinks.terms': '📄 اطلع على الشروط والأحكام',
+    'crossLinks.refund': '💰 سياسة الاسترجاع',
+    'crossLinks.about': 'ℹ️ تعرف علينا',
+    'crossLinks.contact': '📬 تواصل معنا',
+    'legal.lastUpdate': 'آخر تحديث:',
+    'legal.privacy.title': 'سياسة الخصوصية',
+    'legal.privacy.s1.title': '1. المعلومات التي نجمعها',
+    'legal.privacy.s1.item1': 'بيانات التصفح: نجمع بيانات غير شخصية مثل نوع المتصفح وصفحات الزيارة وعنوان IP.',
+    'legal.privacy.s1.item2': 'Cookies: نستخدم ملفات تعريف الارتباط لحفظ تفضيلاتك.',
+    'legal.privacy.s1.item3': 'التحليلات: نستخدم أدوات تحليلية مجهولة لتحسين المحتوى.',
+    'legal.privacy.s1.item4': 'بيانات الجهاز: نجمع معلومات عن نوع الجهاز ونظام التشغيل.',
+    'legal.privacy.s2.title': '2. كيف نستخدم معلوماتك',
+    'legal.privacy.s2.item1': 'تحسين محتوى الموقع وتجربة المستخدم',
+    'legal.privacy.s2.item2': 'تحليل أنماط الزيارة لتطوير المنصة',
+    'legal.privacy.s2.item3': 'عرض إعلانات مناسبة عبر شركائنا (مثل Google AdSense)',
+    'legal.privacy.s2.item4': 'إرسال إشعارات تتعلق بالخدمة والتحديثات',
+    'legal.privacy.s3.title': '3. ملفات تعريف الارتباط (Cookies) وتقنيات التتبع',
+    'legal.privacy.s3.intro': 'نستخدم ملفات تعريف الارتباط وتقنيات مماثلة لتحسين تجربتك:',
+    'legal.privacy.s3.item1': 'الأساسية: مطلوبة لعمل الموقع (حفظ الوضع الليلي/النهاري، اللغة).',
+    'legal.privacy.s3.item2': 'التحليلية: تساعدنا على فهم استخدام الموقع (Google Analytics).',
+    'legal.privacy.s3.item3': 'الإعلانية: تستخدمها Google AdSense لتقديم إعلانات ذات صلة.',
+    'legal.privacy.s3.item4': 'التفضيلية: تذكر إعداداتك وتفضيلاتك.',
+    'legal.privacy.s3.control': 'يمكنك التحكم في ملفات تعريف الارتباط من خلال إعدادات متصفحك.',
+    'legal.privacy.s4.title': '4. الإعلانات و Google AdSense',
+    'legal.privacy.s4.text1': 'يستخدم موقع ليرسكس ملفات تعريف الارتباط، بما في ذلك ملفات من Google وشركائه، لعرض إعلانات.',
+    'legal.privacy.s4.item1': 'يمكنك إلغاء الاشتراك في الإعلانات المخصصة عبر إعدادات إعلانات Google.',
+    'legal.privacy.s4.item2': 'يستخدم البائعون сторонيون ملف DART لتقديم إعلانات.',
+    'legal.privacy.s4.item3': 'يمكنك إلغاء استخدام ملف DART بزيارة سياسة إعلانات Google.',
+    'legal.privacy.s5.title': '5. خدمات الطرف الثالث',
+    'legal.privacy.s5.intro': 'يستخدم الموقع الخدمات التالية:',
+    'legal.privacy.s5.item1': 'Google AdSense: خدمات الإعلانات.',
+    'legal.privacy.s5.item2': 'Google Analytics: تحليلات الاستخدام.',
+    'legal.privacy.s5.item3': 'Google Fonts: خطوط الموقع.',
+    'legal.privacy.s6.title': '6. حماية البيانات',
+    'legal.privacy.s6.text': 'نتخذ إجراءات أمنية مناسبة لحماية معلوماتك، بما في ذلك تشفير TLS/SSL.',
+    'legal.privacy.s7.title': '7. مشاركة المعلومات',
+    'legal.privacy.s7.text': 'لا نبيع أو نؤجر بياناتك الشخصية لأطراف ثالثة، إلا في حالات محددة.',
+    'legal.privacy.s8.title': '8. خصوصية الأطفال',
+    'legal.privacy.s8.text1': 'موقع ليرسكس مخصص للبالغين فقط (18 سنة فما فوق). لا نجمع بيانات من الأطفال.',
+    'legal.privacy.s8.text2': 'إذا اكتشفنا أن طفلاً قدّم بيانات، سنحذفها فوراً. تواصل معنا على emadh5156@gmail.com.',
+    'legal.privacy.s9.title': '9. حقوقك',
+    'legal.privacy.s9.item1': 'الوصول إلى بياناتك وطلب حذفها',
+    'legal.privacy.s9.item2': 'إلغاء الاشتراك في الإعلانات المخصصة',
+    'legal.privacy.s9.item3': 'التحكم في ملفات تعريف الارتباط',
+    'legal.privacy.s10.title': '10. التغييرات على هذه السياسة',
+    'legal.privacy.s10.text': 'قد نحدّث هذه السياسة من وقت لآخر. الاستمرار يعني القبول.',
+    'legal.privacy.s11.title': '11. التواصل',
+    'legal.privacy.s11.text': 'لأي استفسارات: emadh5156@gmail.com',
+    'legal.terms.title': 'شروط الاستخدام',
+    'legal.terms.s1.title': '1. قبول الشروط',
+    'legal.terms.s1.text': 'باستخدامك الموقع فإنك توافق على هذه الشروط والأحكام.',
+    'legal.terms.s2.title': '2. الطبيعة التعليمية',
+    'legal.terms.s2.text': 'المحتوى تعليمي فقط ولا يُعتبر بديلاً عن الاستشارة الطبية.',
+    'legal.terms.s3.title': '3. شروط العمر',
+    'legal.terms.s3.text': 'الموقع مخصص للبالغين فقط (18 سنة فما فوق).',
+    'legal.terms.s4.title': '4. حقوق الملكية الفكرية',
+    'legal.terms.s4.text': 'جميع المحتويات محمية بحقوق الملكية الفكرية.',
+    'legal.terms.s5.title': '5. الخصوصية',
+    'legal.terms.s5.text': 'راجع سياسة الخصوصية لفهم كيفية جمع بياناتك.',
+    'legal.terms.s6.title': '6. إخلاء المسؤولية الطبية',
+    'legal.terms.s6.text': 'ليرسكس لا يقدم استشارات طبية شخصية.',
+    'legal.terms.s7.title': '7. تعديل الشروط',
+    'legal.terms.s7.text': 'نحتفظ بالحق في تعديل هذه الشروط في أي وقت.',
+    'legal.terms.s8.title': '8. القانون الحاكم',
+    'legal.terms.s8.text': 'تخضع الشروط لقوانين بلد إقامة المستخدم.',
+    'legal.terms.gp.title': '9. التوافق مع Google Play',
+    'legal.terms.gp.1': 'يتوافق مع سياسات Google Play.',
+    'legal.terms.gp.2': 'لا نجمع بيانات زائدة عن الحاجة.',
+    'legal.terms.gp.3': 'لا يحتوي على برامج ضارة.',
+    'legal.terms.gp.4': 'جمع الموقع بموافقة صريحة فقط.',
+    'legal.terms.gp.5': 'نوفر آلية لحذف البيانات.',
+    'legal.terms.gp.6': 'لا نبيع البيانات لأطراف ثالثة.',
+    'legal.terms.gp.7': 'الإعلانات تتوافق مع سياسات Google Play.',
+    'legal.terms.gp.8': 'الإشعارات للتنبيهات المتعلقة بالخدمة.',
+    'legal.terms.gp.9': 'يدعم تصنيفات المحتوى (18+).',
+    'legal.terms.gp.10': 'نتعامل مع البيانات وفقاً لسياسة العائلات.',
+    'legal.terms.gp.11': 'خالٍ من السلوك المضلل.',
+    'legal.terms.gp.12': 'يطلب الأذونات الضرورية فقط.',
+    'legal.terms.gp.13': 'نوفر رابط سياسة الخصوصية.',
+    'legal.terms.gp.14': 'يحترم تفضيلات إلغاء الاشتراك.',
+    'legal.terms.gp.15': 'نلتزم بمعايير الجودة والأمان.',
+    'legal.terms.as.title': '10. التوافق مع Apple App Store',
+    'legal.terms.as.1': 'يتوافق مع إرشادات Apple.',
+    'legal.terms.as.2': 'لا يصل لبيانات زائدة عن وظائفه.',
+    'legal.terms.as.3': 'نوفر سياسة خصوصية واضحة.',
+    'legal.terms.as.4': 'لا يحتوي ميزات خفية.',
+    'legal.terms.as.5': 'نحترم خصوصية المستخدم.',
+    'legal.terms.as.6': 'مناسب لتصنيف العمر (18+).',
+    'legal.terms.as.7': 'يتم الإفصاح عن استخدام الموقع.',
+    'legal.terms.as.8': 'لا يستخدم APIs خاصة.',
+    'legal.terms.as.9': 'نوفر آلية لإدارة البيانات.',
+    'legal.terms.as.10': 'المحتويات تتوافق مع إرشادات Apple.',
+    'legal.terms.as.11': 'يدعم أحدث إصدارات iOS.',
+    'legal.terms.as.12': 'نتعامل مع تقارير الأعطال بمسؤولية.',
+    'legal.terms.as.13': 'لا يؤثر على وظائف النظام.',
+    'legal.terms.as.14': 'حقوق الملكية الفكرية محفوظة.',
+    'legal.terms.as.15': 'نلتزم بمتطلبات Apple.',
+    'legal.terms.ad.title': '11. التوافق مع Google AdSense',
+    'legal.terms.ad.1': 'الإعلانات تتوافق مع سياسات AdSense.',
+    'legal.terms.ad.2': 'لا ننقر على إعلاناتنا الخاصة.',
+    'legal.terms.ad.3': 'وضع الإعلانات لا يؤثر على الوظائف.',
+    'legal.terms.ad.4': 'يمكن إلغاء الإعلانات المخصصة.',
+    'legal.terms.ad.5': 'لا نعدّل كود AdSense.',
+    'legal.terms.ad.6': 'محتوى الإعلانات مناسب.',
+    'legal.terms.ad.7': 'نتوافق مع GDPR و CCPA.',
+    'legal.terms.ad.8': 'الفئات الحساسة مستبعدة.',
+    'legal.terms.ad.9': 'ملفات تعريف الارتباط مذكورة.',
+    'legal.terms.ad.10': 'لا نضع إعلانات على صفحات فارغة.',
+    'legal.terms.ad.11': 'عدد الإعلانات لا يتجاوز الحدود.',
+    'legal.refund.title': 'سياسة الاسترجاع والاستبدال',
+    'legal.refund.s1.title': '1. مقدمة',
+    'legal.refund.s1.text': 'نريدك راضياً تماماً. توضح هذه السياسة إجراءات الاسترجاع.',
+    'legal.refund.s2.title': '2. أهلية الاسترجاع',
+    'legal.refund.s2.item1': 'يتوفر خلال 14 يوماً من الشراء.',
+    'legal.refund.s2.item2': 'أقل من 20% استخدام.',
+    'legal.refund.s2.item3': 'لا يتوفر للحسابات المنتهية.',
+    'legal.refund.s3.title': '3. إجراءات الاسترجاع',
+    'legal.refund.s3.text': 'تواصل على emadh5156@gmail.com مع البريد والسبب.',
+    'legal.refund.s4.title': '4. مدة المعالجة',
+    'legal.refund.s4.text': '7-14 يوم عمل إلى طريقة الدفع الأصلية.',
+    'legal.refund.s5.title': '5. الاسترجاع الجزئي',
+    'legal.refund.s5.text': 'الإلغاء في منتصف الدورة قد يحصل على رصيد.',
+    'legal.refund.s6.title': '6. استبدال الخدمة',
+    'legal.refund.s6.text': 'للمشاكل التقنية غير المحلولة خلال 48 ساعة.',
+    'legal.refund.s7.title': '7. الإلغاء',
+    'legal.refund.s7.text': 'يمكن الإلغاء في أي وقت.',
+    'legal.refund.s8.title': '8. الاستثناءات',
+    'legal.refund.s8.item1': 'لا استرجاع للحسابات المنتهية.',
+    'legal.refund.s8.item2': 'الباقات الترويجية تخضع لشروط خاصة.',
+    'legal.refund.s8.item3': 'لا استرجاع بعد 14 يوماً.',
+    'legal.refund.s9.title': '9. التواصل للاسترجاع',
+    'legal.refund.s9.text': 'emadh5156@gmail.com',
+    'legal.contact.title': 'تواصل معنا',
+    'legal.contact.subtitle': 'يسعدنا سماعك! أرسل رسالة وسنرد في أقرب وقت.',
+    'legal.contact.info': '📋 معلومات التواصل',
+    'legal.contact.directEmail': 'البريد المباشر',
+    'legal.contact.response': 'نرد عادةً خلال 24-48 ساعة.',
+    'legal.contact.name': 'اسمك *',
+    'legal.contact.email': 'بريدك الإلكتروني *',
+    'legal.contact.subject': 'الموضوع *',
+    'legal.contact.message': 'رسالتك *',
+    'legal.contact.send': '📤 إرسال الرسالة',
+    'legal.contact.success': 'تم إرسال الرسالة بنجاح!',
+    'legal.contact.error': 'فشل الإرسال. حاول مرة أخرى.',
+    'legal.contact.required': 'جميع الحقول مطلوبة',
+    'legal.about.title': 'من نحن',
+    'legal.about.vision': 'رؤيتنا: نشر التثقيف الصحي الجنسي في المجتمع العربي بأسلوب علمي محترم',
+    'legal.about.intro': 'مرحباً بكم في ليرسكس — المنصة العربية المتخصصة في التثقيف الصحي الجنسي.',
+    'legal.about.s1.title': '🎯 رسالتنا',
+    'legal.about.s1.item1': 'تقديم محتوى علمي موثوق بأسلوب عربي أصيل',
+    'legal.about.s1.item2': 'كسر الحواجز الثقافية حول التثقيف الصحي',
+    'legal.about.s1.item3': 'توفير مرجعية عربية شاملة',
+    'legal.about.s1.item4': 'التعاون مع خبراء ومختصين',
+    'legal.about.s2.title': '📊 بالأرقام',
+    'legal.about.s2.chapters': 'أبواب',
+    'legal.about.s2.articles': 'مقالات',
+    'legal.about.s2.visitors': 'زوار',
+    'legal.about.s2.uptime': 'وقت التشغيل',
+    'legal.about.s3.title': '⚖️ إخلاء المسؤولية',
+    'legal.about.s3.text': 'المحتوى لأغراض تثقيفية فقط. استشر طبيبك المختص.',
+    'legal.about.s4.title': '📬 تواصل معنا',
+    'legal.about.s4.text': 'emadh5156@gmail.com',
+  },
+  en: {
+    'nav.about': 'About', 'nav.terms': 'Terms', 'nav.privacy': 'Privacy',
+    'nav.refund': 'Refund', 'nav.contact': 'Contact', 'nav.home': '🏠 Home',
+    'common.back': '← Back to Home',
+    'footer.about': 'About Us', 'footer.terms': 'Terms of Use', 'footer.privacy': 'Privacy Policy',
+    'footer.refund': 'Refund Policy', 'footer.contact': 'Contact Us',
+    'footer.disclaimer': 'Educational content supervised by specialists • Not a substitute for medical advice',
+    'crossLinks.privacy': '🔒 View Privacy Policy',
+    'crossLinks.terms': '📄 View Terms of Service',
+    'crossLinks.refund': '💰 Refund & Replacement Policy',
+    'crossLinks.about': 'ℹ️ About Us',
+    'crossLinks.contact': '📬 Contact Us',
+    'legal.lastUpdate': 'Last updated:',
+    'legal.privacy.title': 'Privacy Policy',
+    'legal.privacy.s1.title': '1. Information We Collect',
+    'legal.privacy.s1.item1': 'Browsing data: We collect non-personal data such as browser type, visited pages, and IP address.',
+    'legal.privacy.s1.item2': 'Cookies: We use cookies to save your preferences (e.g., dark mode, language).',
+    'legal.privacy.s1.item3': 'Analytics: We use anonymous analytics tools to improve content.',
+    'legal.privacy.s1.item4': 'Device data: We collect device type and OS information.',
+    'legal.privacy.s2.title': '2. How We Use Your Information',
+    'legal.privacy.s2.item1': 'Improve site content and user experience',
+    'legal.privacy.s2.item2': 'Analyze visit patterns to develop the platform',
+    'legal.privacy.s2.item3': 'Display relevant ads through partners (e.g., Google AdSense)',
+    'legal.privacy.s2.item4': 'Send service-related notifications',
+    'legal.privacy.s3.title': '3. Cookies & Tracking Technologies',
+    'legal.privacy.s3.intro': 'We use cookies and similar technologies:',
+    'legal.privacy.s3.item1': 'Essential: Required for the site (dark/light mode, language).',
+    'legal.privacy.s3.item2': 'Analytics: Help us understand site usage (Google Analytics).',
+    'legal.privacy.s3.item3': 'Advertising: Used by Google AdSense for relevant ads.',
+    'legal.privacy.s3.item4': 'Preference: Remember your settings.',
+    'legal.privacy.s3.control': 'You can control cookies through your browser settings.',
+    'legal.privacy.s4.title': '4. Advertising & Google AdSense',
+    'legal.privacy.s4.text1': 'El-Lersex uses cookies, including from Google and partners, to display ads based on your visits.',
+    'legal.privacy.s4.item1': 'You can opt out via Google Ads Settings.',
+    'legal.privacy.s4.item2': 'Third-party vendors use the DART cookie for ads.',
+    'legal.privacy.s4.item3': 'You can opt out of DART via Google Ads Policy.',
+    'legal.privacy.s5.title': '5. Third-Party Services',
+    'legal.privacy.s5.intro': 'We use the following services:',
+    'legal.privacy.s5.item1': 'Google AdSense: Advertising.',
+    'legal.privacy.s5.item2': 'Google Analytics: Usage analytics.',
+    'legal.privacy.s5.item3': 'Google Fonts: Site fonts.',
+    'legal.privacy.s6.title': '6. Data Protection',
+    'legal.privacy.s6.text': 'We take appropriate security measures including TLS/SSL encryption.',
+    'legal.privacy.s7.title': '7. Information Sharing',
+    'legal.privacy.s7.text': 'We do not sell or rent your personal data to third parties, except in specific cases.',
+    'legal.privacy.s8.title': '8. Children\'s Privacy',
+    'legal.privacy.s8.text1': 'El-Lersex is for adults only (18+). We do not knowingly collect data from children.',
+    'legal.privacy.s8.text2': 'If we discover a child provided data, we will delete it immediately. Contact: emadh5156@gmail.com.',
+    'legal.privacy.s9.title': '9. Your Rights',
+    'legal.privacy.s9.item1': 'Access and request deletion of your data',
+    'legal.privacy.s9.item2': 'Opt out of personalized ads',
+    'legal.privacy.s9.item3': 'Control cookies through browser settings',
+    'legal.privacy.s10.title': '10. Changes to This Policy',
+    'legal.privacy.s10.text': 'We may update this policy. Continued use constitutes acceptance.',
+    'legal.privacy.s11.title': '11. Contact',
+    'legal.privacy.s11.text': 'For inquiries: emadh5156@gmail.com',
+    'legal.terms.title': 'Terms of Use',
+    'legal.terms.s1.title': '1. Acceptance of Terms',
+    'legal.terms.s1.text': 'By using the site you agree to these Terms of Service.',
+    'legal.terms.s2.title': '2. Educational Nature',
+    'legal.terms.s2.text': 'Content is educational only and not a substitute for medical advice.',
+    'legal.terms.s3.title': '3. Age Requirements',
+    'legal.terms.s3.text': 'This site is for adults only (18+).',
+    'legal.terms.s4.title': '4. Intellectual Property',
+    'legal.terms.s4.text': 'All content is protected by intellectual property rights.',
+    'legal.terms.s5.title': '5. Privacy',
+    'legal.terms.s5.text': 'See our Privacy Policy for data collection details.',
+    'legal.terms.s6.title': '6. Medical Disclaimer',
+    'legal.terms.s6.text': 'El-Lersex does not provide personal medical advice.',
+    'legal.terms.s7.title': '7. Modifications',
+    'legal.terms.s7.text': 'We reserve the right to modify these terms at any time.',
+    'legal.terms.s8.title': '8. Governing Law',
+    'legal.terms.s8.text': 'These terms are governed by the laws of your country of residence.',
+    'legal.terms.gp.title': '9. Google Play Compliance',
+    'legal.terms.gp.1': 'Complies with Google Play policies.',
+    'legal.terms.gp.2': 'No unnecessary data collection.',
+    'legal.terms.gp.3': 'No malware.',
+    'legal.terms.gp.4': 'Location with explicit consent only.',
+    'legal.terms.gp.5': 'Data deletion mechanism provided.',
+    'legal.terms.gp.6': 'No data selling to third parties.',
+    'legal.terms.gp.7': 'Ads comply with Google Play policies.',
+    'legal.terms.gp.8': 'Notifications for service alerts only.',
+    'legal.terms.gp.9': 'Supports 18+ content rating.',
+    'legal.terms.gp.10': 'Handles data per Families Policy.',
+    'legal.terms.gp.11': 'No deceptive behavior.',
+    'legal.terms.gp.12': 'Requests only necessary permissions.',
+    'legal.terms.gp.13': 'Privacy policy link provided.',
+    'legal.terms.gp.14': 'Respects opt-out preferences.',
+    'legal.terms.gp.15': 'Complies with quality and security standards.',
+    'legal.terms.as.title': '10. Apple App Store Compliance',
+    'legal.terms.as.1': 'Complies with Apple guidelines.',
+    'legal.terms.as.2': 'No data beyond functionality.',
+    'legal.terms.as.3': 'Clear privacy policy provided.',
+    'legal.terms.as.4': 'No hidden features.',
+    'legal.terms.as.5': 'Respects user privacy.',
+    'legal.terms.as.6': 'Suitable for 18+ rating.',
+    'legal.terms.as.7': 'Location usage disclosed.',
+    'legal.terms.as.8': 'No private APIs used.',
+    'legal.terms.as.9': 'Data management mechanism provided.',
+    'legal.terms.as.10': 'Content complies with Apple guidelines.',
+    'legal.terms.as.11': 'Supports latest iOS versions.',
+    'legal.terms.as.12': 'Crash reports handled responsibly.',
+    'legal.terms.as.13': 'Does not interfere with system.',
+    'legal.terms.as.14': 'IP rights reserved.',
+    'legal.terms.as.15': 'Complies with Apple requirements.',
+    'legal.terms.ad.title': '11. Google AdSense Compliance',
+    'legal.terms.ad.1': 'Ads comply with AdSense policies.',
+    'legal.terms.ad.2': 'No clicking on own ads.',
+    'legal.terms.ad.3': 'Ad placement does not affect functionality.',
+    'legal.terms.ad.4': 'Users can opt out of personalized ads.',
+    'legal.terms.ad.5': 'No unauthorized AdSense code modification.',
+    'legal.terms.ad.6': 'Ad content is appropriate.',
+    'legal.terms.ad.7': 'Complies with GDPR and CCPA.',
+    'legal.terms.ad.8': 'Sensitive categories excluded.',
+    'legal.terms.ad.9': 'Cookies disclosed in Privacy Policy.',
+    'legal.terms.ad.10': 'No ads on empty pages.',
+    'legal.terms.ad.11': 'Ad count does not exceed limits.',
+    'legal.refund.title': 'Refund & Replacement Policy',
+    'legal.refund.s1.title': '1. Introduction',
+    'legal.refund.s1.text': 'We want you to be satisfied. This policy outlines refund procedures.',
+    'legal.refund.s2.title': '2. Refund Eligibility',
+    'legal.refund.s2.item1': 'Available within 14 days of purchase.',
+    'legal.refund.s2.item2': 'Less than 20% usage.',
+    'legal.refund.s2.item3': 'Not available for terminated accounts.',
+    'legal.refund.s3.title': '3. Refund Process',
+    'legal.refund.s3.text': 'Contact emadh5156@gmail.com with your email and reason.',
+    'legal.refund.s4.title': '4. Processing Time',
+    'legal.refund.s4.text': '7-14 business days to original payment method.',
+    'legal.refund.s5.title': '5. Partial Refunds',
+    'legal.refund.s5.text': 'Mid-cycle cancellations may receive prorated credit.',
+    'legal.refund.s6.title': '6. Service Replacement',
+    'legal.refund.s6.text': 'For unresolved issues within 48 hours.',
+    'legal.refund.s7.title': '7. Cancellation',
+    'legal.refund.s7.text': 'Cancel anytime.',
+    'legal.refund.s8.title': '8. Exceptions',
+    'legal.refund.s8.item1': 'No refunds for terminated accounts.',
+    'legal.refund.s8.item2': 'Promotional plans have special terms.',
+    'legal.refund.s8.item3': 'No refunds after 14 days.',
+    'legal.refund.s9.title': '9. Refund Contact',
+    'legal.refund.s9.text': 'emadh5156@gmail.com',
+    'legal.contact.title': 'Contact Us',
+    'legal.contact.subtitle': 'We\'d love to hear from you! Send a message and we\'ll respond soon.',
+    'legal.contact.info': '📋 Contact Information',
+    'legal.contact.directEmail': 'Direct Email',
+    'legal.contact.response': 'We typically respond within 24-48 hours.',
+    'legal.contact.name': 'Your Name *',
+    'legal.contact.email': 'Your Email *',
+    'legal.contact.subject': 'Subject *',
+    'legal.contact.message': 'Your Message *',
+    'legal.contact.send': '📤 Send Message',
+    'legal.contact.success': 'Message sent successfully!',
+    'legal.contact.error': 'Failed to send. Please try again.',
+    'legal.contact.required': 'All fields are required',
+    'legal.about.title': 'About Us',
+    'legal.about.vision': 'Our Vision: Promoting sexual health education in the Arab world with scientific respect',
+    'legal.about.intro': 'Welcome to El-Lersex — the Arab platform specialized in sexual health education.',
+    'legal.about.s1.title': '🎯 Our Mission',
+    'legal.about.s1.item1': 'Provide reliable scientific content in authentic Arabic',
+    'legal.about.s1.item2': 'Break cultural barriers around health education',
+    'legal.about.s1.item3': 'Provide a comprehensive Arabic reference',
+    'legal.about.s1.item4': 'Collaborate with medical specialists',
+    'legal.about.s2.title': '📊 By The Numbers',
+    'legal.about.s2.chapters': 'Chapters',
+    'legal.about.s2.articles': 'Articles',
+    'legal.about.s2.visitors': 'Visitors',
+    'legal.about.s2.uptime': 'Uptime',
+    'legal.about.s3.title': '⚖️ Disclaimer',
+    'legal.about.s3.text': 'Content is for educational purposes only. Consult your doctor.',
+    'legal.about.s4.title': '📬 Contact Us',
+    'legal.about.s4.text': 'emadh5156@gmail.com',
+  }
+};
+
+function t(key) {
+  return translations[currentLang]?.[key] || translations.ar[key] || key;
+}
+
+function applyLang() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = t(key);
+    if (val) el.textContent = val;
+  });
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('langBtn').textContent = currentLang === 'ar' ? '🌐 EN' : '🌐 عربي';
+}
+
+function toggleLang() {
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  localStorage.setItem('lersex_lang', currentLang);
+  applyLang();
+}
+
+// ==================== CONTACT FORM ====================
+function handleContactSend() {
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const subject = document.getElementById('contactSubject').value.trim();
+  const message = document.getElementById('contactMessage').value.trim();
+
+  if (!name || !email || !subject || !message) {
+    showToast('⚠️ ' + t('legal.contact.required'));
+    return;
+  }
+
+  const body = 'Name: ' + name + '%0AEmail: ' + email + '%0A%0A' + encodeURIComponent(message);
+  const mailUrl = 'mailto:emadh5156@gmail.com?subject=' + encodeURIComponent('[Lersex] ' + subject) + '&body=' + body;
+  window.location.href = mailUrl;
+  showToast('✅ ' + t('legal.contact.success'));
+
+  document.getElementById('contactName').value = '';
+  document.getElementById('contactEmail').value = '';
+  document.getElementById('contactSubject').value = '';
+  document.getElementById('contactMessage').value = '';
+}
 
 // ─── Load Data ───
 async function loadData() {
@@ -1447,6 +2064,7 @@ async function init() {
   updateStats();
   initDarkMode();
   initHeroImage();
+  applyLang();
 }
 
 function updateStats() {
