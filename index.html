@@ -788,6 +788,42 @@ body.dark-mode .login-error { background: #2a0a0a; border-color: #5a1a1a; }
 </head>
 <body>
 
+<!-- Age Verification Overlay -->
+<style>
+.age-gate{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:1;transition:opacity .5s}
+.age-gate.hidden{opacity:0;pointer-events:none}
+.age-gate-box{background:#1a1a1a;border:1px solid #333;border-radius:24px;padding:48px 40px;max-width:440px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.age-gate-icon{font-size:4rem;margin-bottom:16px;display:block}
+.age-gate-box h2{color:#fff;font-size:1.8rem;font-weight:800;margin-bottom:8px;font-family:'Cairo',sans-serif}
+.age-gate-box .age-label{display:inline-block;background:#b71c1c;color:#fff;padding:8px 24px;border-radius:30px;font-size:1.4rem;font-weight:900;margin:16px 0;letter-spacing:2px;font-family:'Cairo',sans-serif}
+.age-gate-box p{color:#999;font-size:1rem;line-height:1.7;margin-bottom:28px;font-family:'Cairo',sans-serif}
+.age-gate-actions{display:flex;gap:12px;flex-direction:column}
+.age-btn{padding:14px 28px;border-radius:14px;font-size:1rem;font-weight:700;cursor:pointer;border:none;transition:all .3s;font-family:'Cairo',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px}
+.age-btn-yes{background:linear-gradient(135deg,#b71c1c,#e53935);color:#fff;box-shadow:0 4px 20px rgba(183,28,28,.4)}
+.age-btn-yes:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(183,28,28,.5)}
+.age-btn-no{background:#2a2a2a;color:#aaa;border:1px solid #444}
+.age-btn-no:hover{background:#333;color:#fff}
+.age-gate-note{margin-top:20px;font-size:.8rem;color:#555;font-family:'Cairo',sans-serif}
+</style>
+<div class="age-gate" id="ageGate">
+  <div class="age-gate-box">
+    <span class="age-gate-icon">🔞</span>
+    <div class="age-label">+18</div>
+    <h2>تنبيه: محتوى للكبار فقط</h2>
+    <p>هذا الموقع يحتوي على محتوى تثقيفي صحي جنسي مخصص للبالغين فقط.<br>يجب أن يكون عمرك 18 سنة أو أكثر للدخول.</p>
+    <div class="age-gate-actions">
+      <button class="age-btn age-btn-yes" onclick="ageConfirm()">✅ نعم، أنا أكبر من 18 سنة</button>
+      <button class="age-btn age-btn-no" onclick="ageDeny()">❌ لا، أنا أقل من 18 سنة</button>
+    </div>
+    <div class="age-gate-note">بالمتابعة فإنك توافق على شروط الاستخدام وسياسة الخصوصية</div>
+  </div>
+</div>
+<script>
+function ageConfirm(){localStorage.setItem('lersex_age_ok','1');document.getElementById('ageGate').classList.add('hidden');setTimeout(function(){document.getElementById('ageGate').remove()},500)}
+function ageDeny(){window.location.href='https://www.google.com'}
+(function(){if(localStorage.getItem('lersex_age_ok')==='1'){var g=document.getElementById('ageGate');if(g)g.remove()}})();
+</script>
+
 <!-- Header -->
 <header class="header">
   <div class="header-inner">
